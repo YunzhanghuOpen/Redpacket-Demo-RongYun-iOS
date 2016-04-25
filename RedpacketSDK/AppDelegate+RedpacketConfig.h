@@ -9,6 +9,5 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate (RedpacketConfig)
-@property (nonatomic, copy, readwrite) NSDictionary *signDict;
 - (void)configRedpacket;
 @end

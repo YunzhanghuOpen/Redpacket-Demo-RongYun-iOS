@@ -50,6 +50,8 @@
     // 设置红包用户信息
     RedpacketUserInfo *user = [[RedpacketUserInfo alloc] init];
     user.userId = [RCIM sharedRCIM].currentUserInfo.userId;
+    
+    // 目前 nickname 和 avatar 两个参数未被 SDK 使用，需要使用 YZHRedpacketBridgeProtocol 的方法
     user.userNickname = [RCIM sharedRCIM].currentUserInfo.name;
     user.userAvatar = [RCIM sharedRCIM].currentUserInfo.portraitUri;
     
