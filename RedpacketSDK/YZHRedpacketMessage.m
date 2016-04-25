@@ -6,17 +6,17 @@
 //  Copyright © 2016年 RongCloud. All rights reserved.
 //
 
-#import "RedpacketMessage.h"
+#import "YZHRedpacketMessage.h"
 
-@interface RedpacketMessage ()
+@interface YZHRedpacketMessage ()
 @property (nonatomic, readwrite, strong) RedpacketMessageModel *redpacket;
 @end
 
-@implementation RedpacketMessage
+@implementation YZHRedpacketMessage
 
 + (instancetype)messageWithRedpacket:(RedpacketMessageModel *)redpacket
 {
-    RedpacketMessage *message = [[[self class] alloc] init];
+    YZHRedpacketMessage *message = [[[self class] alloc] init];
     message.redpacket = redpacket;
     return message;
 }

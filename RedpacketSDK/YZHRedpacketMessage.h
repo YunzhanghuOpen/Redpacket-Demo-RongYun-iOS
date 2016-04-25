@@ -12,7 +12,7 @@
 
 #define YZHRedpacketMessageTypeIdentifier @"YZH:RedpacketMsg"
 
-@interface RedpacketMessage : RCMessageContent
+@interface YZHRedpacketMessage : RCMessageContent
 
 @property (nonatomic, readonly, strong) RedpacketMessageModel *redpacket;
 
