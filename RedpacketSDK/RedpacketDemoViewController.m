@@ -13,6 +13,7 @@
 #import "RedpacketViewControl.h"
 #import "YZHRedpacketBridge.h"
 #import "RedpacketMessage.h"
+#import "RedpacketMessageCell.h"
 #pragma mark -
 
 // 用于获取
@@ -23,7 +24,7 @@
 #define REDPACKET_TAG 2016
 #pragma mark -
 
-@interface RedpacketDemoViewController ()
+@interface RedpacketDemoViewController () <RCMessageCellDelegate>
 
 @property (nonatomic, strong, readwrite) RedpacketViewControl *redpacketControl;
 
@@ -37,7 +38,7 @@
     
 #pragma mark - 设置红包功能
     
-//    [self registerClass:[RedpacketMessage class] forCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier];
+    [self registerClass:[RedpacketMessageCell class] forCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier];
     
     // 设置红包插件界面
     UIImage *icon = [UIImage imageNamed:REDPACKET_BUNDLE(@"redpacket_redpacket")];
@@ -101,6 +102,41 @@
 - (void)onRedpacketTakenMessage:(RedpacketMessageModel *)redpacket
 {
     
+}
+
+- (CGSize)rcConversationCollectionView:(UICollectionView *)collectionView
+                                layout:(UICollectionViewLayout *)collectionViewLayout
+                sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    RCMessageModel *model = [self.conversationDataRepository objectAtIndex:indexPath.row];
+    RCMessageContent *messageContent = model.content;
+    if ([messageContent isMemberOfClass:[RedpacketMessage class]]) {
+        return CGSizeMake(collectionView.frame.size.width, [RedpacketMessageCell getBubbleBackgroundViewSize:(RedpacketMessage *)messageContent].height + 40);
+    } else {
+        return [super rcConversationCollectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
+    }
+}
+
+- (RCMessageBaseCell *)rcConversationCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    RCMessageModel *model =
+    [self.conversationDataRepository objectAtIndex:indexPath.row];
+    
+    if (!self.displayUserNameInCell) {
+        if (model.messageDirection == MessageDirection_RECEIVE) {
+            model.isDisplayNickname = NO;
+        }
+    }
+    RCMessageContent *messageContent = model.content;
+    if ([messageContent isMemberOfClass:[RedpacketMessage class]]) {
+        RedpacketMessageCell *cell = [collectionView
+                                    dequeueReusableCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier
+                                    forIndexPath:indexPath];
+        [cell setDataModel:model];
+        [cell setDelegate:self];
+        return cell;
+    } else {
+        return [super rcConversationCollectionView:collectionView cellForItemAtIndexPath:indexPath];
+    }
 }
 
 #pragma mark - 融云插件点击事件
