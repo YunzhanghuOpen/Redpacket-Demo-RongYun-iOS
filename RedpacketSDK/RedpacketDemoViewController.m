@@ -12,6 +12,7 @@
 #pragma mark - 红包相关头文件
 #import "RedpacketViewControl.h"
 #import "YZHRedpacketBridge.h"
+#import "RedpacketMessage.h"
 #pragma mark -
 
 // 用于获取
@@ -90,27 +91,8 @@
 // 发送融云红包消息
 - (void)sendRedpacketMessage:(RedpacketMessageModel *)redpacket
 {
-    NSDictionary *modelDic = [redpacket redpacketMessageModelToDic];
-    NSError *error = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:modelDic
-                                                   options:NSJSONWritingPrettyPrinted
-                                                     error:&error];
-    if (!data) {
-        if (error) {
-            NSLog(@"红包 Dictionary 转 JSON 失败 : %@", error);
-        }
-        else {
-            NSLog(@"红包 Dictionary 转 JSON 输出为空");
-        }
-    }
-    else {
-        NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        RCTextMessage *textMessage = [[RCTextMessage alloc] init];
-        textMessage.content = NSLocalizedString(@"您当前的版本不支持红包功能，请更新", @"不支持消息");
-        textMessage.extra = json;
-        
-        [self sendMessage:textMessage pushContent:nil];
-    }
+    RedpacketMessage *message = [RedpacketMessage messageWithRedpacket:redpacket];
+    [self sendMessage:message pushContent:nil];
 }
 
 // 红包被抢消息处理
