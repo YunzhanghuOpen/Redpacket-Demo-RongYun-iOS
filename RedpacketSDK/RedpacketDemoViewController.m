@@ -12,7 +12,7 @@
 #pragma mark - 红包相关头文件
 #import "RedpacketViewControl.h"
 #import "YZHRedpacketBridge.h"
-#import "RedpacketMessage.h"
+#import "YZHRedpacketMessage.h"
 #pragma mark -
 
 // 用于获取
@@ -91,7 +91,7 @@
 // 发送融云红包消息
 - (void)sendRedpacketMessage:(RedpacketMessageModel *)redpacket
 {
-    RedpacketMessage *message = [RedpacketMessage messageWithRedpacket:redpacket];
+    YZHRedpacketMessage *message = [YZHRedpacketMessage messageWithRedpacket:redpacket];
     [self sendMessage:message pushContent:nil];
 }
 
