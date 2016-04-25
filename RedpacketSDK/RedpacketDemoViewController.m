@@ -12,7 +12,7 @@
 #pragma mark - 红包相关头文件
 #import "RedpacketViewControl.h"
 #import "YZHRedpacketBridge.h"
-#import "YZHRedpacketMessage.h"
+#import "RedpacketMessage.h"
 #pragma mark -
 
 // 用于获取
@@ -36,6 +36,8 @@
     // Do any additional setup after loading the view.
     
 #pragma mark - 设置红包功能
+    
+//    [self registerClass:[RedpacketMessage class] forCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier];
     
     // 设置红包插件界面
     UIImage *icon = [UIImage imageNamed:REDPACKET_BUNDLE(@"redpacket_redpacket")];
@@ -91,7 +93,7 @@
 // 发送融云红包消息
 - (void)sendRedpacketMessage:(RedpacketMessageModel *)redpacket
 {
-    YZHRedpacketMessage *message = [YZHRedpacketMessage messageWithRedpacket:redpacket];
+    RedpacketMessage *message = [RedpacketMessage messageWithRedpacket:redpacket];
     [self sendMessage:message pushContent:nil];
 }
 
