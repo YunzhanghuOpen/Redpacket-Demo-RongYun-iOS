@@ -3,7 +3,7 @@
 //  RCloudMessage
 //
 //  Created by YANG HONGBO on 2016-4-25.
-//  Copyright © 2016年 RongCloud. All rights reserved.
+//  Copyright © 2016年 云帐户. All rights reserved.
 //
 
 #import <RongIMLib/RongIMLib.h>
@@ -12,7 +12,8 @@
 
 #define YZHRedpacketMessageTypeIdentifier @"YZH:RedpacketMsg"
 
-@interface YZHRedpacketMessage : RCMessageContent
+// 云帐户红包消息类
+@interface RedpacketMessage : RCMessageContent
 
 @property (nonatomic, readonly, strong) RedpacketMessageModel *redpacket;
 
