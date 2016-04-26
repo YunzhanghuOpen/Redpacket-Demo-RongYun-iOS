@@ -122,6 +122,23 @@
     }
 }
 
+- (RCMessage *)willAppendAndDisplayMessage:(RCMessage *)message
+{
+    RCMessageContent *messageContent = message.content;
+    if ([messageContent isMemberOfClass:[RedpacketMessage class]]) {
+        RedpacketMessageModel *redpacket = ((RedpacketMessage *)messageContent).redpacket;
+        if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType){
+                // 只有发红包的人可以显示所有被抢红包的消息
+            if ([redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]
+                // 抢红包的人显示自己的消息
+                || [redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
+                return nil;
+            }
+        }
+    }
+    return message;
+}
+
 - (RCMessageBaseCell *)rcConversationCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     RCMessageModel *model =
@@ -147,9 +164,22 @@
             RCTipMessageCell *cell = [collectionView
                                       dequeueReusableCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier
                                       forIndexPath:indexPath];
-            cell.tipMessageLabel.text = [NSString stringWithFormat:@"%@%@",
-                                         redpacket.redpacketSender.userNickname,
-                                         NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
+            NSString *tip = nil;
+            if([redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
+                // 显示我抢了别人的红包的提示
+                tip =[NSString stringWithFormat:@"%@%@%@%@", // 你 领取了 XXX 的红包
+                      redpacket.currentUser.userNickname,
+                      NSLocalizedString(@"领取了", @"领取红包消息"),
+                      redpacket.redpacketSender.userNickname,
+                      NSLocalizedString(@"的红包", @"领取红包消息结尾")
+                      ];
+            }
+            else { // 收到了别人抢了我的红包的消息提示
+                tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
+                      redpacket.redpacketSender.userNickname,
+                      NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
+            }
+            cell.tipMessageLabel.text = tip;
             return cell;
         }
         else {
