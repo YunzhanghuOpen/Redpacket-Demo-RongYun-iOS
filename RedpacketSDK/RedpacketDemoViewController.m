@@ -38,8 +38,10 @@
     
 #pragma mark - 设置红包功能
     
+    // 注册消息显示 Cell
     [self registerClass:[RedpacketMessageCell class] forCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier];
     [self registerClass:[RCTipMessageCell class] forCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier];
+    
     // 设置红包插件界面
     UIImage *icon = [UIImage imageNamed:REDPACKET_BUNDLE(@"redpacket_redpacket")];
     assert(icon);
@@ -61,12 +63,14 @@
     if (ConversationType_PRIVATE == self.conversationType) {
     }
     else if (ConversationType_DISCUSSION == self.conversationType) {
+        // 设置群发红包
         user.isGroup = YES;
     }
     
     self.redpacketControl.converstationInfo = user;
     
     __weak typeof(self) SELF = self;
+    // 设置红包 SDK 功能回调
     [self.redpacketControl setRedpacketGrabBlock:^(RedpacketMessageModel *redpacket) {
         // 用户发出的红包收到被抢的通知
         [SELF onRedpacketTakenMessage:redpacket];
@@ -75,6 +79,7 @@
         [SELF sendRedpacketMessage:redpacket];
     }];
     
+    // 通知 红包 SDK 刷新 Token
     [[YZHRedpacketBridge sharedBridge] reRequestRedpacketUserToken];
     
 #pragma mark -
