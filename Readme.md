@@ -14,6 +14,18 @@
 
   (这里使用了 git submodule 来管理 SDK demo 与 融云 demo app 的版本关系。原本[库](https://github.com/YunzhanghuOpen/rongcloud-demo-app-ios-v2)使用的是 master 分支，我们这里未作改动，而是新建了 RedpacketLib 分支。 submodule 会关联其中的某一个提交版本。)
 
+  如果已有代码，需要执行
+
+  `git pull --rebase`
+
+  来进行更新。
+
+  如果没能更新 submodule， 则执行
+
+  `git submodule update --recursive`
+
+  来更新所有的 submodule
+
 2. 下载最新的红包 SDK 库文件 ( master 或者是 release )
 
   因为`红包 SDK` 在一直更新维护，所以为了不与 demo 产生依赖，所以采取了单独下载 zip 包的策略
