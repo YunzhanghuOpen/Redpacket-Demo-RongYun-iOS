@@ -39,7 +39,7 @@
 #pragma mark - 设置红包功能
     
     [self registerClass:[RedpacketMessageCell class] forCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier];
-    
+    [self registerClass:[RCTipMessageCell class] forCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier];
     // 设置红包插件界面
     UIImage *icon = [UIImage imageNamed:REDPACKET_BUNDLE(@"redpacket_redpacket")];
     assert(icon);
@@ -107,8 +107,7 @@
 - (void)onRedpacketTakenMessage:(RedpacketMessageModel *)redpacket
 {
     RedpacketMessage *message = [RedpacketMessage messageWithRedpacket:redpacket];
-    
-//    [self appendAndDisplayMessage:];
+    [self sendMessage:message pushContent:nil];
 }
 
 - (CGSize)rcConversationCollectionView:(UICollectionView *)collectionView
@@ -135,12 +134,27 @@
     }
     RCMessageContent *messageContent = model.content;
     if ([messageContent isMemberOfClass:[RedpacketMessage class]]) {
-        RedpacketMessageCell *cell = [collectionView
-                                    dequeueReusableCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier
-                                    forIndexPath:indexPath];
-        [cell setDataModel:model];
-        [cell setDelegate:self];
-        return cell;
+        RedpacketMessageModel *redpacket = ((RedpacketMessage *)messageContent).redpacket;
+        if(RedpacketMessageTypeRedpacket == redpacket.messageType) {
+            RedpacketMessageCell *cell = [collectionView
+                                          dequeueReusableCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier
+                                          forIndexPath:indexPath];
+            [cell setDataModel:model];
+            [cell setDelegate:self];
+            return cell;
+        }
+        else if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType){
+            RCTipMessageCell *cell = [collectionView
+                                      dequeueReusableCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier
+                                      forIndexPath:indexPath];
+            cell.tipMessageLabel.text = [NSString stringWithFormat:@"%@%@",
+                                         redpacket.redpacketSender.userNickname,
+                                         NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
+            return cell;
+        }
+        else {
+            return [super rcConversationCollectionView:collectionView cellForItemAtIndexPath:indexPath];
+        }
     } else {
         return [super rcConversationCollectionView:collectionView cellForItemAtIndexPath:indexPath];
     }
