@@ -101,7 +101,8 @@ static NSString *const UserDictKey = @"user";
 
 - (NSString *)conversationDigest
 {
-    return NSLocalizedString(@"您收到一个", @"红包消息");
+    NSString *s = [NSString stringWithFormat:@"[云红包]%@", self.redpacket.redpacket.redpacketGreeting];
+    return s;
 }
 
 + (NSString *)getObjectName
