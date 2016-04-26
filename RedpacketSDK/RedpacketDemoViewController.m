@@ -106,7 +106,9 @@
 // 红包被抢消息处理
 - (void)onRedpacketTakenMessage:(RedpacketMessageModel *)redpacket
 {
+    RedpacketMessage *message = [RedpacketMessage messageWithRedpacket:redpacket];
     
+//    [self appendAndDisplayMessage:];
 }
 
 - (CGSize)rcConversationCollectionView:(UICollectionView *)collectionView
