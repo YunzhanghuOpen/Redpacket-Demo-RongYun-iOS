@@ -11,6 +11,7 @@
 
 @interface RedpacketConfig : NSObject <YZHRedpacketBridgeDataSource>
 
-+ (void)configRedpacket;
-
++ (void)config;
++ (void)reconfig;
++ (void)clear;
 @end
