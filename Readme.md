@@ -99,3 +99,13 @@
        (3) 设置红包功能相关的参数
        (4) 设置红包接收用户信息
        (5) 设置红包 SDK 功能回调
+
+6. 显示零钱功能
+
+  通过执行
+
+```objc
+  - [RedpacketViewControl presentChangeMoneyViewController]
+```
+
+  在 融云 SDK demo app 中使用 Storyboard 定义个人设置界面，这里为了执行显示功能，采用 Custom Segue 的方法，在 Demo 中的 `RedpacketChangeMoneySegue` 类实现
