@@ -10,7 +10,12 @@
 #import "RedpacketMessage.h"
 
 @interface RedpacketMessageCell : RCMessageCell
-@property(strong, nonatomic) UILabel *textLabel;
+@property(strong, nonatomic) UILabel *greetingLabel;
+@property(strong, nonatomic) UILabel *subLabel; // 显示 "查看红包"
+@property(strong, nonatomic) UILabel *orgLabel;
+@property(strong, nonatomic) UIImageView *iconView;
+@property(strong, nonatomic) UIImageView *orgIconView;
+
 @property(nonatomic, strong) UIImageView *bubbleBackgroundView;
 
 /*
