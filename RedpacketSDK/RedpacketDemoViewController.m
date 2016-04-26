@@ -51,13 +51,18 @@
     self.redpacketControl = [[RedpacketViewControl alloc] init];
     self.redpacketControl.conversationController = self;
     
-    // 设置红包用户信息
+    // 设置红包接收用户信息
     RedpacketUserInfo *user = [[RedpacketUserInfo alloc] init];
-    user.userId = [RCIM sharedRCIM].currentUserInfo.userId;
+    user.userId = self.targetId;
     
     // 目前 nickname 和 avatar 两个参数未被 SDK 使用，需要使用 YZHRedpacketBridgeProtocol 的方法
-    user.userNickname = [RCIM sharedRCIM].currentUserInfo.name;
-    user.userAvatar = [RCIM sharedRCIM].currentUserInfo.portraitUri;
+    user.userNickname = self.userName;
+    
+    if (ConversationType_PRIVATE == self.conversationType) {
+    }
+    else if (ConversationType_DISCUSSION == self.conversationType) {
+        user.isGroup = YES;
+    }
     
     self.redpacketControl.converstationInfo = user;
     
@@ -136,6 +141,17 @@
         return cell;
     } else {
         return [super rcConversationCollectionView:collectionView cellForItemAtIndexPath:indexPath];
+    }
+}
+
+#pragma mark - 红包插件点击事件
+- (void)didTapMessageCell:(RCMessageModel *)model
+{
+    if ([model.content isKindOfClass:[RedpacketMessage class]]) {
+        [self.redpacketControl redpacketCellTouchedWithMessageModel:((RedpacketMessage *)model.content).redpacket];
+    }
+    else {
+        [super didTapMessageCell:model];
     }
 }
 

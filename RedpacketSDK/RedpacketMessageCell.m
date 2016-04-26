@@ -40,9 +40,9 @@
     [self.messageContentView addSubview:self.bubbleBackgroundView];
     
     self.bubbleBackgroundView.userInteractionEnabled = YES;
-    UILongPressGestureRecognizer *longPress =
-    [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressed:)];
-    [self.bubbleBackgroundView addGestureRecognizer:longPress];
+    UITapGestureRecognizer *tap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self.bubbleBackgroundView addGestureRecognizer:tap];
     
     // 设置红包图标
     UIImage *icon = [RCKitUtility imageNamed:@"redPacket_redPacktIcon" ofBundle:@"RedpacketCellResource.bundle"];
@@ -59,13 +59,6 @@
     [self.greetingLabel setLineBreakMode:NSLineBreakByCharWrapping];
     [self.greetingLabel setTextAlignment:NSTextAlignmentLeft];
     [self.bubbleBackgroundView addSubview:self.greetingLabel];
-    
-    UITapGestureRecognizer *textMessageTap =
-    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapTextMessage:)];
-    textMessageTap.numberOfTapsRequired = 1;
-    textMessageTap.numberOfTouchesRequired = 1;
-    [self.greetingLabel addGestureRecognizer:textMessageTap];
-    self.greetingLabel.userInteractionEnabled = YES;
     
     // 设置次级文字
     self.subLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -107,12 +100,6 @@
 
 }
 
-- (void)tapTextMessage:(UIGestureRecognizer *)gestureRecognizer {
-    if ([self.delegate respondsToSelector:@selector(didTapMessageCell:)]) {
-        [self.delegate didTapMessageCell:self.model];
-    }
-}
-
 - (void)setDataModel:(RCMessageModel *)model {
     [super setDataModel:model];
     
@@ -150,12 +137,9 @@
     }
 }
 
-- (void)longPressed:(id)sender {
-    UILongPressGestureRecognizer *press = (UILongPressGestureRecognizer *)sender;
-    if (press.state == UIGestureRecognizerStateEnded) {
-        return;
-    } else if (press.state == UIGestureRecognizerStateBegan) {
-        [self.delegate didLongTouchMessageCell:self.model inView:self.bubbleBackgroundView];
+- (void)tap:(UITapGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        [self.delegate didTapMessageCell:self.model];
     }
 }
 
