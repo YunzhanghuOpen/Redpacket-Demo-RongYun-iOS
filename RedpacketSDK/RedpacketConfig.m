@@ -50,7 +50,7 @@ static NSString * const signDictKey = @"signDict";
 
 + (void)reconfig
 {
-    [[self sharedConfig] clear];
+    [self clear];
     [[self sharedConfig] config];
 }
 
