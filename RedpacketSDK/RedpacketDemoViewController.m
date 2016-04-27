@@ -14,6 +14,7 @@
 #import "YZHRedpacketBridge.h"
 #import "RedpacketMessage.h"
 #import "RedpacketMessageCell.h"
+#import "RedpacketTakenMessageTipCell.h"
 #pragma mark -
 
 // 用于获取
@@ -40,7 +41,8 @@
     
     // 注册消息显示 Cell
     [self registerClass:[RedpacketMessageCell class] forCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier];
-    [self registerClass:[RCTipMessageCell class] forCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier];
+    [self registerClass:[RedpacketTakenMessageTipCell class] forCellWithReuseIdentifier:YZHRedpacketTakenMessageCellTypeIdentifier];
+    [self registerClass:[RCTextMessageCell class] forCellWithReuseIdentifier:@"Message"];
     
     // 设置红包插件界面
     UIImage *icon = [UIImage imageNamed:REDPACKET_BUNDLE(@"redpacket_redpacket")];
@@ -121,10 +123,18 @@
     RCMessageModel *model = [self.conversationDataRepository objectAtIndex:indexPath.row];
     RCMessageContent *messageContent = model.content;
     if ([messageContent isMemberOfClass:[RedpacketMessage class]]) {
-        return CGSizeMake(collectionView.frame.size.width, [RedpacketMessageCell getBubbleBackgroundViewSize:(RedpacketMessage *)messageContent].height + 40);
-    } else {
-        return [super rcConversationCollectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
+        RedpacketMessageModel *redpacket = ((RedpacketMessage *)messageContent).redpacket;
+        if(RedpacketMessageTypeRedpacket == redpacket.messageType) {
+            return CGSizeMake(collectionView.frame.size.width, [RedpacketMessageCell getBubbleBackgroundViewSize:(RedpacketMessage *)messageContent].height + 40);
+        }
+        else if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType){
+            return CGSizeMake(collectionView.frame.size.width,
+                              [RedpacketTakenMessageTipCell sizeForModel:model].height + REDPACKET_TAKEN_MESSAGE_TOP_BOTTOM_PADDING);
+        }
+        
     }
+    
+    return [super rcConversationCollectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
 }
 
 - (RCMessage *)willAppendAndDisplayMessage:(RCMessage *)message
@@ -133,10 +143,10 @@
     if ([messageContent isMemberOfClass:[RedpacketMessage class]]) {
         RedpacketMessageModel *redpacket = ((RedpacketMessage *)messageContent).redpacket;
         if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType){
-                // 只有发红包的人可以显示所有被抢红包的消息
-            if ([redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]
+                // 发红包的人可以显示所有被抢红包的消息
                 // 抢红包的人显示自己的消息
-                || [redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
+            if (![redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]
+                && ![redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
                 return nil;
             }
         }
@@ -166,8 +176,8 @@
             return cell;
         }
         else if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType){
-            RCTipMessageCell *cell = [collectionView
-                                      dequeueReusableCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier
+            RedpacketTakenMessageTipCell *cell = [collectionView
+                                      dequeueReusableCellWithReuseIdentifier:YZHRedpacketTakenMessageCellTypeIdentifier
                                       forIndexPath:indexPath];
             NSString *tip = nil;
             if([redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
@@ -185,6 +195,8 @@
                       NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
             }
             cell.tipMessageLabel.text = tip;
+            [cell setDataModel:model];
+            [cell setNeedsLayout];
             return cell;
         }
         else {
@@ -199,7 +211,9 @@
 - (void)didTapMessageCell:(RCMessageModel *)model
 {
     if ([model.content isKindOfClass:[RedpacketMessage class]]) {
-        [self.redpacketControl redpacketCellTouchedWithMessageModel:((RedpacketMessage *)model.content).redpacket];
+        if(RedpacketMessageTypeRedpacket == ((RedpacketMessage *)model.content).redpacket.messageType) {
+            [self.redpacketControl redpacketCellTouchedWithMessageModel:((RedpacketMessage *)model.content).redpacket];
+        }
     }
     else {
         [super didTapMessageCell:model];
