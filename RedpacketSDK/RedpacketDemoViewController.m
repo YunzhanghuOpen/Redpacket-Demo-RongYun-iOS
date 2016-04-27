@@ -182,16 +182,15 @@
             NSString *tip = nil;
             if([redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
                 // 显示我抢了别人的红包的提示
-                tip =[NSString stringWithFormat:@"%@%@%@%@", // 你 领取了 XXX 的红包
-                      redpacket.currentUser.userNickname,
-                      NSLocalizedString(@"领取了", @"领取红包消息"),
+                tip =[NSString stringWithFormat:@"%@%@%@", // 你领取了 XXX 的红包
+                      NSLocalizedString(@"你领取了", @"领取红包消息"),
                       redpacket.redpacketSender.userNickname,
                       NSLocalizedString(@"的红包", @"领取红包消息结尾")
                       ];
             }
             else { // 收到了别人抢了我的红包的消息提示
                 tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
-                      redpacket.redpacketSender.userNickname,
+                      redpacket.redpacketReceiver.userNickname,
                       NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
             }
             cell.tipMessageLabel.text = tip;
