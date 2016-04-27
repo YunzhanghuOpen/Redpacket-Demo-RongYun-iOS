@@ -74,7 +74,7 @@ static NSString * const signDictKey = @"signDict";
     
     if (userId) {
         
-        if (self.signDict) {
+        if (!self.signDict) {
             // 获取应用自己的签名字段。实际应用中需要开发者自行提供相应在的签名计算服务
             
             NSString *urlStr = [NSString stringWithFormat:@"%@%@",requestUrl, userId];
