@@ -85,6 +85,7 @@ static NSString * const signDictKey = @"signDict";
                                                                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                                                   if ([responseObject isKindOfClass:[NSDictionary class]]) {
                                                                                       self.signDict = responseObject;
+                                                                                      [self saveSign];
                                                                                       [self configWithSignDict:responseObject];
                                                                                   }
                                                                               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
