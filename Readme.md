@@ -67,7 +67,7 @@
              appUserId:(NSString *)appUserid
              timeStamp:(long)timeStamp;
     ```
-    
+
     以执行`红包 SDK` 的信息注册
 
 5. 在聊天对话中添加红包支持
