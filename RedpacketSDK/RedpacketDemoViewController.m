@@ -211,6 +211,9 @@
 {
     if ([model.content isKindOfClass:[RedpacketMessage class]]) {
         if(RedpacketMessageTypeRedpacket == ((RedpacketMessage *)model.content).redpacket.messageType) {
+            if ([self.chatSessionInputBarControl.inputTextView isFirstResponder]) {
+                [self.chatSessionInputBarControl.inputTextView resignFirstResponder];
+            }
             [self.redpacketControl redpacketCellTouchedWithMessageModel:((RedpacketMessage *)model.content).redpacket];
         }
     }
