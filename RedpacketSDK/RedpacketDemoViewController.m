@@ -28,7 +28,7 @@
 @interface RedpacketDemoViewController () <RCMessageCellDelegate>
 
 @property (nonatomic, strong, readwrite) RedpacketViewControl *redpacketControl;
-
+@property (nonatomic, strong, readwrite) RCUserInfo *targetUser;
 @end
 
 @implementation RedpacketDemoViewController
@@ -55,13 +55,8 @@
     self.redpacketControl = [[RedpacketViewControl alloc] init];
     self.redpacketControl.conversationController = self;
     
-    // 设置红包接收用户信息
     RedpacketUserInfo *user = [[RedpacketUserInfo alloc] init];
     user.userId = self.targetId;
-    
-    // 目前 nickname 和 avatar 两个参数未被 SDK 使用，需要使用 YZHRedpacketBridgeProtocol 的方法
-    user.userNickname = self.userName;
-    
     if (ConversationType_PRIVATE == self.conversationType) {
     }
     else if (ConversationType_DISCUSSION == self.conversationType) {
@@ -70,6 +65,21 @@
     }
     
     self.redpacketControl.converstationInfo = user;
+    
+    // 异步获取更多用户消息, 这是 Demo app 的 DataSource 逻辑
+    [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:self.targetId
+                                                  completion:^(RCUserInfo *userInfo) {
+                                                      // 设置红包接收用户信息
+                                                      
+                                                      user.userNickname = userInfo.name;
+                                                      user.userAvatar = userInfo.portraitUri;
+                                                      
+                                                      self.targetUser = userInfo;
+                                                      // 更新用户信息
+                                                      self.redpacketControl.converstationInfo = user;
+                                                  }];
+    
+    
     
     __weak typeof(self) SELF = self;
     // 设置红包 SDK 功能回调
@@ -189,9 +199,38 @@
                       ];
             }
             else { // 收到了别人抢了我的红包的消息提示
-                tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
-                      redpacket.redpacketReceiver.userNickname,
-                      NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
+                if (ConversationType_PRIVATE == self.conversationType) {
+                    tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
+                          // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
+//                          redpacket.redpacketReceiver.userNickname,
+                          self.targetUser.name,
+                          NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
+                }
+                else {
+                    tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
+                          // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
+                          redpacket.redpacketReceiver.userNickname,
+                          NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
+                    
+                    [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:redpacket.redpacketReceiver.userId
+                                                                     inGroup:self.targetId
+                                                                  completion:^(RCUserInfo *userInfo) {
+                                                                      if (userInfo) {
+                                                                          NSString *tip = nil;
+                                                                          tip = [NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
+                                                                                // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
+                                                                                 userInfo.name,
+                                                                                NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
+                                                                          
+                                                                          RedpacketTakenMessageTipCell *cell = (RedpacketTakenMessageTipCell *)[collectionView cellForItemAtIndexPath:indexPath];
+                                                                          if (cell) {
+                                                                              cell.tipMessageLabel.text = tip;
+                                                                              [cell setDataModel:model];
+                                                                              [cell setNeedsLayout];
+                                                                          }
+                                                                      }
+                                                                  }];
+                }
             }
             cell.tipMessageLabel.text = tip;
             [cell setDataModel:model];
