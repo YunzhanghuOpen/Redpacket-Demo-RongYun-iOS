@@ -125,7 +125,7 @@
     if ([messageContent isMemberOfClass:[RedpacketMessage class]]) {
         RedpacketMessageModel *redpacket = ((RedpacketMessage *)messageContent).redpacket;
         if(RedpacketMessageTypeRedpacket == redpacket.messageType) {
-            return CGSizeMake(collectionView.frame.size.width, [RedpacketMessageCell getBubbleBackgroundViewSize:(RedpacketMessage *)messageContent].height + 40);
+            return CGSizeMake(collectionView.frame.size.width, [RedpacketMessageCell getBubbleBackgroundViewSize:(RedpacketMessage *)messageContent].height + REDPACKET_MESSAGE_TOP_BOTTOM_PADDING);
         }
         else if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType){
             return CGSizeMake(collectionView.frame.size.width,
