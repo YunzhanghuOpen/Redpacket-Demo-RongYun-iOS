@@ -12,7 +12,7 @@ static NSString *const RedpacketDictKey = @"redpacket";
 static NSString *const UserDictKey = @"user";
 
 @interface RedpacketMessage ()
-@property (nonatomic, readwrite, strong) RedpacketMessageModel *redpacket;
+@property (nonatomic, readwrite, copy) RedpacketMessageModel *redpacket;
 @end
 
 @implementation RedpacketMessage

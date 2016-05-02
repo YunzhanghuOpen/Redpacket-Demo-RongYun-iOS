@@ -16,7 +16,7 @@
 // 云帐户红包消息类
 @interface RedpacketMessage : RCMessageContent
 
-@property (nonatomic, readonly, strong) RedpacketMessageModel *redpacket;
+@property (nonatomic, readonly, copy) RedpacketMessageModel *redpacket;
 
 + (instancetype)messageWithRedpacket:(RedpacketMessageModel *)redpacket;
 
