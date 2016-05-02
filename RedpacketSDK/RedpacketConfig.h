@@ -13,5 +13,5 @@
 
 + (void)config;
 + (void)reconfig;
-+ (void)clear;
++ (void)logout;
 @end

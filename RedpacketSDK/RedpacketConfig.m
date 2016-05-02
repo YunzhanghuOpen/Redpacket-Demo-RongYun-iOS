@@ -43,14 +43,15 @@ static NSString * const signDictKey = @"signDict";
     [[self sharedConfig] config];
 }
 
-+ (void)clear
++ (void)logout
 {
+    [[YZHRedpacketBridge sharedBridge] redpacketUserLoginOut];
     [[self sharedConfig] cleanSign];
 }
 
 + (void)reconfig
 {
-    [self clear];
+    [self logout];
     [[self sharedConfig] config];
 }
 
