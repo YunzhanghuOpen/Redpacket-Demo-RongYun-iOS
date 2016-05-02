@@ -16,11 +16,8 @@
 
 //	*此为演示地址* App需要修改为自己AppServer上的地址, 数据格式参考此地址给出的格式。
 static NSString * const requestUrl = @"http://121.42.52.69:3001/api/sign?duid=";
-static NSString * const signDictKey = @"signDict";
 
 @interface RedpacketConfig ()
-
-@property (nonatomic, copy, readwrite) NSDictionary *signDict;
 
 @end
 
@@ -32,7 +29,6 @@ static NSString * const signDictKey = @"signDict";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         config = [[RedpacketConfig alloc] init];
-        [config loadSign];
         [[YZHRedpacketBridge sharedBridge] setDataSource:config];
     });
     return config;
@@ -46,7 +42,6 @@ static NSString * const signDictKey = @"signDict";
 + (void)logout
 {
     [[YZHRedpacketBridge sharedBridge] redpacketUserLoginOut];
-    [[self sharedConfig] cleanSign];
 }
 
 + (void)reconfig
@@ -71,11 +66,11 @@ static NSString * const signDictKey = @"signDict";
 
 - (void)config
 {
-    NSString *userId = [RCIM sharedRCIM].currentUserInfo.userId;
-    
-    if (userId) {
+    if(![[YZHRedpacketBridge sharedBridge] isRedpacketTokenValidate]) {
+        NSString *userId = [RCIM sharedRCIM].currentUserInfo.userId;
         
-        if (!self.signDict) {
+        if (userId) {
+            
             // 获取应用自己的签名字段。实际应用中需要开发者自行提供相应在的签名计算服务
             
             NSString *urlStr = [NSString stringWithFormat:@"%@%@",requestUrl, userId];
@@ -85,18 +80,12 @@ static NSString * const signDictKey = @"signDict";
             [[[AFHTTPRequestOperationManager manager] HTTPRequestOperationWithRequest:request
                                                                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                                                   if ([responseObject isKindOfClass:[NSDictionary class]]) {
-                                                                                      self.signDict = responseObject;
-                                                                                      [self saveSign];
                                                                                       [self configWithSignDict:responseObject];
                                                                                   }
                                                                               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                                                                   NSLog(@"request redpacket sign failed:%@", error);
                                                                               }] start];
         }
-        else {
-            [self configWithSignDict:self.signDict];
-        }
-        
     }
 }
 
@@ -110,26 +99,4 @@ static NSString * const signDictKey = @"signDict";
     return user;
 }
 
-- (void)saveSign
-{
-    if (self.signDict) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:self.signDict forKey:signDictKey];
-        [defaults synchronize];
-    }
-}
-
-- (void)loadSign
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.signDict = [defaults objectForKey:signDictKey];
-}
-
-- (void)cleanSign
-{
-    self.signDict = nil;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:nil forKey:signDictKey];
-    [defaults synchronize];
-}
 @end
