@@ -14,6 +14,7 @@
 #import "YZHRedpacketBridge.h"
 #import "RedpacketMessage.h"
 #import "RedpacketMessageCell.h"
+#import "RedpacketTakenMessage.h"
 #import "RedpacketTakenMessageTipCell.h"
 #pragma mark -
 
@@ -40,7 +41,7 @@
     
     // 注册消息显示 Cell
     [self registerClass:[RedpacketMessageCell class] forCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier];
-    [self registerClass:[RedpacketTakenMessageTipCell class] forCellWithReuseIdentifier:YZHRedpacketTakenMessageCellTypeIdentifier];
+    [self registerClass:[RedpacketTakenMessageTipCell class] forCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier];
     [self registerClass:[RCTextMessageCell class] forCellWithReuseIdentifier:@"Message"];
     
     // 设置红包插件界面
@@ -111,7 +112,7 @@
 // 红包被抢消息处理
 - (void)onRedpacketTakenMessage:(RedpacketMessageModel *)redpacket
 {
-    RedpacketMessage *message = [RedpacketMessage messageWithRedpacket:redpacket];
+    RedpacketTakenMessage *message = [RedpacketTakenMessage messageWithRedpacket:redpacket];
     [self sendMessage:message pushContent:nil];
 }
 
@@ -175,7 +176,7 @@
         }
         else if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType){
             RedpacketTakenMessageTipCell *cell = [collectionView
-                                      dequeueReusableCellWithReuseIdentifier:YZHRedpacketTakenMessageCellTypeIdentifier
+                                      dequeueReusableCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier
                                       forIndexPath:indexPath];
             NSString *tip = nil;
             if([redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {

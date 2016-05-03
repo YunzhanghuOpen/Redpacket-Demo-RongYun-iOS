@@ -26,7 +26,7 @@ static NSString *const UserDictKey = @"user";
 
 // 消息只存储，不计入未读消息
 + (RCMessagePersistent)persistentFlag {
-    return (MessagePersistent_ISPERSISTED);
+    return (MessagePersistent_ISPERSISTED | MessagePersistent_ISCOUNTED);
 }
 
 - (NSData *)encode

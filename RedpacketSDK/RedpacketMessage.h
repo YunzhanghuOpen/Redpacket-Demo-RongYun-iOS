@@ -11,7 +11,6 @@
 #import "RedpacketMessageModel.h"
 
 #define YZHRedpacketMessageTypeIdentifier @"YZH:RedpacketMsg"
-#define YZHRedpacketTakenMessageCellTypeIdentifier @"YZH:RedpacketTakenMsg"
 
 // 云帐户红包消息类
 @interface RedpacketMessage : RCMessageContent
