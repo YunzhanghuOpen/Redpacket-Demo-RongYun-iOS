@@ -28,7 +28,6 @@
 @interface RedpacketDemoViewController () <RCMessageCellDelegate>
 
 @property (nonatomic, strong, readwrite) RedpacketViewControl *redpacketControl;
-@property (nonatomic, strong, readwrite) RCUserInfo *targetUser;
 @end
 
 @implementation RedpacketDemoViewController
@@ -69,21 +68,6 @@
     }
     
     self.redpacketControl.converstationInfo = user;
-    
-    // 异步获取更多用户消息, 这是 Demo app 的 DataSource 逻辑
-    [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:self.targetId
-                                                  completion:^(RCUserInfo *userInfo) {
-                                                      // 设置红包接收用户信息
-                                                      
-                                                      user.userNickname = userInfo.name;
-                                                      user.userAvatar = userInfo.portraitUri;
-                                                      
-                                                      self.targetUser = userInfo;
-                                                      // 更新用户信息
-                                                      self.redpacketControl.converstationInfo = user;
-                                                  }];
-    
-    
     
     __weak typeof(self) SELF = self;
     // 设置红包 SDK 功能回调
@@ -203,11 +187,11 @@
                       ];
             }
             else { // 收到了别人抢了我的红包的消息提示
-                if (ConversationType_PRIVATE == self.conversationType && self.targetUser) {
+                if (ConversationType_PRIVATE == self.conversationType) {
                     tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
                           // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
 //                          redpacket.redpacketReceiver.userNickname,
-                          self.targetUser.name,
+                          self.userName,
                           NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
                 }
                 else {
