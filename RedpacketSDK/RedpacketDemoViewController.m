@@ -235,6 +235,10 @@
 
 - (void)willDisplayMessageCell:(RCMessageBaseCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    if ([cell isKindOfClass:[RedpacketMessageCell class]]) {
+        RedpacketMessageCell *c = (RedpacketMessageCell *)cell;
+        c.statusContentView.hidden = YES;
+    }
     [super willDisplayMessageCell:cell atIndexPath:indexPath];
 }
 
