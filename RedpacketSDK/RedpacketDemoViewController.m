@@ -203,7 +203,7 @@
                       ];
             }
             else { // 收到了别人抢了我的红包的消息提示
-                if (ConversationType_PRIVATE == self.conversationType) {
+                if (ConversationType_PRIVATE == self.conversationType && self.targetUser) {
                     tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
                           // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
 //                          redpacket.redpacketReceiver.userNickname,
