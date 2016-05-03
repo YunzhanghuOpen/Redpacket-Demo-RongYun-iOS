@@ -57,6 +57,10 @@
     
     RedpacketUserInfo *user = [[RedpacketUserInfo alloc] init];
     user.userId = self.targetId;
+    // 虽然现在 userName 不被 viewController 保存，但是如果不设置 userNickname，会
+    // 导致新消息显示的时候显示 (null) 数据
+    user.userNickname = self.userName;
+    
     if (ConversationType_PRIVATE == self.conversationType) {
     }
     else if (ConversationType_DISCUSSION == self.conversationType) {
@@ -243,6 +247,11 @@
     } else {
         return [super rcConversationCollectionView:collectionView cellForItemAtIndexPath:indexPath];
     }
+}
+
+- (void)willDisplayMessageCell:(RCMessageBaseCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    [super willDisplayMessageCell:cell atIndexPath:indexPath];
 }
 
 #pragma mark - 红包插件点击事件

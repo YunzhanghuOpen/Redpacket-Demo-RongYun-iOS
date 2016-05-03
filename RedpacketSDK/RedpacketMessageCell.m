@@ -135,6 +135,8 @@
         UIImage *image = [RCKitUtility imageNamed:@"redpacket_sender_bg" ofBundle:@"RedpacketCellResource.bundle"];
         self.bubbleBackgroundView.image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(70, 9, 25, 20)];
     }
+    
+    self.statusContentView.hidden = YES;
 }
 
 - (void)tap:(UITapGestureRecognizer *)gesture {
