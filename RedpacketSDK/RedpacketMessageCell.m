@@ -98,6 +98,7 @@
     rt.size = CGSizeMake(21, 14);
     self.orgIconView.frame = rt;
 
+    self.statusContentView.hidden = YES;
 }
 
 - (void)setDataModel:(RCMessageModel *)model {
