@@ -62,6 +62,17 @@
     user.userNickname = self.userName;
     
     if (ConversationType_PRIVATE == self.conversationType) {
+        // 异步获取更多用户消息, 这是 Demo app 的 DataSource 逻辑
+        [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:self.targetId
+                                                      completion:^(RCUserInfo *userInfo) {
+                                                          // 设置红包接收用户信息
+                                                          
+                                                          user.userNickname = userInfo.name;
+                                                          user.userAvatar = userInfo.portraitUri;
+                                                          
+                                                          // 更新用户信息
+                                                          self.redpacketControl.converstationInfo = user;
+                                                      }];
     }
     else if (ConversationType_DISCUSSION == self.conversationType) {
         // 设置群发红包
