@@ -132,7 +132,7 @@
                 sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     RCMessageModel *model = [self.conversationDataRepository objectAtIndex:indexPath.row];
     RCMessageContent *messageContent = model.content;
-    if ([messageContent isMemberOfClass:[RedpacketMessage class]]) {
+    if ([messageContent isKindOfClass:[RedpacketMessage class]]) {
         RedpacketMessageModel *redpacket = ((RedpacketMessage *)messageContent).redpacket;
         if(RedpacketMessageTypeRedpacket == redpacket.messageType) {
             return CGSizeMake(collectionView.frame.size.width, [RedpacketMessageCell getBubbleBackgroundViewSize:(RedpacketMessage *)messageContent].height + REDPACKET_MESSAGE_TOP_BOTTOM_PADDING);
@@ -150,7 +150,7 @@
 - (RCMessage *)willAppendAndDisplayMessage:(RCMessage *)message
 {
     RCMessageContent *messageContent = message.content;
-    if ([messageContent isMemberOfClass:[RedpacketMessage class]]) {
+    if ([messageContent isKindOfClass:[RedpacketMessage class]]) {
         RedpacketMessageModel *redpacket = ((RedpacketMessage *)messageContent).redpacket;
         if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType){
                 // 发红包的人可以显示所有被抢红包的消息
@@ -175,7 +175,7 @@
         }
     }
     RCMessageContent *messageContent = model.content;
-    if ([messageContent isMemberOfClass:[RedpacketMessage class]]) {
+    if ([messageContent isKindOfClass:[RedpacketMessage class]]) {
         RedpacketMessageModel *redpacket = ((RedpacketMessage *)messageContent).redpacket;
         if(RedpacketMessageTypeRedpacket == redpacket.messageType) {
             RedpacketMessageCell *cell = [collectionView

@@ -7,9 +7,11 @@
 //
 
 #import "RedpacketMessage.h"
+#import <RongIMKit/RongIMKit.h>
 
 static NSString *const RedpacketDictKey = @"redpacket";
 static NSString *const UserDictKey = @"user";
+static NSString *const SenderUsernameKey = @"senderUsername";
 
 @interface RedpacketMessage ()
 @property (nonatomic, readwrite, copy) RedpacketMessageModel *redpacket;
@@ -21,6 +23,7 @@ static NSString *const UserDictKey = @"user";
 {
     RedpacketMessage *message = [[[self class] alloc] init];
     message.redpacket = redpacket;
+    message.senderUsername = [RCIMClient sharedRCIMClient].currentUserInfo.name;
     return message;
 }
 
@@ -52,6 +55,8 @@ static NSString *const UserDictKey = @"user";
             }
             dic[UserDictKey] = userInfoDic;
         }
+        
+        dic[SenderUsernameKey] = self.senderUsername;
         
         if ([NSJSONSerialization isValidJSONObject:dic]) {
             NSError *error = nil;
@@ -93,6 +98,8 @@ static NSString *const UserDictKey = @"user";
         
         NSDictionary *userDic = dic[UserDictKey];
         [self decodeUserInfo:userDic];
+        
+        self.senderUsername = dic[SenderUsernameKey];
     }
     else {
         NSLog(@"获取的 JSON 不是字典内容");
@@ -117,7 +124,7 @@ static NSString *const UserDictKey = @"user";
         }
         else { // 收到了别人抢了我的红包的消息提示
             s = [NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
-                 self.redpacket.redpacketReceiver.userNickname,
+                 self.senderUsername,
                  NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
         }
     }
