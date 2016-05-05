@@ -133,7 +133,8 @@
     RCMessageModel *model = [self.conversationDataRepository objectAtIndex:indexPath.row];
     RCMessageContent *messageContent = model.content;
     if ([messageContent isKindOfClass:[RedpacketMessage class]]) {
-        RedpacketMessageModel *redpacket = ((RedpacketMessage *)messageContent).redpacket;
+        RedpacketMessage *redpacketMessage = (RedpacketMessage *)messageContent;
+        RedpacketMessageModel *redpacket = redpacketMessage.redpacket;
         if(RedpacketMessageTypeRedpacket == redpacket.messageType) {
             return CGSizeMake(collectionView.frame.size.width, [RedpacketMessageCell getBubbleBackgroundViewSize:(RedpacketMessage *)messageContent].height + REDPACKET_MESSAGE_TOP_BOTTOM_PADDING);
         }
@@ -151,12 +152,13 @@
 {
     RCMessageContent *messageContent = message.content;
     if ([messageContent isKindOfClass:[RedpacketMessage class]]) {
-        RedpacketMessageModel *redpacket = ((RedpacketMessage *)messageContent).redpacket;
+        RedpacketMessage *redpacketMessage = (RedpacketMessage *)messageContent;
+        RedpacketMessageModel *redpacket = redpacketMessage.redpacket;
         if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType){
                 // 发红包的人可以显示所有被抢红包的消息
                 // 抢红包的人显示自己的消息
             if (![redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]
-                && ![redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
+                && ![redpacket.currentUser.userId isEqualToString:redpacketMessage.redpacketUserInfo.userId]) {
                 return nil;
             }
         }
@@ -191,7 +193,9 @@
                                       dequeueReusableCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier
                                       forIndexPath:indexPath];
             NSString *tip = nil;
-            if([redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
+            // 目前红包 SDK 不传递有效的 redpacketReceiver
+            if([redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]
+               || [redpacket.currentUser.userId isEqualToString:redpacketMessage.redpacketUserInfo.userId]) {
                 // 显示我抢了别人的红包的提示
                 tip =[NSString stringWithFormat:@"%@%@%@", // 你领取了 XXX 的红包
                       NSLocalizedString(@"你领取了", @"领取红包消息"),
@@ -210,27 +214,27 @@
                 else {
                     tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
                           // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
-                          redpacketMessage.senderUsername,
+                          redpacketMessage.redpacketUserInfo.name,
                           NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
                     
-                    [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:redpacket.redpacketReceiver.userId
-                                                                     inGroup:self.targetId
-                                                                  completion:^(RCUserInfo *userInfo) {
-                                                                      if (userInfo) {
-                                                                          NSString *tip = nil;
-                                                                          tip = [NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
-                                                                                // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
-                                                                                 userInfo.name,
-                                                                                NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
-                                                                          
-                                                                          RedpacketTakenMessageTipCell *cell = (RedpacketTakenMessageTipCell *)[collectionView cellForItemAtIndexPath:indexPath];
-                                                                          if (cell) {
-                                                                              cell.tipMessageLabel.text = tip;
-                                                                              [cell setDataModel:model];
-                                                                              [cell setNeedsLayout];
-                                                                          }
-                                                                      }
-                                                                  }];
+//                    [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:redpacket.redpacketReceiver.userId
+//                                                                     inGroup:self.targetId
+//                                                                  completion:^(RCUserInfo *userInfo) {
+//                                                                      if (userInfo) {
+//                                                                          NSString *tip = nil;
+//                                                                          tip = [NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
+//                                                                                // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
+//                                                                                 userInfo.name,
+//                                                                                NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
+//                                                                          
+//                                                                          RedpacketTakenMessageTipCell *cell = (RedpacketTakenMessageTipCell *)[collectionView cellForItemAtIndexPath:indexPath];
+//                                                                          if (cell) {
+//                                                                              cell.tipMessageLabel.text = tip;
+//                                                                              [cell setDataModel:model];
+//                                                                              [cell setNeedsLayout];
+//                                                                          }
+//                                                                      }
+//                                                                  }];
                 }
             }
             cell.tipMessageLabel.text = tip;

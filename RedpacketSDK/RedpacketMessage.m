@@ -11,7 +11,6 @@
 
 static NSString *const RedpacketDictKey = @"redpacket";
 static NSString *const UserDictKey = @"user";
-static NSString *const SenderUsernameKey = @"senderUsername";
 
 @interface RedpacketMessage ()
 @property (nonatomic, readwrite, copy) RedpacketMessageModel *redpacket;
@@ -23,7 +22,7 @@ static NSString *const SenderUsernameKey = @"senderUsername";
 {
     RedpacketMessage *message = [[[self class] alloc] init];
     message.redpacket = redpacket;
-    message.senderUsername = [RCIMClient sharedRCIMClient].currentUserInfo.name;
+    message.redpacketUserInfo = [RCIMClient sharedRCIMClient].currentUserInfo;
     return message;
 }
 
@@ -42,21 +41,19 @@ static NSString *const SenderUsernameKey = @"senderUsername";
         NSDictionary *modelDic = [self.redpacket redpacketMessageModelToDic];
         dic[RedpacketDictKey] = modelDic;
         
-        if (self.senderUserInfo) {
+        if (self.redpacketUserInfo) {
             NSMutableDictionary *userInfoDic = [[NSMutableDictionary alloc] init];
-            if (self.senderUserInfo.name) {
-                [userInfoDic setObject:self.senderUserInfo.name forKeyedSubscript:@"name"];
+            if (self.redpacketUserInfo.name) {
+                [userInfoDic setObject:self.redpacketUserInfo.name forKeyedSubscript:@"name"];
             }
-            if (self.senderUserInfo.portraitUri) {
-                [userInfoDic setObject:self.senderUserInfo.portraitUri forKeyedSubscript:@"icon"];
+            if (self.redpacketUserInfo.portraitUri) {
+                [userInfoDic setObject:self.redpacketUserInfo.portraitUri forKeyedSubscript:@"icon"];
             }
-            if (self.senderUserInfo.userId) {
-                [userInfoDic setObject:self.senderUserInfo.userId forKeyedSubscript:@"id"];
+            if (self.redpacketUserInfo.userId) {
+                [userInfoDic setObject:self.redpacketUserInfo.userId forKeyedSubscript:@"id"];
             }
             dic[UserDictKey] = userInfoDic;
         }
-        
-        dic[SenderUsernameKey] = self.senderUsername;
         
         if ([NSJSONSerialization isValidJSONObject:dic]) {
             NSError *error = nil;
@@ -96,10 +93,13 @@ static NSString *const SenderUsernameKey = @"senderUsername";
             NSLog(@"获取的不是红包相关的数据");
         }
         
-        NSDictionary *userDic = dic[UserDictKey];
-        [self decodeUserInfo:userDic];
+        NSDictionary *userInfoDic = dic[UserDictKey];
+        if (userInfoDic) {
+            self.redpacketUserInfo = [[RCUserInfo alloc] initWithUserId:userInfoDic[@"id"]
+                                                                   name:userInfoDic[@"name"]
+                                                               portrait:userInfoDic[@"icon"]];
+        }
         
-        self.senderUsername = dic[SenderUsernameKey];
     }
     else {
         NSLog(@"获取的 JSON 不是字典内容");
@@ -114,17 +114,17 @@ static NSString *const SenderUsernameKey = @"senderUsername";
         s = [NSString stringWithFormat:@"[云红包]%@", self.redpacket.redpacket.redpacketGreeting];
     }
     else if(RedpacketMessageTypeTedpacketTakenMessage == self.redpacket.messageType) {
-        if([self.redpacket.currentUser.userId isEqualToString:self.redpacket.redpacketReceiver.userId]) {
+        if([self.redpacket.currentUser.userId isEqualToString:self.redpacketUserInfo.userId]) {
             // 显示我抢了别人的红包的提示
             s =[NSString stringWithFormat:@"%@%@%@", // 你领取了 XXX 的红包
                 NSLocalizedString(@"你领取了", @"领取红包消息"),
-                self.senderUsername,
+                self.redpacketUserInfo.name,
                 NSLocalizedString(@"的红包", @"领取红包消息结尾")
                 ];
         }
         else { // 收到了别人抢了我的红包的消息提示
             s = [NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
-                 self.senderUsername,
+                 self.redpacketUserInfo.name,
                  NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
         }
     }
