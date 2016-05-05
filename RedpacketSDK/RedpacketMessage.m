@@ -118,7 +118,7 @@ static NSString *const SenderUsernameKey = @"senderUsername";
             // 显示我抢了别人的红包的提示
             s =[NSString stringWithFormat:@"%@%@%@", // 你领取了 XXX 的红包
                 NSLocalizedString(@"你领取了", @"领取红包消息"),
-                self.redpacket.redpacketSender.userNickname,
+                self.senderUsername,
                 NSLocalizedString(@"的红包", @"领取红包消息结尾")
                 ];
         }

@@ -176,7 +176,8 @@
     }
     RCMessageContent *messageContent = model.content;
     if ([messageContent isKindOfClass:[RedpacketMessage class]]) {
-        RedpacketMessageModel *redpacket = ((RedpacketMessage *)messageContent).redpacket;
+        RedpacketMessage *redpacketMessage = (RedpacketMessage *)messageContent;
+        RedpacketMessageModel *redpacket = redpacketMessage.redpacket;
         if(RedpacketMessageTypeRedpacket == redpacket.messageType) {
             RedpacketMessageCell *cell = [collectionView
                                           dequeueReusableCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier
@@ -209,7 +210,7 @@
                 else {
                     tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
                           // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
-                          redpacket.redpacketReceiver.userNickname,
+                          redpacketMessage.senderUsername,
                           NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
                     
                     [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:redpacket.redpacketReceiver.userId
