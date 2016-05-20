@@ -66,7 +66,8 @@ static NSString * const requestUrl = @"http://121.42.52.69:3001/api/sign?duid=";
 
 - (void)config
 {
-    if(![[YZHRedpacketBridge sharedBridge] isRedpacketTokenValidate]) {
+    YZHRedpacketBridge *b = [YZHRedpacketBridge sharedBridge];
+    if(![[YZHRedpacketBridge sharedBridge] isRedpacketTokenExist]) {
         NSString *userId = [RCIM sharedRCIM].currentUserInfo.userId;
         
         if (userId) {
