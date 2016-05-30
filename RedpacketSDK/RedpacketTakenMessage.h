@@ -8,8 +8,9 @@
 
 #import "RedpacketMessage.h"
 
-#define YZHRedpacketTakenMessageTypeIdentifier @"YZH:RedpacketTakenMsg"
+#define YZHRedpacketTakenMessageTypeIdentifier @"YZH:RedpacketAckMsg"
 
+// 按照 Android 方面的格式修改消息格式
 @interface RedpacketTakenMessage : RedpacketMessage
 
 @end

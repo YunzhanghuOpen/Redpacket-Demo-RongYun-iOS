@@ -15,6 +15,7 @@
 #import "RedpacketMessage.h"
 #import "RedpacketMessageCell.h"
 #import "RedpacketTakenMessage.h"
+#import "RedpacketTakenOutgoingMessage.h"
 #import "RedpacketTakenMessageTipCell.h"
 #pragma mark -
 
@@ -124,7 +125,21 @@
 - (void)onRedpacketTakenMessage:(RedpacketMessageModel *)redpacket
 {
     RedpacketTakenMessage *message = [RedpacketTakenMessage messageWithRedpacket:redpacket];
-    [self sendMessage:message pushContent:nil];
+    if (NO == self.redpacketControl.converstationInfo.isGroup) {
+        [self sendMessage:message pushContent:nil];
+    }
+    else {
+        RCMessage *m = [[RCMessage alloc] initWithType:self.conversation.conversationType
+                                              targetId:self.targetId
+                                             direction:MessageDirection_RECEIVE
+                                             messageId:-1
+                                               content:message];
+        [self appendAndDisplayMessage:m];
+        
+        // 按照 android 的需求修改发送红包的功能
+        RedpacketTakenOutgoingMessage *m2 = [RedpacketTakenOutgoingMessage messageWithRedpacket:redpacket];
+        [self sendMessage:m2 pushContent:nil];
+    }
 }
 
 - (CGSize)rcConversationCollectionView:(UICollectionView *)collectionView
