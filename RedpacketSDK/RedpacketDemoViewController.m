@@ -207,52 +207,8 @@
             RedpacketTakenMessageTipCell *cell = [collectionView
                                       dequeueReusableCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier
                                       forIndexPath:indexPath];
-            NSString *tip = nil;
             // 目前红包 SDK 不传递有效的 redpacketReceiver
-            if([redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]
-               || [redpacket.currentUser.userId isEqualToString:redpacketMessage.redpacketUserInfo.userId]) {
-                // 显示我抢了别人的红包的提示
-                tip =[NSString stringWithFormat:@"%@%@%@", // 你领取了 XXX 的红包
-                      NSLocalizedString(@"你领取了", @"领取红包消息"),
-                      redpacket.redpacketSender.userNickname,
-                      NSLocalizedString(@"的红包", @"领取红包消息结尾")
-                      ];
-            }
-            else { // 收到了别人抢了我的红包的消息提示
-                if (ConversationType_PRIVATE == self.conversationType) {
-                    tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
-                          // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
-//                          redpacket.redpacketReceiver.userNickname,
-                          self.userName,
-                          NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
-                }
-                else {
-                    tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
-                          // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
-                          redpacketMessage.redpacketUserInfo.name,
-                          NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
-                    
-//                    [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:redpacket.redpacketReceiver.userId
-//                                                                     inGroup:self.targetId
-//                                                                  completion:^(RCUserInfo *userInfo) {
-//                                                                      if (userInfo) {
-//                                                                          NSString *tip = nil;
-//                                                                          tip = [NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
-//                                                                                // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
-//                                                                                 userInfo.name,
-//                                                                                NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
-//                                                                          
-//                                                                          RedpacketTakenMessageTipCell *cell = (RedpacketTakenMessageTipCell *)[collectionView cellForItemAtIndexPath:indexPath];
-//                                                                          if (cell) {
-//                                                                              cell.tipMessageLabel.text = tip;
-//                                                                              [cell setDataModel:model];
-//                                                                              [cell setNeedsLayout];
-//                                                                          }
-//                                                                      }
-//                                                                  }];
-                }
-            }
-            cell.tipMessageLabel.text = tip;
+            cell.tipMessageLabel.text = [redpacketMessage conversationDigest];
             [cell setDataModel:model];
             [cell setNeedsLayout];
             return cell;

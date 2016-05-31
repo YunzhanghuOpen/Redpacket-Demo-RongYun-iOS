@@ -14,4 +14,8 @@
     return (MessagePersistent_NONE);
 }
 
++ (NSString *)getObjectName
+{
+    return YZHRedpacketTakenOutgoingMessageTypeIdentifier;
+}
 @end

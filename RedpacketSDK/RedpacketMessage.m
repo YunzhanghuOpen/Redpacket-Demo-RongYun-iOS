@@ -12,8 +12,8 @@
 // 按照 Android 的消息格式修改了消息结构
 static NSString *const SenderUserNameKey = @"sendUserName";
 static NSString *const SenderUserIdKey = @"sendUserID";
-static NSString *const ReceiverUserNameKey = @"receiverUserName";
-static NSString *const ReceiverUserIdKey = @"receiverUserID";
+static NSString *const ReceiverUserNameKey = @"receiveUserName";
+static NSString *const ReceiverUserIdKey = @"receiveUserID";
 static NSString *const RedpacketMessageKey = @"message";
 static NSString *const RedpacketIdKey = @"moneyID";
 
@@ -132,27 +132,37 @@ static NSString *const RedpacketIdKey = @"moneyID";
 
 - (NSString *)conversationDigest
 {
-    NSString *s = @"[云红包]";
+    NSString *tip = @"[云红包]";
     
     if (RedpacketMessageTypeRedpacket == self.redpacket.messageType) {
-        s = [NSString stringWithFormat:@"[云红包]%@", self.redpacket.redpacket.redpacketGreeting];
+        tip = [NSString stringWithFormat:@"[云红包]%@", self.redpacket.redpacket.redpacketGreeting];
     }
     else if(RedpacketMessageTypeTedpacketTakenMessage == self.redpacket.messageType) {
-        if([self.redpacket.currentUser.userId isEqualToString:self.redpacketUserInfo.userId]) {
-            // 显示我抢了别人的红包的提示
-            s =[NSString stringWithFormat:@"%@%@%@", // 你领取了 XXX 的红包
-                NSLocalizedString(@"你领取了", @"领取红包消息"),
-                self.redpacketUserInfo.name,
-                NSLocalizedString(@"的红包", @"领取红包消息结尾")
-                ];
+        RedpacketMessageModel *redpacket = self.redpacket;
+        if([redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]) {
+            if ([redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
+                tip = NSLocalizedString(@"你领取了自己的红包", @"你领取了自己的红包");
+            }
+            else {
+                // 收到了别人抢了我的红包的消息提示
+                tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
+                      // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
+                      redpacket.redpacketReceiver.userNickname,
+                      NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
+            }
         }
-        else { // 收到了别人抢了我的红包的消息提示
-            s = [NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
-                 self.redpacketUserInfo.name,
-                 NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
+        else {
+            // 显示我抢了别人的红包的提示
+            tip =[NSString stringWithFormat:@"%@%@%@", // 你领取了 XXX 的红包
+                  NSLocalizedString(@"你领取了", @"领取红包消息"),
+                  redpacket.redpacketSender.userNickname,
+                  NSLocalizedString(@"的红包", @"领取红包消息结尾")
+                  ];
+            
+           
         }
     }
-    return s;
+    return tip;
 }
 
 + (NSString *)getObjectName

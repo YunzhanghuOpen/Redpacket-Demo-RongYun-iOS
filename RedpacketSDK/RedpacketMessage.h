@@ -10,7 +10,7 @@
 
 #import "RedpacketMessageModel.h"
 
-#define YZHRedpacketMessageTypeIdentifier @"YZH:RedpacketMsg"
+#define YZHRedpacketMessageTypeIdentifier @"YZH:RedPacketMsg"
 
 // 云帐户红包消息类
 @interface RedpacketMessage : RCMessageContent
