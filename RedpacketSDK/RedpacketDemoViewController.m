@@ -130,11 +130,11 @@
         [self sendMessage:message pushContent:nil];
     }
     else {
-        RCMessage *m = [[RCMessage alloc] initWithType:self.conversation.conversationType
-                                              targetId:self.targetId
-                                             direction:MessageDirection_RECEIVE
-                                             messageId:-1
-                                               content:message];
+        RCMessage *m = [[RCIMClient sharedRCIMClient] insertMessage:self.conversationType
+                                                           targetId:self.targetId
+                                                       senderUserId:self.conversation.senderUserId
+                                                         sendStatus:SentStatus_SENT
+                                                            content:message];
         [self appendAndDisplayMessage:m];
         
         // 按照 android 的需求修改发送红包的功能
