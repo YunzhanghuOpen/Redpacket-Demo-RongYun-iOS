@@ -75,7 +75,8 @@
                                                           self.redpacketControl.converstationInfo = user;
                                                       }];
     }
-    else if (ConversationType_DISCUSSION == self.conversationType) {
+    else if (ConversationType_DISCUSSION == self.conversationType
+             || ConversationType_GROUP == self.conversationType) {
         // 设置群发红包
         user.isGroup = YES;
     }
@@ -266,6 +267,9 @@
                                                      } error:^(RCErrorCode status) {
                                                          
                                                      }];
+            }
+            else if (ConversationType_GROUP == self.conversationType) {
+                [self.redpacketControl presentRedPacketMoreViewControllerWithCount:(int)0];
             }
         }
         default:
