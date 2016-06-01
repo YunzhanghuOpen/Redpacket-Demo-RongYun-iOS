@@ -95,7 +95,6 @@
     
     // 通知 红包 SDK 刷新 Token
     [[YZHRedpacketBridge sharedBridge] reRequestRedpacketUserToken];
-    
 #pragma mark -
 }
 
@@ -173,8 +172,10 @@
         if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType){
                 // 发红包的人可以显示所有被抢红包的消息
                 // 抢红包的人显示自己的消息
-            if (![redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]
-                && ![redpacket.currentUser.userId isEqualToString:redpacketMessage.redpacketUserInfo.userId]) {
+            // 过滤掉空消息显示
+            if (![messageContent isMemberOfClass:[RedpacketTakenMessage class]]
+                && ![redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]
+                && ![redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
                 return nil;
             }
         }
@@ -204,7 +205,9 @@
             [cell setDelegate:self];
             return cell;
         }
-        else if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType){
+        else if(RedpacketMessageTypeTedpacketTakenMessage == redpacket.messageType
+                // 过滤掉空消息显示
+                && [messageContent isMemberOfClass:[RedpacketTakenMessage class]]){
             RedpacketTakenMessageTipCell *cell = [collectionView
                                       dequeueReusableCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier
                                       forIndexPath:indexPath];
