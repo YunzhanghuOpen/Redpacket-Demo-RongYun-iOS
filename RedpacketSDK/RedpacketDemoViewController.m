@@ -45,56 +45,60 @@
     [self registerClass:[RedpacketTakenMessageTipCell class] forCellWithReuseIdentifier:YZHRedpacketTakenMessageTypeIdentifier];
     [self registerClass:[RCTextMessageCell class] forCellWithReuseIdentifier:@"Message"];
     
-    // 设置红包插件界面
-    UIImage *icon = [UIImage imageNamed:REDPACKET_BUNDLE(@"redpacket_redpacket")];
-    assert(icon);
-    [self.pluginBoardView insertItemWithImage:icon
-                                        title:NSLocalizedString(@"红包", @"红包")
-                                      atIndex:0
-                                          tag:REDPACKET_TAG];
-    // 设置红包功能相关的参数
-    self.redpacketControl = [[RedpacketViewControl alloc] init];
-    self.redpacketControl.conversationController = self;
-    
-    RedpacketUserInfo *user = [[RedpacketUserInfo alloc] init];
-    user.userId = self.targetId;
-    // 虽然现在 userName 不被 viewController 保存，但是如果不设置 userNickname，会
-    // 导致新消息显示的时候显示 (null) 数据
-    user.userNickname = self.userName;
-    
-    if (ConversationType_PRIVATE == self.conversationType) {
-        // 异步获取更多用户消息, 这是 Demo app 的 DataSource 逻辑
-        [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:self.targetId
-                                                      completion:^(RCUserInfo *userInfo) {
-                                                          // 设置红包接收用户信息
-                                                          
-                                                          user.userNickname = userInfo.name;
-                                                          user.userAvatar = userInfo.portraitUri;
-                                                          
-                                                          // 更新用户信息
-                                                          self.redpacketControl.converstationInfo = user;
-                                                      }];
+    if (ConversationType_PRIVATE == self.conversationType
+        || ConversationType_DISCUSSION == self.conversationType
+        || ConversationType_GROUP == self.conversationType ) {
+        // 设置红包插件界面
+        UIImage *icon = [UIImage imageNamed:REDPACKET_BUNDLE(@"redpacket_redpacket")];
+        assert(icon);
+        [self.pluginBoardView insertItemWithImage:icon
+                                            title:NSLocalizedString(@"红包", @"红包")
+                                          atIndex:0
+                                              tag:REDPACKET_TAG];
+        // 设置红包功能相关的参数
+        self.redpacketControl = [[RedpacketViewControl alloc] init];
+        self.redpacketControl.conversationController = self;
+        
+        RedpacketUserInfo *user = [[RedpacketUserInfo alloc] init];
+        user.userId = self.targetId;
+        // 虽然现在 userName 不被 viewController 保存，但是如果不设置 userNickname，会
+        // 导致新消息显示的时候显示 (null) 数据
+        user.userNickname = self.userName;
+        
+        if (ConversationType_PRIVATE == self.conversationType) {
+            // 异步获取更多用户消息, 这是 Demo app 的 DataSource 逻辑
+            [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:self.targetId
+                                                          completion:^(RCUserInfo *userInfo) {
+                                                              // 设置红包接收用户信息
+                                                              
+                                                              user.userNickname = userInfo.name;
+                                                              user.userAvatar = userInfo.portraitUri;
+                                                              
+                                                              // 更新用户信息
+                                                              self.redpacketControl.converstationInfo = user;
+                                                          }];
+        }
+        else if (ConversationType_DISCUSSION == self.conversationType
+                 || ConversationType_GROUP == self.conversationType) {
+            // 设置群发红包
+            user.isGroup = YES;
+        }
+        
+        self.redpacketControl.converstationInfo = user;
+        
+        __weak typeof(self) SELF = self;
+        // 设置红包 SDK 功能回调
+        [self.redpacketControl setRedpacketGrabBlock:^(RedpacketMessageModel *redpacket) {
+            // 用户发出的红包收到被抢的通知
+            [SELF onRedpacketTakenMessage:redpacket];
+        } andRedpacketBlock:^(RedpacketMessageModel *redpacket) {
+            // 用户发红包的通知
+            [SELF sendRedpacketMessage:redpacket];
+        }];
+        
+        // 通知 红包 SDK 刷新 Token
+        [[YZHRedpacketBridge sharedBridge] reRequestRedpacketUserToken];
     }
-    else if (ConversationType_DISCUSSION == self.conversationType
-             || ConversationType_GROUP == self.conversationType) {
-        // 设置群发红包
-        user.isGroup = YES;
-    }
-    
-    self.redpacketControl.converstationInfo = user;
-    
-    __weak typeof(self) SELF = self;
-    // 设置红包 SDK 功能回调
-    [self.redpacketControl setRedpacketGrabBlock:^(RedpacketMessageModel *redpacket) {
-        // 用户发出的红包收到被抢的通知
-        [SELF onRedpacketTakenMessage:redpacket];
-    } andRedpacketBlock:^(RedpacketMessageModel *redpacket) {
-        // 用户发红包的通知
-        [SELF sendRedpacketMessage:redpacket];
-    }];
-    
-    // 通知 红包 SDK 刷新 Token
-    [[YZHRedpacketBridge sharedBridge] reRequestRedpacketUserToken];
 #pragma mark -
 }
 
