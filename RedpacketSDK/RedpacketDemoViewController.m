@@ -64,7 +64,7 @@
         RedpacketUserInfo *redpacketUserInfo = [[RedpacketConfig sharedConfig] redpacketUserInfo];
         [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:redpacketUserInfo.userId
                                                       completion:^(RCUserInfo *userInfo) {
-                                                          [RedpacketConfig sharedConfig].currentUserName = userInfo.name;
+                                                          [[RCIM sharedRCIM] refreshUserInfoCache:userInfo withUserId:userInfo.userId];
                                                       }];
         
         RedpacketUserInfo *user = [[RedpacketUserInfo alloc] init];
