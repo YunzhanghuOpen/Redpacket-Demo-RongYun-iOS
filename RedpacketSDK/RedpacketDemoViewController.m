@@ -17,6 +17,7 @@
 #import "RedpacketTakenMessage.h"
 #import "RedpacketTakenOutgoingMessage.h"
 #import "RedpacketTakenMessageTipCell.h"
+#import "RedpacketConfig.h"
 #pragma mark -
 
 // 用于获取
@@ -58,6 +59,13 @@
         // 设置红包功能相关的参数
         self.redpacketControl = [[RedpacketViewControl alloc] init];
         self.redpacketControl.conversationController = self;
+        
+        // 由于不清楚的原因，RCIM 返回的 userNickname 时候是邮箱，但又不好判断是什么，所以每次都强制更新一下用户名
+        RedpacketUserInfo *redpacketUserInfo = [[RedpacketConfig sharedConfig] redpacketUserInfo];
+        [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:redpacketUserInfo.userId
+                                                      completion:^(RCUserInfo *userInfo) {
+                                                          [RedpacketConfig sharedConfig].currentUserName = userInfo.name;
+                                                      }];
         
         RedpacketUserInfo *user = [[RedpacketUserInfo alloc] init];
         user.userId = self.targetId;
