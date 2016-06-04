@@ -130,7 +130,8 @@
 - (void)sendRedpacketMessage:(RedpacketMessageModel *)redpacket
 {
     RedpacketMessage *message = [RedpacketMessage messageWithRedpacket:redpacket];
-    [self sendMessage:message pushContent:nil];
+    NSString *push = [NSString stringWithFormat:@"%@发了一个红包", redpacket.currentUser.userNickname];
+    [self sendMessage:message pushContent:push];
 }
 
 // 红包被抢消息处理
