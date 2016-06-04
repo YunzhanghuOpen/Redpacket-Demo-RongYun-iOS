@@ -61,12 +61,7 @@
         self.redpacketControl.conversationController = self;
         
         // 由于不清楚的原因，RCIM 返回的 userNickname 时候是邮箱，但又不好判断是什么，所以每次都强制更新一下用户名
-        RedpacketUserInfo *redpacketUserInfo = [[RedpacketConfig sharedConfig] redpacketUserInfo];
-        [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:redpacketUserInfo.userId
-                                                      completion:^(RCUserInfo *userInfo) {
-                                                          [[RCIM sharedRCIM] refreshUserInfoCache:userInfo withUserId:userInfo.userId];
-                                                      }];
-        
+        RedpacketUserInfo *redpacketUserInfo = [[RedpacketConfig sharedConfig] redpacketUserInfo];        
         RedpacketUserInfo *user = [[RedpacketUserInfo alloc] init];
         user.userId = self.targetId;
         // 虽然现在 userName 不被 viewController 保存，但是如果不设置 userNickname，会
