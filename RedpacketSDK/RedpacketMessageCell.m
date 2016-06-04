@@ -99,6 +99,8 @@
     self.orgIconView.frame = rt;
 
     self.statusContentView.hidden = YES;
+    self.messageHasReadStatusView.hidden = YES;
+    self.messageSendSuccessStatusView.hidden = YES;
 }
 
 - (void)setDataModel:(RCMessageModel *)model {
@@ -138,6 +140,8 @@
     }
     
     self.statusContentView.hidden = YES;
+    self.messageHasReadStatusView.hidden = YES;
+    self.messageSendSuccessStatusView.hidden = YES;
 }
 
 - (void)tap:(UITapGestureRecognizer *)gesture {

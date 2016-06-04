@@ -55,6 +55,9 @@
     self.iconView.image = [RCKitUtility imageNamed:@"redpacket_smallIcon" ofBundle:@"RedpacketCellResource.bundle"];
     self.iconView.userInteractionEnabled = NO;
     [self.bgView addSubview:self.iconView];
+    
+    self.isDisplayReadStatus = NO;
+    
 }
 
 - (void)setDataModel:(RCMessageModel *)model {
