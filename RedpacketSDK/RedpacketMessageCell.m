@@ -98,15 +98,29 @@
     rt.size = CGSizeMake(21, 14);
     self.orgIconView.frame = rt;
 
-    self.statusContentView.hidden = YES;
-    self.messageHasReadStatusView.hidden = YES;
-    self.messageSendSuccessStatusView.hidden = YES;
+    [self.statusContentView removeFromSuperview];
+    self.statusContentView = nil;
+    
+    [self.messageHasReadStatusView removeFromSuperview];
+    self.messageHasReadStatusView = nil;
+
+    [self.messageSendSuccessStatusView removeFromSuperview];
+    self.messageSendSuccessStatusView = nil;
 }
 
 - (void)setDataModel:(RCMessageModel *)model {
     [super setDataModel:model];
     
     [self setAutoLayout];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.statusContentView.hidden = YES;
+    self.messageHasReadStatusView.hidden = YES;
+    self.messageSendSuccessStatusView.hidden = YES;
 }
 
 - (void)setAutoLayout {
