@@ -133,8 +133,23 @@
 - (void)onRedpacketTakenMessage:(RedpacketMessageModel *)redpacket
 {
     RedpacketTakenMessage *message = [RedpacketTakenMessage messageWithRedpacket:redpacket];
-    if (NO == self.redpacketControl.converstationInfo.isGroup) {
-        [self sendMessage:message pushContent:nil];
+    // 抢自己的红包不发消息，只自己显示抢红包消息
+    if (![redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]) {
+        if (NO == self.redpacketControl.converstationInfo.isGroup) {
+            [self sendMessage:message pushContent:nil];
+        }
+        else {
+            RCMessage *m = [[RCIMClient sharedRCIMClient] insertMessage:self.conversationType
+                                                               targetId:self.targetId
+                                                           senderUserId:self.conversation.senderUserId
+                                                             sendStatus:SentStatus_SENT
+                                                                content:message];
+            [self appendAndDisplayMessage:m];
+            
+            // 按照 android 的需求修改发送红包的功能
+            RedpacketTakenOutgoingMessage *m2 = [RedpacketTakenOutgoingMessage messageWithRedpacket:redpacket];
+            [self sendMessage:m2 pushContent:nil];
+        }
     }
     else {
         RCMessage *m = [[RCIMClient sharedRCIMClient] insertMessage:self.conversationType
@@ -143,10 +158,6 @@
                                                          sendStatus:SentStatus_SENT
                                                             content:message];
         [self appendAndDisplayMessage:m];
-        
-        // 按照 android 的需求修改发送红包的功能
-        RedpacketTakenOutgoingMessage *m2 = [RedpacketTakenOutgoingMessage messageWithRedpacket:redpacket];
-        [self sendMessage:m2 pushContent:nil];
     }
 }
 
