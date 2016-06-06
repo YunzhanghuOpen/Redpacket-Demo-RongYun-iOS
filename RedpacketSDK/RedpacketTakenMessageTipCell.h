@@ -8,7 +8,7 @@
 
 #import <RongIMKit/RongIMKit.h>
 #define REDPACKET_TAKEN_MESSAGE_TOP_BOTTOM_PADDING 20
-#define REDPACKET_MESSAGE_TOP_BOTTOM_PADDING 20
+#define REDPACKET_MESSAGE_TOP_BOTTOM_PADDING 40
 
 @interface RedpacketTakenMessageTipCell : RCMessageBaseCell
 @property(strong, nonatomic) RCTipLabel *tipMessageLabel;
