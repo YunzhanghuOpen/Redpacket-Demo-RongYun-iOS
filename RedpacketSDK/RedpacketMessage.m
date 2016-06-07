@@ -103,7 +103,7 @@ static NSString *const UserDictKey = @"user";
     NSString *tip = @"[云红包]";
     
     if (RedpacketMessageTypeRedpacket == self.redpacket.messageType) {
-        tip = [NSString stringWithFormat:@"%@%@", self.redpacket.redpacket.redpacketOrgName, self.redpacket.redpacket.redpacketGreeting];
+        tip = [NSString stringWithFormat:@"[%@]%@", self.redpacket.redpacket.redpacketOrgName, self.redpacket.redpacket.redpacketGreeting];
     }
     else if(RedpacketMessageTypeTedpacketTakenMessage == self.redpacket.messageType) {
         RedpacketMessageModel *redpacket = self.redpacket;
