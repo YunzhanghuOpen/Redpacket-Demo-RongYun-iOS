@@ -128,8 +128,10 @@
     NSString *messageString = redpacketMessage.redpacket.redpacket.redpacketGreeting;
     self.greetingLabel.text = messageString;
     
-    NSString *orgString = redpacketMessage.redpacket.redpacket.redpacketOrgName;
-    self.orgLabel.text = orgString;
+//    NSString *orgString = redpacketMessage.redpacket.redpacket.redpacketOrgName;
+//    self.orgLabel.text = orgString;
+    // SDK 的字段无法更改
+    self.orgLabel.text = @"融云红包";
     
     CGSize bubbleBackgroundViewSize = [[self class] getBubbleSize];
     CGRect messageContentViewRect = self.messageContentView.frame;
