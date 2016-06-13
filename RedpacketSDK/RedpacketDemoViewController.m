@@ -96,6 +96,8 @@
             [SELF onRedpacketTakenMessage:redpacket];
         } andRedpacketBlock:^(RedpacketMessageModel *redpacket) {
             // 用户发红包的通知
+            // SDK 默认的消息需要改变
+            redpacket.redpacket.redpacketOrgName = @"融云红包";
             [SELF sendRedpacketMessage:redpacket];
         }];
         
