@@ -66,7 +66,6 @@ static NSString *requestUrl = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
 
 - (void)config
 {
-    YZHRedpacketBridge *b = [YZHRedpacketBridge sharedBridge];
     if(![[YZHRedpacketBridge sharedBridge] isRedpacketTokenExist]) {
         NSString *userId = [RCIM sharedRCIM].currentUserInfo.userId;
         
