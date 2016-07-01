@@ -143,29 +143,7 @@
 
   在 融云 demo app 中已经实现 `RCDChatViewController` ，为了尽量不改动原来的代码，我们重新定义 `RCDChatViewController` 的子类 `RedpacketDemoViewController`。
 
-  在 `RCDChatListViewController` 中的
-
-  ```objc
-  -(void)onSelectedTableRow:(RCConversationModelType)conversationModelType
-          conversationModel:(RCConversationModel *)model
-                atIndexPath:(NSIndexPath *)indexPath
-  ```
-
-  找到
-
-  ```objc
-  if (conversationModelType == RC_CONVERSATION_MODEL_TYPE_NORMAL) {
- #pragma mark - 对于特定的界面使用红包功能
-   RCDChatViewController *_conversationVC = [[RCDChatViewController alloc]init];
- #pragma mark -
-  ...
-  ```
-
-  对应部分修改为
-
-  ```objc
-  RCDChatViewController *_conversationVC = [[RedpacketDemoViewController alloc] init];
-  ```
+  在 `RCDChatListViewController` 中RCDChatViewController全部替换为RedpacketDemoViewController
       
   2) 添加红包功能
 
