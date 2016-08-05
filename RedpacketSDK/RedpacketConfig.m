@@ -54,19 +54,15 @@ static NSString *requestUrl = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
 {
     NSString *partner = [dict valueForKey:@"partner"];
     NSString *appUserId = [dict valueForKey:@"user_id"];
-    unsigned long timeStamp = [[dict valueForKey:@"timestamp"] unsignedLongValue];
+    NSString *timeStamp = [NSString stringWithFormat:@"%@",[dict valueForKey:@"timestamp"]] ;
     NSString *sign = [dict valueForKey:@"sign"];
     
     
-    [[YZHRedpacketBridge sharedBridge] configWithSign:sign
-                                              partner:partner
-                                            appUserId:appUserId
-                                            timeStamp:timeStamp];
+    [[YZHRedpacketBridge sharedBridge] configWithSign:sign partner:partner appUserId:appUserId timestamp:timeStamp];
 }
 
 - (void)config
 {
-    if(![[YZHRedpacketBridge sharedBridge] isRedpacketTokenExist]) {
         NSString *userId = [RCIM sharedRCIM].currentUserInfo.userId;
         
         if (userId) {
@@ -86,7 +82,11 @@ static NSString *requestUrl = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
                                                                                   NSLog(@"request redpacket sign failed:%@", error);
                                                                               }] start];
         }
-    }
+}
+
+- (void)redpacketError:(NSString *)error withErrorCode:(NSInteger)code
+{
+    [self config];
 }
 
 - (RedpacketUserInfo *)redpacketUserInfo

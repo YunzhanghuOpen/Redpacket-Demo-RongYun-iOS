@@ -104,8 +104,6 @@
             [SELF sendRedpacketMessage:redpacket];
         }];
         
-        // 通知 红包 SDK 刷新 Token
-        [[YZHRedpacketBridge sharedBridge] reRequestRedpacketUserToken];
     }
 #pragma mark -
 }
@@ -307,13 +305,13 @@
                                                                                    }];
                                                              
                                                          }
-                                                         [self.redpacketControl presentRedPacketMoreViewControllerWithGroupMemberArray:discussion.memberIdList];
+                                                         [self.redpacketControl presentRedPacketMoreViewControllerWithGroupMembers:discussion.memberIdList];
                                                      } error:^(RCErrorCode status) {
                                                          
                                                      }];
             }
             else if (ConversationType_GROUP == self.conversationType) {
-                [self.redpacketControl presentRedPacketMoreViewControllerWithGroupMemberArray:@[]];
+                [self.redpacketControl presentRedPacketMoreViewControllerWithGroupMembers:@[]];
             }
         }
         default:
@@ -321,8 +319,8 @@
             break;
     }
 }
-- (NSArray *)groupMemberList{
-
+- (NSArray<RedpacketUserInfo *> *)groupMemberList
+{
     return self.usersArray;
 }
 @end
