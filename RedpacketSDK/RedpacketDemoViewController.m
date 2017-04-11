@@ -306,6 +306,7 @@
                                                    successCompletion:^(RCGroup *group)
                                             {
                                                 [[RCDHttpTool shareInstance] getGroupMembersByGroupID:group.groupId successCompletion:^(NSArray *members) {
+                                                    [weakSelf.usersArray removeAllObjects];
                                                     for (NSDictionary *userDict in members) {
                                                         RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
                                                         userInfo.userId = userDict[@"id"];
