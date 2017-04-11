@@ -29,7 +29,7 @@
 #define REDPACKET_TAG 2016
 #pragma mark -
 
-@interface RedpacketDemoViewController () <RCMessageCellDelegate,RedpacketViewControlDelegate>
+@interface RedpacketDemoViewController () <RCMessageCellDelegate>
 
 @property (nonatomic, strong, readwrite) RedpacketViewControl *redpacketControl;
 @property (atomic, strong)NSMutableArray * usersArray;
@@ -54,56 +54,7 @@
         // 设置红包插件界面
         UIImage *icon = [UIImage imageNamed:REDPACKET_BUNDLE(@"redpacket_redpacket")];
         assert(icon);
-        [self.pluginBoardView insertItemWithImage:icon
-                                            title:NSLocalizedString(@"红包", @"红包")
-                                          atIndex:0
-                                              tag:REDPACKET_TAG];
-        // 设置红包功能相关的参数
-        self.redpacketControl = [[RedpacketViewControl alloc] init];
-        self.redpacketControl.delegate = self;
-        self.redpacketControl.conversationController = self;
-        
-        // 由于不清楚的原因，RCIM 返回的 userNickname 时候是邮箱，但又不好判断是什么，所以每次都强制更新一下用户名
-        RedpacketUserInfo *redpacketUserInfo = [[RedpacketConfig sharedConfig] redpacketUserInfo];        
-        RedpacketUserInfo *user = [[RedpacketUserInfo alloc] init];
-        user.userId = self.targetId;
-        // 虽然现在 userName 不被 viewController 保存，但是如果不设置 userNickname，会
-        // 导致新消息显示的时候显示 (null) 数据
-        user.userNickname = self.userName;
-        
-        if (ConversationType_PRIVATE == self.conversationType) {
-            // 异步获取更多用户消息, 这是 Demo app 的 DataSource 逻辑
-            [[RCDRCIMDataSource shareInstance] getUserInfoWithUserId:self.targetId
-                                                          completion:^(RCUserInfo *userInfo) {
-                                                              // 设置红包接收用户信息
-                                                              
-                                                              user.userNickname = userInfo.name;
-                                                              user.userAvatar = userInfo.portraitUri;
-                                                              
-                                                              // 更新用户信息
-                                                              self.redpacketControl.converstationInfo = user;
-                                                          }];
-        }
-        else if (ConversationType_DISCUSSION == self.conversationType
-                 || ConversationType_GROUP == self.conversationType) {
-            // 设置群发红包
-            user.isGroup = YES;
-        }
-        
-        self.redpacketControl.converstationInfo = user;
-        
-        __weak typeof(self) SELF = self;
-        // 设置红包 SDK 功能回调
-        [self.redpacketControl setRedpacketGrabBlock:^(RedpacketMessageModel *redpacket) {
-            // 用户发出的红包收到被抢的通知
-            [SELF onRedpacketTakenMessage:redpacket];
-        } andRedpacketBlock:^(RedpacketMessageModel *redpacket) {
-            // 用户发红包的通知
-            // SDK 默认的消息需要改变
-            redpacket.redpacket.redpacketOrgName = @"融云红包";
-            [SELF sendRedpacketMessage:redpacket];
-        }];
-        
+        [self.pluginBoardView insertItemWithImage:icon title:NSLocalizedString(@"红包", @"红包") tag:REDPACKET_TAG];
     }
 #pragma mark -
 }
@@ -138,7 +89,7 @@
     RedpacketTakenMessage *message = [RedpacketTakenMessage messageWithRedpacket:redpacket];
     // 抢自己的红包不发消息，只自己显示抢红包消息
     if (![redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]) {
-        if (NO == self.redpacketControl.converstationInfo.isGroup) {
+        if (ConversationType_PRIVATE == self.conversationType) {
             [self sendMessage:message pushContent:nil];
         }
         else {
@@ -261,10 +212,55 @@
 {
     if ([model.content isKindOfClass:[RedpacketMessage class]]) {
         if(RedpacketMessageTypeRedpacket == ((RedpacketMessage *)model.content).redpacket.messageType) {
+            NSLog(@"%@",((RedpacketMessage *)model.content).redpacket.redpacketSender.userId);
             if ([self.chatSessionInputBarControl.inputTextView isFirstResponder]) {
                 [self.chatSessionInputBarControl.inputTextView resignFirstResponder];
             }
-            [self.redpacketControl redpacketCellTouchedWithMessageModel:((RedpacketMessage *)model.content).redpacket];
+            __weak typeof(self) weakSelf = self;
+            [RedpacketViewControl redpacketTouchedWithMessageModel:((RedpacketMessage *)model.content).redpacket
+                                                fromViewController:self
+                                                redpacketGrabBlock:^(RedpacketMessageModel *messageModel) {
+                                                    /** 抢到红包后，发送红包被抢的消息*/
+                                                    if (messageModel.redpacketType != RedpacketTypeAmount) {
+                                                        [weakSelf sendRedpacketMessage:messageModel];
+                                                    }
+                                                    
+                                                } advertisementAction:^(NSDictionary *args) {
+                                                    /** 营销红包事件处理*/
+                                                    NSInteger actionType = [args[@"actionType"] integerValue];
+                                                    switch (actionType) {
+                                                        case 0:
+                                                            /** 用户点击了领取红包按钮*/
+                                                            break;
+                                                            
+                                                        case 1: {
+                                                            /** 用户点击了去看看按钮，进入到商户定义的网页 */
+                                                            UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+                                                            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:args[@"LandingPage"]]];
+                                                            [webView loadRequest:request];
+                                                            
+                                                            UIViewController *webVc = [[UIViewController alloc] init];
+                                                            [webVc.view addSubview:webView];
+                                                            [(UINavigationController *)self.presentedViewController pushViewController:webVc animated:YES];
+                                                            
+                                                        }
+                                                            break;
+                                                            
+                                                        case 2: {
+                                                            /** 点击了分享按钮，开发者可以根据需求自定义，动作。*/
+                                                            [[[UIAlertView alloc]initWithTitle:nil
+                                                                                       message:@"点击「分享」按钮，红包SDK将该红包素材内配置的分享链接传递给商户APP，由商户APP自行定义分享渠道完成分享动作。"
+                                                                                      delegate:nil
+                                                                             cancelButtonTitle:@"我知道了"
+                                                                             otherButtonTitles:nil] show];
+                                                        }
+                                                            break;
+                                                        default:
+                                                            break;
+                                                    }
+                                                    
+                                                }];
+
         }
     }
     else {
@@ -276,51 +272,66 @@
 
 - (void)pluginBoardView:(RCPluginBoardView *)pluginBoardView clickedItemWithTag:(NSInteger)tag
 {
+    __weak typeof(self) weakSelf = self;
+    RPRedpacketControllerType  redpacketVCType = 0;
+    RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
+    userInfo = [[RedpacketConfig sharedConfig] redpacketUserInfo];
     switch (tag) {
-        // 云账户增加红包插件点击回调
+            // 云账户增加红包插件点击回调
         case REDPACKET_TAG: {
             if (ConversationType_PRIVATE == self.conversationType) {
-                [self.redpacketControl presentRedPacketViewController];
+                /** 小额随机红包*/
+                redpacketVCType = RPRedpacketControllerTypeRand;
+                [RedpacketViewControl presentRedpacketViewController:redpacketVCType
+                                                     fromeController:weakSelf groupMemberCount:0
+                                               withRedpacketReceiver:userInfo
+                                                     andSuccessBlock:^(RedpacketMessageModel *model) {
+                                                         [weakSelf sendRedpacketMessage:model];
+                                                     } withFetchGroupMemberListBlock:nil
+                                         andGenerateRedpacketIDBlock:nil];
             }
-            else if(ConversationType_DISCUSSION == self.conversationType) {
-
+            else if(ConversationType_GROUP == self.conversationType) {
+                /** 群红包*/
+                redpacketVCType = RPRedpacketControllerTypeGroup;
                 // 需要在界面显示群员数量，需要先取得相应的数值
-                [[RCIMClient sharedRCIMClient] getDiscussion:self.targetId
-                                                     success:^(RCDiscussion *discussion) {
-                                                         // 显示多人红包界面
-                                                         [self.usersArray removeAllObjects];
-                                                         for (NSString *targetId in discussion.memberIdList) {
-                                                             [[RCDHttpTool shareInstance] getUserInfoByUserID:targetId
-                                                                                   completion:^(RCUserInfo *user) {
-                                                                                       RedpacketUserInfo * userInfo = [RedpacketUserInfo new];
-                                                                                       userInfo.userId = user.userId;
-                                                                                       userInfo.userAvatar = user.portraitUri;
-                                                                                       userInfo.userNickname = user.name;
-                                                                                       if ([discussion.creatorId isEqualToString: user.userId]) {
-                                                                                           [self.usersArray insertObject:userInfo atIndex:0];
-                                                                                       }else{
-                                                                                           
-                                                                                           [self.usersArray addObject:userInfo];
-                                                                                       }
-                                                                                   }];
-                                                             
-                                                         }
-                                                         [self.redpacketControl presentRedPacketMoreViewControllerWithGroupMembers:discussion.memberIdList];
-                                                     } error:^(RCErrorCode status) {
+                [RedpacketViewControl presentRedpacketViewController:redpacketVCType
+                                                     fromeController:weakSelf
+                                                    groupMemberCount:self.usersArray.count
+                                               withRedpacketReceiver:userInfo
+                                                     andSuccessBlock:^(RedpacketMessageModel *model) {
+                                                                    [weakSelf sendRedpacketMessage:model];
+                                                                                                    }
+                                       withFetchGroupMemberListBlock:^(RedpacketMemberListFetchBlock fetchFinishBlock) {
+                                           [RCDHTTPTOOL getGroupByID:self.targetId
+                                                   successCompletion:^(RCGroup *group)
+                                            {
+                                                [[RCDHttpTool shareInstance] getGroupMembersByGroupID:group.groupId successCompletion:^(NSArray *members) {
+                                                    for (NSDictionary *userDict in members) {
+                                                        RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
+                                                        userInfo.userId = userDict[@"id"];
+                                                        userInfo.userNickname = userDict[@"username"];
+                                                        userInfo.userAvatar = userDict[@"portrait"];
+                                                        [weakSelf.usersArray addObject:userInfo];
+                                                    }
+                                                    fetchFinishBlock(weakSelf.usersArray);
+                                                }];
+                                            }];
+                                                                                                                        }
+                                         andGenerateRedpacketIDBlock:nil];
                                                          
-                                                     }];
             }
-            else if (ConversationType_GROUP == self.conversationType) {
-                [self.redpacketControl presentRedPacketMoreViewControllerWithGroupMembers:@[]];
-            }
+
         }
         default:
             [super pluginBoardView:pluginBoardView clickedItemWithTag:tag];
             break;
     }
+
 }
+
 - (NSArray<RedpacketUserInfo *> *)groupMemberList
 {
     return self.usersArray;
 }
+
 @end

@@ -31,62 +31,45 @@ static NSString *requestUrl = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
         config = [[RedpacketConfig alloc] init];
         [[YZHRedpacketBridge sharedBridge] setDataSource:config];
     });
+    [YZHRedpacketBridge sharedBridge].dataSource = config;
+    [YZHRedpacketBridge sharedBridge].delegate = config;
+    [YZHRedpacketBridge sharedBridge].isDebug = YES;
+    [YZHRedpacketBridge sharedBridge].redacketURLScheme = @"rongcloud";
     return config;
 }
 
-+ (void)config
+/* MARK:红包Token注册回调**/
+- (void)redpacketFetchRegisitParam:(FetchRegisitParamBlock)fetchBlock withError:(NSError *)error
 {
-    [[self sharedConfig] config];
-}
-
-+ (void)logout
-{
-    [[YZHRedpacketBridge sharedBridge] redpacketUserLoginOut];
-}
-
-+ (void)reconfig
-{
-    [self logout];
-    [[self sharedConfig] config];
-}
-
-- (void)configWithSignDict:(NSDictionary *)dict
-{
-    NSString *partner = [dict valueForKey:@"partner"];
-    NSString *appUserId = [dict valueForKey:@"user_id"];
-    NSString *timeStamp = [NSString stringWithFormat:@"%@",[dict valueForKey:@"timestamp"]] ;
-    NSString *sign = [dict valueForKey:@"sign"];
-    
-    
-    [[YZHRedpacketBridge sharedBridge] configWithSign:sign partner:partner appUserId:appUserId timestamp:timeStamp];
-}
-
-- (void)config
-{
-        NSString *userId = [RCIM sharedRCIM].currentUserInfo.userId;
+    if (self.redpacketUserInfo.userId.length) {
+        // 获取应用自己的签名字段。实际应用中需要开发者自行提供相应在的签名计算服务
         
-        if (userId) {
-            
-            // 获取应用自己的签名字段。实际应用中需要开发者自行提供相应在的签名计算服务
-            
-            NSString *urlStr = [NSString stringWithFormat:@"%@%@",requestUrl, userId];
-            NSURL *url = [NSURL URLWithString:urlStr];
-            NSURLRequest *request = [NSURLRequest requestWithURL:url];
-            
-            [[[AFHTTPRequestOperationManager manager] HTTPRequestOperationWithRequest:request
-                                                                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                                                  if ([responseObject isKindOfClass:[NSDictionary class]]) {
-                                                                                      [self configWithSignDict:responseObject];
-                                                                                  }
-                                                                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                                  NSLog(@"request redpacket sign failed:%@", error);
-                                                                              }] start];
-        }
-}
+        NSString *urlStr = [NSString stringWithFormat:@"%@%@",requestUrl, self.redpacketUserInfo.userId];
+        NSURL *url = [NSURL URLWithString:urlStr];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        
+        [[[AFHTTPRequestOperationManager manager] HTTPRequestOperationWithRequest:request
+                                                                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                                              if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                                                                                  NSDictionary *dict = (NSDictionary *)responseObject;
+                                                                                  NSString *partner = [dict valueForKey:@"partner"];
+                                                                                  NSString *appUserId = [dict valueForKey:@"user_id"];
+                                                                                  NSString *timeStamp = [NSString stringWithFormat:@"%@",[dict valueForKey:@"timestamp"]] ;
+                                                                                  NSString *sign = [dict valueForKey:@"sign"];
+                                                                                  RedpacketRegisitModel *model = [RedpacketRegisitModel signModelWithAppUserId:appUserId
+                                                                                                                                                    signString:sign
+                                                                                                                                                       partner:partner
+                                                                                                                                                  andTimeStamp:timeStamp];
+                                                                                  fetchBlock(model);
 
-- (void)redpacketError:(NSString *)error withErrorCode:(NSInteger)code
-{
-    [self config];
+                                                                              }
+                                                                          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                                              NSLog(@"request redpacket sign failed:%@", error);
+                                                                              fetchBlock(nil);
+                                                                          }] start];
+    }else {
+        fetchBlock(nil);
+    }
 }
 
 - (RedpacketUserInfo *)redpacketUserInfo
