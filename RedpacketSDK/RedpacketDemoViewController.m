@@ -42,6 +42,7 @@
     // Do any additional setup after loading the view.
     
 #pragma mark - 设置红包功能
+    [RedpacketConfig sharedConfig];
     self.usersArray = [NSMutableArray array];
     // 注册消息显示 Cell
     [self registerClass:[RedpacketMessageCell class] forCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier];
@@ -272,61 +273,61 @@
 
 - (void)pluginBoardView:(RCPluginBoardView *)pluginBoardView clickedItemWithTag:(NSInteger)tag
 {
-    __weak typeof(self) weakSelf = self;
-    RPRedpacketControllerType  redpacketVCType = 0;
-    RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
-    userInfo = [[RedpacketConfig sharedConfig] redpacketUserInfo];
-    switch (tag) {
-            // 云账户增加红包插件点击回调
-        case REDPACKET_TAG: {
-            if (ConversationType_PRIVATE == self.conversationType) {
-                /** 小额随机红包*/
-                redpacketVCType = RPRedpacketControllerTypeRand;
-                [RedpacketViewControl presentRedpacketViewController:redpacketVCType
-                                                     fromeController:weakSelf groupMemberCount:0
-                                               withRedpacketReceiver:userInfo
-                                                     andSuccessBlock:^(RedpacketMessageModel *model) {
-                                                         [weakSelf sendRedpacketMessage:model];
-                                                     } withFetchGroupMemberListBlock:nil
-                                         andGenerateRedpacketIDBlock:nil];
-            }
-            else if(ConversationType_GROUP == self.conversationType) {
-                /** 群红包*/
-                redpacketVCType = RPRedpacketControllerTypeGroup;
-                // 需要在界面显示群员数量，需要先取得相应的数值
-                [RedpacketViewControl presentRedpacketViewController:redpacketVCType
-                                                     fromeController:weakSelf
-                                                    groupMemberCount:self.usersArray.count
-                                               withRedpacketReceiver:userInfo
-                                                     andSuccessBlock:^(RedpacketMessageModel *model) {
-                                                                    [weakSelf sendRedpacketMessage:model];
-                                                                                                    }
-                                       withFetchGroupMemberListBlock:^(RedpacketMemberListFetchBlock fetchFinishBlock) {
-                                           [RCDHTTPTOOL getGroupByID:self.targetId
-                                                   successCompletion:^(RCGroup *group)
-                                            {
-                                                [[RCDHttpTool shareInstance] getGroupMembersByGroupID:group.groupId successCompletion:^(NSArray *members) {
-                                                    [weakSelf.usersArray removeAllObjects];
-                                                    for (NSDictionary *userDict in members) {
-                                                        RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
-                                                        userInfo.userId = userDict[@"id"];
-                                                        userInfo.userNickname = userDict[@"username"];
-                                                        userInfo.userAvatar = userDict[@"portrait"];
-                                                        [weakSelf.usersArray addObject:userInfo];
-                                                    }
-                                                    fetchFinishBlock(weakSelf.usersArray);
-                                                }];
-                                            }];
-                                                                                                                        }
-                                         andGenerateRedpacketIDBlock:nil];
-                                                         
-            }
-
-        }
-        default:
-            [super pluginBoardView:pluginBoardView clickedItemWithTag:tag];
-            break;
-    }
+//    __weak typeof(self) weakSelf = self;
+//    RPRedpacketControllerType  redpacketVCType = 0;
+//    RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
+//    userInfo = [[RedpacketConfig sharedConfig] redpacketUserInfo];
+//    switch (tag) {
+//            // 云账户增加红包插件点击回调
+//        case REDPACKET_TAG: {
+//            if (ConversationType_PRIVATE == self.conversationType) {
+//                /** 小额随机红包*/
+//                redpacketVCType = RPRedpacketControllerTypeRand;
+//                [RedpacketViewControl presentRedpacketViewController:redpacketVCType
+//                                                     fromeController:weakSelf groupMemberCount:0
+//                                               withRedpacketReceiver:userInfo
+//                                                     andSuccessBlock:^(RedpacketMessageModel *model) {
+//                                                         [weakSelf sendRedpacketMessage:model];
+//                                                     } withFetchGroupMemberListBlock:nil
+//                                         andGenerateRedpacketIDBlock:nil];
+//            }
+//            else if(ConversationType_GROUP == self.conversationType) {
+//                /** 群红包*/
+//                redpacketVCType = RPRedpacketControllerTypeGroup;
+//                // 需要在界面显示群员数量，需要先取得相应的数值
+//                [RedpacketViewControl presentRedpacketViewController:redpacketVCType
+//                                                     fromeController:weakSelf
+//                                                    groupMemberCount:self.usersArray.count
+//                                               withRedpacketReceiver:userInfo
+//                                                     andSuccessBlock:^(RedpacketMessageModel *model) {
+//                                                                    [weakSelf sendRedpacketMessage:model];
+//                                                                                                    }
+//                                       withFetchGroupMemberListBlock:^(RedpacketMemberListFetchBlock fetchFinishBlock) {
+//                                           [RCDHTTPTOOL getGroupByID:self.targetId
+//                                                   successCompletion:^(RCGroup *group)
+//                                            {
+//                                                [[RCDHttpTool shareInstance] getGroupMembersByGroupID:group.groupId successCompletion:^(NSArray *members) {
+//                                                    [weakSelf.usersArray removeAllObjects];
+//                                                    for (NSDictionary *userDict in members) {
+//                                                        RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
+//                                                        userInfo.userId = userDict[@"id"];
+//                                                        userInfo.userNickname = userDict[@"username"];
+//                                                        userInfo.userAvatar = userDict[@"portrait"];
+//                                                        [weakSelf.usersArray addObject:userInfo];
+//                                                    }
+//                                                    fetchFinishBlock(weakSelf.usersArray);
+//                                                }];
+//                                            }];
+//                                                                                                                        }
+//                                         andGenerateRedpacketIDBlock:nil];
+//                                                         
+//            }
+//
+//        }
+//        default:
+//            [super pluginBoardView:pluginBoardView clickedItemWithTag:tag];
+//            break;
+//    }
 
 }
 
