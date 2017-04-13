@@ -9,6 +9,7 @@
 #import "RedpacketChangeMoneySegue.h"
 
 #pragma mark - 红包相关头文件
+#import "RedpacketConfig.h"
 #import "RedpacketViewControl.h"
 #pragma mark -
 
@@ -20,6 +21,7 @@
 
 - (void)perform
 {
+    [RedpacketConfig sharedConfig];
     [RedpacketViewControl presentChangePocketViewControllerFromeController:self.sourceViewController];
 }
 

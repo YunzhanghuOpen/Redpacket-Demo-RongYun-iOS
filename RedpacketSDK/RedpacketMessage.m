@@ -13,7 +13,7 @@ static NSString *const RedpacketDictKey = @"redpacket";
 static NSString *const UserDictKey = @"user";
 
 @interface RedpacketMessage ()
-@property (nonatomic, readwrite, copy) RedpacketMessageModel *redpacket;
+@property (nonatomic, readwrite) RedpacketMessageModel *redpacket;
 @end
 
 @implementation RedpacketMessage
@@ -126,8 +126,6 @@ static NSString *const UserDictKey = @"user";
                   redpacket.redpacketSender.userNickname,
                   NSLocalizedString(@"的红包", @"领取红包消息结尾")
                   ];
-            
-            
         }
     }
     return tip;
