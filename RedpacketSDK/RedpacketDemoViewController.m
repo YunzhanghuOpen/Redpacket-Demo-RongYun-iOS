@@ -274,7 +274,7 @@
     __weak typeof(self) weakSelf = self;
     RPRedpacketControllerType  redpacketVCType = 0;
     RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
-    userInfo.userId = weakSelf.conversation.targetId;
+    userInfo.userId = weakSelf.targetId;
     switch (tag) {
             // 云账户增加红包插件点击回调
         case REDPACKET_TAG: {
