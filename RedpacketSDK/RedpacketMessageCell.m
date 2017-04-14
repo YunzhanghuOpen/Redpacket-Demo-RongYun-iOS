@@ -8,12 +8,21 @@
 
 #import "RedpacketMessageCell.h"
 #import "RedpacketMessage.h"
+#import "RedpacketOpenConst.h"
+#import "RedpacketView.h"
+#import "RedPacketLuckView.h"
+#import "RedpacketMessageModel.h"
 
 #define Redpacket_Message_Font_Size 14
 #define Redpacket_SubMessage_Font_Size 12
 #define Redpacket_Background_Extra_Height 25
 #define Redpacket_SubMessage_Text NSLocalizedString(@"查看红包", @"查看红包")
 #define Redpacket_Label_Padding 2
+
+@interface RedpacketMessageCell ()
+@property (nonatomic, strong) RedpacketView *redpacketView;
+@property (nonatomic, strong) RedPacketLuckView *repacketLuckView;
+@end
 
 @implementation RedpacketMessageCell
 
@@ -43,60 +52,6 @@
     UITapGestureRecognizer *tap =
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     [self.bubbleBackgroundView addGestureRecognizer:tap];
-    
-    // 设置红包图标
-    UIImage *icon = [RCKitUtility imageNamed:@"redPacket_redPacktIcon" ofBundle:@"RedpacketCellResource.bundle"];
-    self.iconView = [[UIImageView alloc] initWithImage:icon];
-    self.iconView.frame = CGRectMake(13, 19, 26, 34);
-    [self.bubbleBackgroundView addSubview:self.iconView];
-    
-    // 设置红包文字
-    self.greetingLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.greetingLabel.frame = CGRectMake(48, 19, 137, 15);
-    self.greetingLabel.font = [UIFont systemFontOfSize:Redpacket_Message_Font_Size];
-    self.greetingLabel.textColor = [UIColor whiteColor];
-    self.greetingLabel.numberOfLines = 1;
-    [self.greetingLabel setLineBreakMode:NSLineBreakByCharWrapping];
-    [self.greetingLabel setTextAlignment:NSTextAlignmentLeft];
-    [self.bubbleBackgroundView addSubview:self.greetingLabel];
-    
-    // 设置次级文字
-    self.subLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    CGRect frame = self.greetingLabel.frame;
-    frame.origin.y = 41;
-    self.subLabel.frame = frame;
-    self.subLabel.text = Redpacket_SubMessage_Text;
-    self.subLabel.font = [UIFont systemFontOfSize:Redpacket_SubMessage_Font_Size];
-    self.subLabel.numberOfLines = 1;
-    self.subLabel.textColor = [UIColor whiteColor];
-    self.subLabel.numberOfLines = 1;
-    [self.subLabel setLineBreakMode:NSLineBreakByCharWrapping];
-    [self.subLabel setTextAlignment:NSTextAlignmentLeft];
-    [self.bubbleBackgroundView addSubview:self.subLabel];
-    
-    // 设置次级文字
-    self.orgLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    frame = CGRectMake(13, 76, 150, 12);
-    self.orgLabel.frame = frame;
-    self.orgLabel.text = Redpacket_SubMessage_Text;
-    self.orgLabel.font = [UIFont systemFontOfSize:Redpacket_SubMessage_Font_Size];
-    self.orgLabel.numberOfLines = 1;
-    self.orgLabel.textColor = [UIColor lightGrayColor];
-    self.orgLabel.numberOfLines = 1;
-    [self.orgLabel setLineBreakMode:NSLineBreakByCharWrapping];
-    [self.orgLabel setTextAlignment:NSTextAlignmentLeft];
-    [self.bubbleBackgroundView addSubview:self.orgLabel];
-
-    // 设置红包厂商图标
-    icon = [RCKitUtility imageNamed:@"redPacket_yunAccount_icon" ofBundle:@"RedpacketCellResource.bundle"];
-    self.orgIconView = [[UIImageView alloc] initWithImage:icon];
-    [self.bubbleBackgroundView addSubview:self.orgIconView];
-    
-
-    CGRect rt = self.orgIconView.frame;
-    rt.origin = CGPointMake(165, 75);
-    rt.size = CGSizeMake(21, 14);
-    self.orgIconView.frame = rt;
 
     [self.statusContentView removeFromSuperview];
     self.statusContentView = nil;
@@ -110,7 +65,20 @@
 
 - (void)setDataModel:(RCMessageModel *)model {
     [super setDataModel:model];
-    
+    RedpacketMessage *redpacketMessage = (RedpacketMessage *)self.model.content;
+    RedpacketMessageModel *messageModel = redpacketMessage.redpacket;
+    if (messageModel.redpacketType == RedpacketTypeAmount) {
+        [_redpacketView removeFromSuperview];
+        _redpacketView = nil;
+        [self.bubbleBackgroundView addSubview:self.repacketLuckView];
+        [_repacketLuckView configWithRedpacketMessageModel:messageModel];
+    }else {
+        [_repacketLuckView removeFromSuperview];
+        _repacketLuckView = nil;
+        [self.bubbleBackgroundView addSubview: self.redpacketView];
+        [_redpacketView configWithRedpacketMessageModel:messageModel
+                                        andRedpacketDic:nil];
+    }
     [self setAutoLayout];
 }
 
@@ -138,19 +106,12 @@
     if (MessageDirection_RECEIVE == self.messageDirection) {
         messageContentViewRect.size.width = bubbleBackgroundViewSize.width;
         self.messageContentView.frame = messageContentViewRect;
-        
         self.bubbleBackgroundView.frame = CGRectMake(-8, 0, bubbleBackgroundViewSize.width, bubbleBackgroundViewSize.height);
-        UIImage *image = [RCKitUtility imageNamed:@"redpacket_receiver_bg" ofBundle:@"RedpacketCellResource.bundle"];
-        self.bubbleBackgroundView.image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(70, 9, 25, 20)];
     } else {
-        
         messageContentViewRect.size.width = bubbleBackgroundViewSize.width;
         messageContentViewRect.origin.x = self.baseContentView.bounds.size.width - (messageContentViewRect.size.width + 12 + [RCIM sharedRCIM].globalMessagePortraitSize.width + 10);
         self.messageContentView.frame = messageContentViewRect;
-        
-        self.bubbleBackgroundView.frame = CGRectMake(8, 0, bubbleBackgroundViewSize.width, bubbleBackgroundViewSize.height);
-        UIImage *image = [RCKitUtility imageNamed:@"redpacket_sender_bg" ofBundle:@"RedpacketCellResource.bundle"];
-        self.bubbleBackgroundView.image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(70, 9, 25, 20)];
+        self.bubbleBackgroundView.frame = CGRectMake(-8, 0, bubbleBackgroundViewSize.width, bubbleBackgroundViewSize.height);
     }
     
     self.statusContentView.hidden = YES;
@@ -170,6 +131,27 @@
 }
 
 + (CGSize)getBubbleBackgroundViewSize:(RedpacketMessage *)message {
-    return [[self class] getBubbleSize];
+    RedpacketMessageModel *messageModel = message.redpacket;
+    if (messageModel.redpacketType == RedpacketTypeAmount) {
+        return CGSizeMake(116.0f,  [RedPacketLuckView heightForRedpacketMessageCell] + 20);
+    }else {
+        return CGSizeMake(218.0f,  [RedpacketView redpacketViewHeight] + 20);
+    }
 }
+
+- (RedpacketView *)redpacketView
+{
+    if (!_redpacketView) {
+        _redpacketView = [[RedpacketView alloc]init];
+    }
+    return _redpacketView;
+}
+- (RedPacketLuckView *)repacketLuckView
+{
+    if (!_repacketLuckView) {
+        _repacketLuckView = [[RedPacketLuckView alloc]init];
+    }
+    return _repacketLuckView;
+}
+
 @end
