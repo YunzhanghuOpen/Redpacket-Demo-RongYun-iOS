@@ -57,7 +57,6 @@
         assert(icon);
         [self.pluginBoardView insertItemWithImage:icon title:NSLocalizedString(@"红包", @"红包") tag:REDPACKET_TAG];
     }
-#pragma mark -
 }
 
 - (void)didReceiveMemoryWarning {

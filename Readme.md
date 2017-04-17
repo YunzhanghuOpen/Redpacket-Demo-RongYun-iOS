@@ -1,169 +1,175 @@
-融云红包 SDK 接入文档
-=================
+# 融云 iOS红包SDK集成
+## 集成概述
+* 红包SDK分为两个版本，即**钱包版红包SDK**与**支付宝版红包SDK**。
+* 使用钱包版红包SDK的用户，可以使用银行卡支付或支付宝支付等第三方支付来发红包；收到的红包金额会进入到钱包余额，并支持提现到绑定的银行卡。
+* 使用支付宝版红包SDK的用户，发红包仅支持支付宝支付；收到的红包金额即时入账至绑定的支付宝账号。
+* 请选择希望接入的版本并下载对应的SDK进行集成，钱包版红包SDK与支付宝版红包SDK集成方式相同。
+* 需要注意的是如果已经集成了钱包版红包SDK，暂不支持切换到支付宝版红包SDK（两个版本不支持互通）。
+* [集成演示Demo](https://github.com/YunzhanghuOpen/Redpacket-Demo-RongYun-iOS)，开发者可以通过此Demo了解iOS红包SDK的集成，集成方式仅供参考。
 
-使用融云 demo app
-------------------
+## 集成红包
 
-  `红包 SDK` 的 demo 直接嵌入进 融云 demo 2.0 中，对于原 demo 仅做了少量的修改。如果你的 app 采用 融云的 demo app 作为原型的话，这里的方法是简单快捷的。
+### 红包开源模块介绍
 
-  在融云 demo app 里做的修改添加了相关的 `#pragma mark` 标记，可以在 Xcode 快速跳转到相应的标记
+* `RedpacketAliPay` 
+* 为**支付宝版SDK**处理支付宝授权和支付宝支付回调
 
-###准备工作
+* `RedpacketJDPay` 
+* 为**钱包版SDK**处理支付宝支付回调
 
-1. clone demo:[ https://github.com/YunzhanghuOpen/iOS-SDK-for-RongYun](https://github.com/YunzhanghuOpen/iOS-SDK-for-RongYun)
+* `RedpacketMessageCell` 
+* 红包SDK内的红包卡片样式
 
-  `git clone --recursive https://github.com/YunzhanghuOpen/iOS-SDK-for-RongYun`
+*  `RedpacketCellResource.bundle` 
+*  红包开源部分的资源文件
 
-  (这里使用了 git submodule 来管理 SDK demo 与 融云 demo app 的版本关系。原本[库](https://github.com/YunzhanghuOpen/rongcloud-demo-app-ios-v2)使用的是 master 分支，我们这里未作改动，而是新建了 RedpacketLib 分支。 submodule 会关联其中的某一个提交版本。)
+* `RedpacketDemoViewController` 
+* 包含发红包收红包功能
+* 单聊红包包含**小额随机红包**和**普通红包**
+* 群红包包含**定向红包**，**普通红包**和**拼手气红包**
 
-  如果已有代码，需要执行
+* `RedpacketConfig` 红包SDK初始化文件       
+*  实现红包SDK注册
+*  实现当前用户获取
 
-  `git pull --rebase`
+### SDK初始化配置
+文件名称：AppDelegate+Redpacket.h
+说明：配置SDK相关数据源， 设置支付宝回调。
 
-  来进行更新。
+在AppDelegate中完成初始化
+导入头文件
+`#import "RedpacketConfig.h"`
+`#import "RedpacketMessage.h"`
+`#import "RedpacketTakenMessage.h"`
+`#import "RedpacketTakenOutgoingMessage.h"`
 
-  如果没能更新 submodule， 则执行
 
-  `git submodule update --recursive`
-
-  来更新所有的 submodule
-
-2. 下载最新的红包 SDK 库文件 ( master 或者是 release )
-
-  因为`红包 SDK` 在一直更新维护，所以为了不与 demo 产生依赖，所以采取了单独下载 zip 包的策略
-
-  [https://www.yunzhanghu.com/download.html](https://www.yunzhanghu.com/download.html)
-
-  解压后将 RedpacketLib 复制至 iOS-SDK-for-RongYun 目录下。
-  
-3. 下载支付宝相关SDK
-
-    [https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.CeDJVo&treeId=54&articleId=104509&docType=1](https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.CeDJVo&treeId=54&articleId=104509&docType=1)
-    
-4. 开启 rongcloud-demo-app-ios-v2/ios-rongimdemo/RCloudMessage.xcodeproj 工程文件
-
-=========================================
-####开始集成红包
-1. 导入RedpacketLib和支付宝.在info.plist文件中添加支付宝回调的URL Schemes `alipayredpacket`
-
-    支付宝具体参考[https://doc.open.alipay.com/doc2/detail?treeId=59&articleId=103676&docType=1](https://doc.open.alipay.com/doc2/detail?treeId=59&articleId=103676&docType=1)
-2. 设置红包信息
-
-  在 `AppDelegate.m` 中导入头文件
-  ```objc
-    #pragma mark - 红包相关头文件
-    #import "RedpacketConfig.h"
-    #import "RedpacketMessage.h"
-    #import "RedpacketTakenMessage.h"
-    #import "RedpacketTakenOutgoingMessage.h"
-    #import "AlipaySDK.h"
-  ```
-  在Appdelegate
-  ```objc
-  - (BOOL)application:(UIApplication *)application
-    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-  ```
-
-  最后添加了
-
-    ```objc
-    #pragma mark - 配置红包信息
-    [RedpacketConfig config];
-    #pragma mark - 注册自定义消息体
-    [[RCIM sharedRCIM] registerMessageType:[RedpacketMessage class]];
-    [[RCIM sharedRCIM] registerMessageType:[RedpacketTakenMessage class]];
-    [[RCIM sharedRCIM] registerMessageType:[RedpacketTakenOutgoingMessage class]];
-    ```
-
-    同时需添加
-    ```objc
-    // NOTE: 9.0之前使用的API接口
-    - (BOOL)application:(UIApplication *)application
-                openURL:(NSURL *)url
-      sourceApplication:(NSString *)sourceApplication
-             annotation:(id)annotation {
-        
-        if ([url.host isEqualToString:@"safepay"]) {
-            //跳转支付宝钱包进行支付，处理支付结果
-            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:RedpacketAlipayNotifaction object:resultDic];
-            }];
-        }
-        return YES;
-    }
-    
-    // NOTE: 9.0以后使用新API接口
-    - (BOOL)application:(UIApplication *)app
-                openURL:(NSURL *)url
-                options:(NSDictionary<NSString*, id> *)options
-    {
-        if ([url.host isEqualToString:@"safepay"]) {
-            //跳转支付宝钱包进行支付，处理支付结果
-            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:RedpacketAlipayNotifaction object:resultDic];
-            }];
-        }
-        return YES;
-    }
-    - (void)applicationDidBecomeActive:(UIApplication *)application {
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:RedpacketAlipayNotifaction object:nil];
-    }
 ```
 
-  `RedpacketConfig` 类有两个作用。
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    1) 它实现了 `YZHRedpacketBridgeDataSource` protocol，并在 Singleton 创建对象的时候设置了
-    ```objc
-    [[YZHRedpacketBridge sharedBridge] setDataSource:config];`
-    ```
-    `YZHRedpacketBridgeDataSource` protocol 用以为红包 SDK 提供用户信息
+...
 
-    2) 它用于执行`YZHRedpacketBridge` 的
+//红包集成
+[[RCIM sharedRCIM] registerMessageType:[RCDTestMessage class]];
+[[RCIM sharedRCIM] registerMessageType:[RedpacketMessage class]];
+[[RCIM sharedRCIM] registerMessageType:[RedpacketTakenMessage class]];
+[[RCIM sharedRCIM] registerMessageType:[RedpacketTakenOutgoingMessage class]];
+...
 
-    ```objc
-    - (void)configWithSign:(NSString *)sign
-               partner:(NSString *)partner
-             appUserId:(NSString *)appUserid
-             timeStamp:(long)timeStamp;
-    ```
+}
 
-    以执行`红包 SDK` 的信息注册
-    所以在登录、退出登录、刷新用户信息是要分别调用RedpacketConfig的三个API
-    ```objc
-    [RedpacketConfig config]//登录
-    [RedpacketConfig logout]//退出登录
-    [RedpacketConfig reconfig]//刷新身份
-    ```
-    开发者赢后续替换自己服务器URL来获取注册身份信息
+```
 
-3. 在聊天对话中添加红包支持
+### 收发红包
+文件名称：RedpacketDemoViewController.m
 
-  1) 添加类支持
+#### 添加红包按钮和红包按钮回调事件
 
-  在 融云 demo app 中已经实现 `RCDChatViewController` ，为了尽量不改动原来的代码，我们重新定义 `RCDChatViewController` 的子类 `RedpacketDemoViewController`。
 
-  在 `RCDChatListViewController` 中RCDChatViewController全部替换为RedpacketDemoViewController
-      
-  2) 添加红包功能
+```
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    if (ConversationType_PRIVATE == self.conversationType
+    || ConversationType_DISCUSSION == self.conversationType
+    || ConversationType_GROUP == self.conversationType ) {
+    // 设置红包插件界面
+    UIImage *icon = [UIImage imageNamed:REDPACKET_BUNDLE(@"redpacket_redpacket")];
+    assert(icon);
+    [self.pluginBoardView insertItemWithImage:icon title:NSLocalizedString(@"红包", @"红包") tag:REDPACKET_TAG];
+                                                        }
+...
+...
+}
 
-  查看 `RedpacketDemoViewController.m` 的 源代码注释了解红包功能的。
 
-    添加的部分包括：
+- (void)pluginBoardView:(RCPluginBoardView *)pluginBoardView clickedItemWithTag:(NSInteger)tag {
+...
+...
+}
 
-       (1) 注册消息显示 Cell
-       (2) 设置红包插件界面
-       (3) 设置红包功能相关的参数
-       (4) 设置红包接收用户信息
-       (5) 设置红包 SDK 功能回调
+```
 
-4. 显示零钱功能
+#### 发送红包消息
 
-  通过执行
+* 红包消息
 
-    ```objc
-    - [RedpacketViewControl presentChangeMoneyViewController]
-    
-    ```
+```
+- (void)sendRedpacketMessage:(RedpacketMessageModel *)redpacket
+{
+    RedpacketMessage *message = [RedpacketMessage messageWithRedpacket:redpacket];
+    NSString *push = [NSString stringWithFormat:@"%@发了一个红包", redpacket.currentUser.userNickname];
+    [self sendMessage:message pushContent:push];
+}```
 
-  在 融云 SDK demo app 中使用 Storyboard 定义个人设置界面，这里为了执行显示功能，采用 Custom Segue 的方法，在 Demo 中的 `RedpacketChangeMoneySegue` 类实现
+* 接收处理被抢的消息
+
+```
+- (void)onRedpacketTakenMessage:(RedpacketMessageModel *)redpacket
+{
+    RedpacketTakenMessage *message = [RedpacketTakenMessage messageWithRedpacket:redpacket];
+    // 抢自己的红包不发消息，只自己显示抢红包消息
+    if (![redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]) {
+    if (ConversationType_PRIVATE == self.conversationType) {
+    [self sendMessage:message pushContent:nil];
+    }
+    else {
+    RCMessage *m = [[RCIMClient sharedRCIMClient] insertMessage:self.conversationType
+    targetId:self.targetId
+    senderUserId:self.conversation.senderUserId
+    sendStatus:SentStatus_SENT
+    content:message];
+    [self appendAndDisplayMessage:m];
+
+    // 按照 android 的需求修改发送红包的功能
+    RedpacketTakenOutgoingMessage *m2 = [RedpacketTakenOutgoingMessage messageWithRedpacket:redpacket];
+    [self sendMessage:m2 pushContent:nil];
+    }
+    }
+    else {
+    RCMessage *m = [[RCIMClient sharedRCIMClient] insertMessage:self.conversationType
+    targetId:self.targetId
+    senderUserId:self.conversation.senderUserId
+    sendStatus:SentStatus_SENT
+    content:message];
+    [self appendAndDisplayMessage:m];
+    }
+}
+
+```
+
+#### 展示红包卡片样式
+
+红包样式`RedpacketMessageCell`
+红包被领取的样式`RedpacketTakenMessageTipCell`
+
+```
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+...
+...
+...	
+}
+```
+
+#### 收拆红包
+
+```
+- (void)didTapMessageCell:(RCMessageModel *)model {
+...
+...
+...
+}
+```
+
+### 显示零钱功能
+
+文件位置：`#import "RedpacketChangeMoneySegue.h"`
+
+说明： 显示红包零钱页面
+
+```
++ (void)presentChangePocketViewControllerFromeController:(UIViewController *)viewController;
+
+```
+
+
