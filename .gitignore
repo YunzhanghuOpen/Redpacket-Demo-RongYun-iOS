@@ -40,8 +40,6 @@ Thumbs.db
 #XCode
 xcuserdata
 project.xcworkspace
-rongcloud-demo-app-ios-v2/ios-rongimdemo/Podfile.lock
-rongcloud-demo-app-ios-v2/ios-rongimdemo/Pods/*
 #Android
 local.properties
 obj
