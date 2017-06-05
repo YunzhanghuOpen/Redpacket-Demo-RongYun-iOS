@@ -1,0 +1,14 @@
+platform :ios, '8.0'
+
+# Import CocoaPods sources
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'RCloudMessage' do
+
+pod 'RedpacketAliAuthLib'
+end
+
+target 'RCloudMessage-JDpay' do
+    
+    pod 'RedpacketLib'
+end
