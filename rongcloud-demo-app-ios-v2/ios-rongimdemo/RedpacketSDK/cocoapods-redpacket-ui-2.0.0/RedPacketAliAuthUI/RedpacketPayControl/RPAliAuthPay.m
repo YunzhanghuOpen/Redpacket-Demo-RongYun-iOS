@@ -148,32 +148,25 @@
 {
     RPDebug(@"红包SDK通知：\n收到支付宝支付回调：%@\n 当前的控制器：%@", notifaction, self);
     
-    if (self.billRef) {
-        if ([notifaction.object isKindOfClass:[NSDictionary class]]) {
-            NSInteger code = [[notifaction.object valueForKey:@"resultStatus"] integerValue];
-            if (code == 9000) {
-                //  支付成功
-                if (self.paySuccessBlock) {
-                    self.paySuccessBlock(self.billRef);
-                }
-                
-            }else if (code == AlipayPayUserCancel) {
-                [self alertCancelPayMessage:@"你已取消支付，该红包不会被发出"
-                                  withTitle:@"取消支付"];
-            }else {
-                [self alertCancelPayMessage:@"付款失败, 该红包不会被发出"
-                                  withTitle:@"付款失败"];
+    if ([notifaction.object isKindOfClass:[NSDictionary class]]) {
+        NSInteger code = [[notifaction.object valueForKey:@"resultStatus"] integerValue];
+        if (code == 9000) {
+            //  支付成功
+            if (self.paySuccessBlock) {
+                self.paySuccessBlock(self.billRef);
             }
-            
+                
+        }else if (code == AlipayPayUserCancel) {
+            [self alertCancelPayMessage:@"你已取消支付，该红包不会被发出"
+                                withTitle:@"取消支付"];
         }else {
-            self.billRef = nil;
-            [_payController.view rp_removeHudInManaual];
+            [self alertCancelPayMessage:@"付款失败, 该红包不会被发出"
+                                withTitle:@"付款失败"];
         }
         
     }else {
-
-        //  收到无效Alipay通知
-        
+        self.billRef = nil;
+        [_payController.view rp_removeHudInManaual];
     }
 }
 

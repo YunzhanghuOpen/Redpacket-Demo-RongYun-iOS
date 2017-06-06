@@ -8,10 +8,9 @@
 
 #import "RedpacketMessageCell.h"
 #import "RedpacketMessage.h"
-#import "RedpacketOpenConst.h"
 #import "RedpacketView.h"
 #import "RedPacketLuckView.h"
-#import "RedpacketMessageModel.h"
+#import "AnalysisRedpacketModel.h"
 
 #define Redpacket_Message_Font_Size 14
 #define Redpacket_SubMessage_Font_Size 12
@@ -66,18 +65,17 @@
 - (void)setDataModel:(RCMessageModel *)model {
     [super setDataModel:model];
     RedpacketMessage *redpacketMessage = (RedpacketMessage *)self.model.content;
-    RedpacketMessageModel *messageModel = redpacketMessage.redpacket;
-    if (messageModel.redpacketType == RedpacketTypeAmount) {
+    AnalysisRedpacketModel *messageModel = redpacketMessage.analyModel;
+    if (messageModel.redpacketType == RPRedpacketTypeAmount) {
         [_redpacketView removeFromSuperview];
         _redpacketView = nil;
         [self.bubbleBackgroundView addSubview:self.repacketLuckView];
         [_repacketLuckView configWithRedpacketMessageModel:messageModel];
-    }else {
+    } else {
         [_repacketLuckView removeFromSuperview];
         _repacketLuckView = nil;
-        [self.bubbleBackgroundView addSubview: self.redpacketView];
-        [_redpacketView configWithRedpacketMessageModel:messageModel
-                                        andRedpacketDic:nil];
+        [self.bubbleBackgroundView addSubview:self.redpacketView];
+        [_redpacketView configWithRedpacketMessageModel:messageModel];
     }
     [self setAutoLayout];
 }
@@ -93,10 +91,10 @@
 
 - (void)setAutoLayout {
     RedpacketMessage *redpacketMessage = (RedpacketMessage *)self.model.content;
-    NSString *messageString = redpacketMessage.redpacket.redpacket.redpacketGreeting;
+    NSString *messageString = redpacketMessage.redpacket.greeting;
     self.greetingLabel.text = messageString;
     
-    NSString *orgString = redpacketMessage.redpacket.redpacket.redpacketOrgName;
+    NSString *orgString = redpacketMessage.analyModel.redpacketOrgName;
     self.orgLabel.text = orgString;
     
     CGSize bubbleBackgroundViewSize = [[self class] getBubbleSize];
@@ -131,8 +129,8 @@
 }
 
 + (CGSize)getBubbleBackgroundViewSize:(RedpacketMessage *)message {
-    RedpacketMessageModel *messageModel = message.redpacket;
-    if (messageModel.redpacketType == RedpacketTypeAmount) {
+    AnalysisRedpacketModel *messageModel = message.analyModel;
+    if (messageModel.redpacketType == MessageCellTypeRedpaket) {
         return CGSizeMake(116.0f,  [RedPacketLuckView heightForRedpacketMessageCell] + 20);
     }else {
         return CGSizeMake(218.0f,  [RedpacketView redpacketViewHeight] + 20);

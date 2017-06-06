@@ -8,17 +8,20 @@
 
 #import "RedpacketMessage.h"
 #import <RongIMKit/RongIMKit.h>
+#import "RPRedpacketUnionHandle.h"
+#import "RPRedpacketConstValues.h"
 
 static NSString *const RedpacketDictKey = @"redpacket";
 static NSString *const UserDictKey = @"user";
 
 @interface RedpacketMessage ()
-@property (nonatomic, readwrite) RedpacketMessageModel *redpacket;
+@property (nonatomic, readwrite) RPRedpacketModel *redpacket;
+@property (nonatomic, readwrite) AnalysisRedpacketModel *analyModel;
 @end
 
 @implementation RedpacketMessage
 
-+ (instancetype)messageWithRedpacket:(RedpacketMessageModel *)redpacket
++ (instancetype)messageWithRedpacket:(RPRedpacketModel *)redpacket
 {
     RedpacketMessage *message = [[[self class] alloc] init];
     message.redpacket = redpacket;
@@ -38,7 +41,13 @@ static NSString *const UserDictKey = @"user";
     
     // 先保证是一个正确的红包消息
     if(self.redpacket) {
-        NSDictionary *modelDic = [self.redpacket redpacketMessageModelToDic];
+        NSDictionary *modelDic;
+        if (self.redpacket.receiveMoney.floatValue > 0.001) {
+            modelDic = [RPRedpacketUnionHandle dictWithRedpacketModel:self.redpacket isACKMessage:YES];
+        } else {
+            modelDic = [RPRedpacketUnionHandle dictWithRedpacketModel:self.redpacket isACKMessage:NO];
+        }
+        
         [dic addEntriesFromDictionary:modelDic];
         
         if (self.redpacketUserInfo) {
@@ -54,7 +63,7 @@ static NSString *const UserDictKey = @"user";
             }
             dic[UserDictKey] = userInfoDic;
         }
-        
+        self.analyModel = [AnalysisRedpacketModel analysisRedpacketWithDict:dic andIsSender:YES];
         if ([NSJSONSerialization isValidJSONObject:dic]) {
             NSError *error = nil;
             data = [NSJSONSerialization dataWithJSONObject:dic
@@ -85,9 +94,13 @@ static NSString *const UserDictKey = @"user";
                                                           error:&error];
     if ([dic isKindOfClass:[NSDictionary class]]) {
         NSDictionary *redpacketDic = dic;
-        if ([RedpacketMessageModel isRedpacketRelatedMessage:redpacketDic]) {
-            RedpacketMessageModel *redpacket = [RedpacketMessageModel redpacketMessageModelWithDic:redpacketDic];
-            self.redpacket = redpacket;
+        if ([AnalysisRedpacketModel messageCellTypeWithDict:redpacketDic] != MessageCellTypeUnknown) {
+            RPUserInfo *sender = [RPUserInfo new];
+            sender.userID = redpacketDic[RedpacketKeyRedpacketSenderId];
+            sender.userName = self.senderUserInfo.name;
+            sender.avatar = self.senderUserInfo.portraitUri;
+            self.redpacket = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:redpacketDic andSender:sender];
+            self.analyModel = [AnalysisRedpacketModel analysisRedpacketWithDict:redpacketDic andIsSender:[sender.userID isEqualToString:[RCIM sharedRCIM].currentUserInfo.userId]];
         }
         else {
             NSLog(@"获取的不是红包相关的数据");
@@ -102,20 +115,19 @@ static NSString *const UserDictKey = @"user";
 {
     NSString *tip = @"[云红包]";
     
-    if (RedpacketMessageTypeRedpacket == self.redpacket.messageType) {
-        tip = [NSString stringWithFormat:@"[%@]%@", self.redpacket.redpacket.redpacketOrgName, self.redpacket.redpacket.redpacketGreeting];
+    if (self.analyModel.type == MessageCellTypeRedpaket) {
+        tip = [NSString stringWithFormat:@"[%@]%@", self.analyModel.redpacketOrgName, self.analyModel.greeting];
     }
-    else if(RedpacketMessageTypeTedpacketTakenMessage == self.redpacket.messageType) {
-        RedpacketMessageModel *redpacket = self.redpacket;
-        if([redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]) {
-            if ([redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
+    else if(MessageCellTypeUnknown != self.analyModel.type) {
+        if([[RCIM sharedRCIM].currentUserInfo.userId isEqualToString:self.analyModel.sender.userID]) {
+            if ([[RCIM sharedRCIM].currentUserInfo.userId isEqualToString:self.analyModel.receiver.userID]) {
                 tip = NSLocalizedString(@"你领取了自己的红包", @"你领取了自己的红包");
             }
             else {
                 // 收到了别人抢了我的红包的消息提示
                 tip =[NSString stringWithFormat:@"%@%@", // XXX 领取了你的红包
                       // 当前红包 SDK 不返回用户的昵称，需要 app 自己获取
-                      redpacket.redpacketReceiver.userNickname,
+                      self.analyModel.receiver.userID,
                       NSLocalizedString(@"领取了你的红包", @"领取红包消息")];
             }
         }
@@ -123,7 +135,7 @@ static NSString *const UserDictKey = @"user";
             // 显示我抢了别人的红包的提示
             tip =[NSString stringWithFormat:@"%@%@%@", // 你领取了 XXX 的红包
                   NSLocalizedString(@"你领取了", @"领取红包消息"),
-                  redpacket.redpacketSender.userNickname,
+                  self.analyModel.sender.userName,
                   NSLocalizedString(@"的红包", @"领取红包消息结尾")
                   ];
         }

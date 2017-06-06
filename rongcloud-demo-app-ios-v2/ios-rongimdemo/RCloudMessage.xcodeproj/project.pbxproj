@@ -29,13 +29,11 @@
 		5111B07D1AE6A11A00317E71 /* RongCloud.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5111B07A1AE6A11A00317E71 /* RongCloud.bundle */; };
 		5C0253F41B53D6F8003F48D9 /* RCDBlackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0253F31B53D6F8003F48D9 /* RCDBlackListViewController.m */; };
 		5C7629831B54F7E60027DA82 /* RCDBlackListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7629821B54F7E60027DA82 /* RCDBlackListCell.m */; };
-		84F980391EE56A1200CB9BDA /* RedpacketCellResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84F97F9F1EE56A1100CB9BDA /* RedpacketCellResource.bundle */; };
 		84F9803A1EE56A1200CB9BDA /* RedpacketChangeMoneySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F97FA11EE56A1100CB9BDA /* RedpacketChangeMoneySegue.m */; };
 		84F9803B1EE56A1200CB9BDA /* RedpacketConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F97FA31EE56A1100CB9BDA /* RedpacketConfig.m */; };
 		84F9803C1EE56A1200CB9BDA /* RedpacketDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F97FA51EE56A1100CB9BDA /* RedpacketDemoViewController.m */; };
 		84F9803D1EE56A1200CB9BDA /* RedpacketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F97FA71EE56A1100CB9BDA /* RedpacketMessage.m */; };
 		84F9803E1EE56A1200CB9BDA /* RedpacketMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F97FA91EE56A1100CB9BDA /* RedpacketMessageCell.m */; };
-		84F9803F1EE56A1200CB9BDA /* RedpacketCellResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84F97FAC1EE56A1100CB9BDA /* RedpacketCellResource.bundle */; };
 		84F980401EE56A1200CB9BDA /* RedPacketLuckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F97FAE1EE56A1100CB9BDA /* RedPacketLuckView.m */; };
 		84F980411EE56A1200CB9BDA /* RedpacketTakenMessageTipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F97FB01EE56A1100CB9BDA /* RedpacketTakenMessageTipCell.m */; };
 		84F980421EE56A1200CB9BDA /* RedpacketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F97FB21EE56A1100CB9BDA /* RedpacketView.m */; };
@@ -45,6 +43,7 @@
 		84F980461EE56A1200CB9BDA /* RPRedpacketUnionHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F97FBB1EE56A1100CB9BDA /* RPRedpacketUnionHandle.m */; };
 		84F980471EE56A1200CB9BDA /* RedpacketTakenMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F97FBD1EE56A1100CB9BDA /* RedpacketTakenMessage.m */; };
 		84F980481EE56A1200CB9BDA /* RedpacketTakenOutgoingMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F97FBF1EE56A1100CB9BDA /* RedpacketTakenOutgoingMessage.m */; };
+		84F980541EE6AB3E00CB9BDA /* RedpacketCellResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84F980531EE6AB3E00CB9BDA /* RedpacketCellResource.bundle */; };
 		8C55EB511B2A8CE5004285F4 /* Emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C55EB501B2A8CE5004285F4 /* Emoji.plist */; };
 		8CCBC9871AEDDF8600BA1135 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCBC9861AEDDF8600BA1135 /* AssetsLibrary.framework */; };
 		A60BAD0A1CD1ACB9003D2375 /* voip_call.caf in Resources */ = {isa = PBXBuildFile; fileRef = A60BAD091CD1ACB9003D2375 /* voip_call.caf */; };
@@ -243,7 +242,6 @@
 		5D7799FF4B5CEB16DEF820C7 /* Pods-RCloudMessage.autorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage.autorelease.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage/Pods-RCloudMessage.autorelease.xcconfig"; sourceTree = "<group>"; };
 		7A451CC6AB1FB47EFDDAAF7A /* libPods-RCloudMessage-JDpay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCloudMessage-JDpay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F97E681EE557BE00CB9BDA /* RCloudMessage copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RCloudMessage copy-Info.plist"; path = "/Users/admin/Documents/developer/rongyun/iOS-SDK-for-RongYun/rongcloud-demo-app-ios-v2/ios-rongimdemo/RCloudMessage copy-Info.plist"; sourceTree = "<absolute>"; };
-		84F97F9F1EE56A1100CB9BDA /* RedpacketCellResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RedpacketCellResource.bundle; sourceTree = "<group>"; };
 		84F97FA01EE56A1100CB9BDA /* RedpacketChangeMoneySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketChangeMoneySegue.h; sourceTree = "<group>"; };
 		84F97FA11EE56A1100CB9BDA /* RedpacketChangeMoneySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedpacketChangeMoneySegue.m; sourceTree = "<group>"; };
 		84F97FA21EE56A1100CB9BDA /* RedpacketConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketConfig.h; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 		84F97FA71EE56A1100CB9BDA /* RedpacketMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedpacketMessage.m; sourceTree = "<group>"; };
 		84F97FA81EE56A1100CB9BDA /* RedpacketMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketMessageCell.h; sourceTree = "<group>"; };
 		84F97FA91EE56A1100CB9BDA /* RedpacketMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedpacketMessageCell.m; sourceTree = "<group>"; };
-		84F97FAC1EE56A1100CB9BDA /* RedpacketCellResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RedpacketCellResource.bundle; sourceTree = "<group>"; };
 		84F97FAD1EE56A1100CB9BDA /* RedPacketLuckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPacketLuckView.h; sourceTree = "<group>"; };
 		84F97FAE1EE56A1100CB9BDA /* RedPacketLuckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedPacketLuckView.m; sourceTree = "<group>"; };
 		84F97FAF1EE56A1100CB9BDA /* RedpacketTakenMessageTipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketTakenMessageTipCell.h; sourceTree = "<group>"; };
@@ -273,6 +270,7 @@
 		84F97FBD1EE56A1100CB9BDA /* RedpacketTakenMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedpacketTakenMessage.m; sourceTree = "<group>"; };
 		84F97FBE1EE56A1100CB9BDA /* RedpacketTakenOutgoingMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketTakenOutgoingMessage.h; sourceTree = "<group>"; };
 		84F97FBF1EE56A1100CB9BDA /* RedpacketTakenOutgoingMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedpacketTakenOutgoingMessage.m; sourceTree = "<group>"; };
+		84F980531EE6AB3E00CB9BDA /* RedpacketCellResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RedpacketCellResource.bundle; sourceTree = "<group>"; };
 		8624FC134075EE90F5158A49 /* Pods-RCloudMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage/Pods-RCloudMessage.debug.xcconfig"; sourceTree = "<group>"; };
 		8C55EB501B2A8CE5004285F4 /* Emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Emoji.plist; path = framework/Emoji.plist; sourceTree = SOURCE_ROOT; };
 		8CCBC9861AEDDF8600BA1135 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -721,7 +719,6 @@
 		84F97E831EE56A1100CB9BDA /* RedpacketSDK */ = {
 			isa = PBXGroup;
 			children = (
-				84F97F9F1EE56A1100CB9BDA /* RedpacketCellResource.bundle */,
 				84F97FA01EE56A1100CB9BDA /* RedpacketChangeMoneySegue.h */,
 				84F97FA11EE56A1100CB9BDA /* RedpacketChangeMoneySegue.m */,
 				84F97FA21EE56A1100CB9BDA /* RedpacketConfig.h */,
@@ -753,7 +750,7 @@
 		84F97FAB1EE56A1100CB9BDA /* RedpacketCellPublic */ = {
 			isa = PBXGroup;
 			children = (
-				84F97FAC1EE56A1100CB9BDA /* RedpacketCellResource.bundle */,
+				84F980531EE6AB3E00CB9BDA /* RedpacketCellResource.bundle */,
 				84F97FAD1EE56A1100CB9BDA /* RedPacketLuckView.h */,
 				84F97FAE1EE56A1100CB9BDA /* RedPacketLuckView.m */,
 				84F97FAF1EE56A1100CB9BDA /* RedpacketTakenMessageTipCell.h */,
@@ -1639,10 +1636,9 @@
 				5111B07D1AE6A11A00317E71 /* RongCloud.bundle in Resources */,
 				A6CF8A351BD4CB6E00F3EA1A /* RCConfig.plist in Resources */,
 				E4BFAE251A121839007165B1 /* Images.xcassets in Resources */,
-				84F980391EE56A1200CB9BDA /* RedpacketCellResource.bundle in Resources */,
-				84F9803F1EE56A1200CB9BDA /* RedpacketCellResource.bundle in Resources */,
 				510624851AD63A9E00348452 /* RongCloudKit.strings in Resources */,
 				A60BAD0A1CD1ACB9003D2375 /* voip_call.caf in Resources */,
+				84F980541EE6AB3E00CB9BDA /* RedpacketCellResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

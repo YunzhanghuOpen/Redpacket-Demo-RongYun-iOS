@@ -6,12 +6,14 @@
 //  Copyright © 2016年 云帐户. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <RongIMKit/RongIMKit.h>
+#define REDPACKET_TAKEN_MESSAGE_TOP_BOTTOM_PADDING 20
+#define REDPACKET_MESSAGE_TOP_BOTTOM_PADDING 40
 
-@interface RedpacketTakenMessageTipCell : UITableViewCell
+@interface RedpacketTakenMessageTipCell : RCMessageBaseCell
+@property(strong, nonatomic) RCTipLabel *tipMessageLabel;
+@property(strong, nonatomic) UIImageView *iconView;
 
-- (void)configWithText:(NSString *)text;
-
-+ (CGFloat)heightForRedpacketMessageTipCell;
++ (CGSize)sizeForModel:(RCMessageModel*)model;
 
 @end

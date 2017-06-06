@@ -7,37 +7,32 @@
 //
 
 #import "RedpacketTakenMessageTipCell.h"
+#import "UIColor+RCColor.h"
 
-#define REDPACKET_BUNDLE(name) @"RedpacketCellResource.bundle/" name
 #define BACKGROUND_LEFT_RIGHT_PADDING 10
 #define ICON_LEFT_RIGHT_PADDING 2
-#define REDPACKET_TAKEN_MESSAGE_TOP_BOTTOM_PADDING 10
 
 @interface RedpacketTakenMessageTipCell ()
-
-@property(nonatomic, weak) UIView *baseContentView;
-
-@property(nonatomic, strong) UIView *bgView;
-@property(nonatomic, strong) UILabel *tipMessageLabel;
-@property(nonatomic, strong) UIImageView *iconView;
-
+@property(strong, nonatomic) UIView *bgView;
 @end
 
 @implementation RedpacketTakenMessageTipCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
     if (self) {
-        self.baseContentView = self.contentView;
-        
         [self initialize];
     }
-    
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initialize];
+    }
+    return self;
+}
 
 - (void)initialize {
     
@@ -45,37 +40,35 @@
     
     self.bgView = [[UIView alloc] initWithFrame:self.baseContentView.bounds];
     self.bgView.userInteractionEnabled = NO;
-    self.bgView.backgroundColor = [self hexColor:0xe3e3e3];
-    
-    self.bgView.autoresizingMask = UIViewAutoresizingNone;
+    self.bgView.backgroundColor = [UIColor colorWithHexString:@"dddddd" alpha:1.0];
     self.bgView.layer.cornerRadius = 4.0f;
     [self.baseContentView addSubview:self.bgView];
     
-    self.tipMessageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.tipMessageLabel = [[RCTipLabel alloc] initWithFrame:CGRectZero];
     self.tipMessageLabel.font = [UIFont systemFontOfSize:12];
-    self.tipMessageLabel.textColor = [UIColor grayColor];
+    self.tipMessageLabel.textColor = [UIColor colorWithHexString:@"9e9e9e" alpha:1.0];
     self.tipMessageLabel.userInteractionEnabled = NO;
     self.tipMessageLabel.numberOfLines = 1;
     [self.bgView addSubview:self.tipMessageLabel];
     
     self.iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 12, 15)];
-    self.iconView.image = [UIImage imageNamed:REDPACKET_BUNDLE(@"redpacket_smallIcon")];
+    self.iconView.image = [RCKitUtility imageNamed:@"redpacket_smallIcon" ofBundle:@"RedpacketCellResource.bundle"];
     self.iconView.userInteractionEnabled = NO;
     [self.bgView addSubview:self.iconView];
+    
+    self.isDisplayReadStatus = NO;
+    
 }
 
-- (void)configWithText:(NSString *)text
-{    
-    self.bgView.hidden = NO;
-    self.tipMessageLabel.text = text;
+- (void)setDataModel:(RCMessageModel *)model {
+    [super setDataModel:model];
     
     [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     [super layoutSubviews];
-    
     [self.tipMessageLabel sizeToFit];
     
     CGRect frame = self.tipMessageLabel.frame;
@@ -99,19 +92,9 @@
     self.bgView.frame = bgFrame;
 }
 
-+ (CGFloat)heightForRedpacketMessageTipCell
++ (CGSize)sizeForModel:(RCMessageModel *)model
 {
-    return 40.0f;
+    return CGSizeMake(320, 22);
 }
-
-- (UIColor *)hexColor:(uint)color
-{
-    float r = (color&0xFF0000) >> 16;
-    float g = (color&0xFF00) >> 8;
-    float b = (color&0xFF);
-    
-    return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f];
-}
-
 
 @end

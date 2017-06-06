@@ -8,6 +8,7 @@
 
 #import <RongIMLib/RongIMLib.h>
 
+#import "RPRedpacketModel.h"
 #import "AnalysisRedpacketModel.h"
 
 #define YZHRedpacketMessageTypeIdentifier @"YZH:RedPacketMsg"
@@ -15,10 +16,11 @@
 // 云帐户红包消息类
 @interface RedpacketMessage : RCMessageContent
 
-@property (nonatomic, readonly)  AnalysisRedpacketModel * __nonnull redpacket;
+@property (nonatomic, readonly)  RPRedpacketModel * __nonnull redpacket;
+@property (nonatomic, readonly)  AnalysisRedpacketModel  * __nonnull analyModel;
 // 红包消息未包含对方的用户昵称，所以需要消息体自己处理
 @property (nonnull, readwrite, strong) RCUserInfo *redpacketUserInfo;
 
-+ (instancetype _Nonnull)messageWithRedpacket:(AnalysisRedpacketModel * _Nonnull) redpacket;
++ (instancetype _Nonnull)messageWithRedpacket:(RPRedpacketModel * _Nonnull) redpacket;
 
 @end

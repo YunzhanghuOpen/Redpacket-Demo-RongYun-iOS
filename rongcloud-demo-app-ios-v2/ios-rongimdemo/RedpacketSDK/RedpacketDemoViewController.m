@@ -75,7 +75,7 @@
 
 #pragma mark - 融云消息与红包插件消息转换与处理
 // 发送融云红包消息
-- (void)sendRedpacketMessage:(AnalysisRedpacketModel *)redpacket
+- (void)sendRedpacketMessage:(RPRedpacketModel *)redpacket
 {
     RedpacketMessage *message = [RedpacketMessage messageWithRedpacket:redpacket];
     NSString *push = [NSString stringWithFormat:@"%@发了一个红包", redpacket.sender.userName];
@@ -83,7 +83,7 @@
 }
 
 // 红包被抢消息处理
-- (void)onRedpacketTakenMessage:(AnalysisRedpacketModel *)redpacket
+- (void)onRedpacketTakenMessage:(RPRedpacketModel *)redpacket
 {
     RedpacketTakenMessage *message = [RedpacketTakenMessage messageWithRedpacket:redpacket];
     // 抢自己的红包不发消息，只自己显示抢红包消息
@@ -121,9 +121,9 @@
     RCMessageContent *messageContent = model.content;
     if ([messageContent isKindOfClass:[RedpacketMessage class]]) {
         RedpacketMessage *redpacketMessage = (RedpacketMessage *)messageContent;
-        AnalysisRedpacketModel *redpacket = redpacketMessage.redpacket;
+        AnalysisRedpacketModel *redpacket = redpacketMessage.analyModel;
         if(MessageCellTypeRedpaket == redpacket.type) {
-            return CGSizeMake(collectionView.frame.size.width, [RedpacketMessageCell getBubbleBackgroundViewSize:(RedpacketMessage *)messageContent].height + REDPACKET_MESSAGE_TOP_BOTTOM_PADDING);
+            return CGSizeMake(collectionView.frame.size.width, [RedpacketMessageCell getBubbleBackgroundViewSize:(RedpacketMessage *)messageContent].height + 100);
         }
         else if(MessageCellTypeRedpaketTaken == redpacket.type){
             return CGSizeMake(collectionView.frame.size.width,
@@ -140,14 +140,14 @@
     RCMessageContent *messageContent = message.content;
     if ([messageContent isKindOfClass:[RedpacketMessage class]]) {
         RedpacketMessage *redpacketMessage = (RedpacketMessage *)messageContent;
-        AnalysisRedpacketModel *redpacket = redpacketMessage.redpacket;
+        AnalysisRedpacketModel *redpacket = redpacketMessage.analyModel;
         if(MessageCellTypeRedpaketTaken == redpacket.type){
                 // 发红包的人可以显示所有被抢红包的消息
                 // 抢红包的人显示自己的消息
             // 过滤掉空消息显示
             if (![messageContent isMemberOfClass:[RedpacketTakenMessage class]]
-                && ![redpacket.currentUser.userId isEqualToString:redpacket.redpacketSender.userId]
-                && ![redpacket.currentUser.userId isEqualToString:redpacket.redpacketReceiver.userId]) {
+                && ![[RCIM sharedRCIM].currentUserInfo.userId isEqualToString:redpacket.sender.userID]
+                && ![[RCIM sharedRCIM].currentUserInfo.userId isEqualToString:redpacket.receiver.userID]) {
                 return nil;
             }
         }
@@ -168,7 +168,7 @@
     RCMessageContent *messageContent = model.content;
     if ([messageContent isKindOfClass:[RedpacketMessage class]]) {
         RedpacketMessage *redpacketMessage = (RedpacketMessage *)messageContent;
-        AnalysisRedpacketModel *redpacket = redpacketMessage.redpacket;
+        AnalysisRedpacketModel *redpacket = redpacketMessage.analyModel;
         if(MessageCellTypeRedpaket == redpacket.type) {
             RedpacketMessageCell *cell = [collectionView
                                           dequeueReusableCellWithReuseIdentifier:YZHRedpacketMessageTypeIdentifier
@@ -208,7 +208,7 @@
 - (void)didTapMessageCell:(RCMessageModel *)model
 {
     if ([model.content isKindOfClass:[RedpacketMessage class]]) {
-        if(MessageCellTypeRedpaket == ((RedpacketMessage *)model.content).redpacket.type) {
+        if(MessageCellTypeRedpaket == ((RedpacketMessage *)model.content).analyModel.type) {
             NSLog(@"%@",((RedpacketMessage *)model.content).redpacket.sender.userID);
             if ([self.chatSessionInputBarControl.inputTextView isFirstResponder]) {
                 [self.chatSessionInputBarControl.inputTextView resignFirstResponder];
