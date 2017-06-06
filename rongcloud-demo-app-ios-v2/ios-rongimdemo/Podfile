@@ -5,10 +5,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'RCloudMessage' do
 
-pod 'RedpacketAliAuthLib'
-end
+pod 'RedPacketAliAuthUI', :path => 'RedpacketSDK/cocoapods-redpacket-ui-2.0.0'
 
-target 'RCloudMessage-JDpay' do
-    
-    pod 'RedpacketLib'
 end

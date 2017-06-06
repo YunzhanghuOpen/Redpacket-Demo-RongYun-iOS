@@ -1,0 +1,1 @@
+../../../RedpacketAliAuthAPILib/RedpacketAliAuthAPILib/RPRedpacketSetting.h

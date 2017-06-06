@@ -7,295 +7,1441 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C7024741A724C9D98EFEC6549BE83E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		486463D92B0E26E398AEA5529F7804DE /* Pods-RCloudMessage-JDpay-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7907F71889EACE6938BA84F08718618E /* Pods-RCloudMessage-JDpay-dummy.m */; };
-		4AEC2907A73A3F190508C179EF5F1638 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A8B9C2455C4FDA970BDE1B7E5D633417 /* Pods-RCloudMessage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2630B600A78430EAB9C07ABD1113EE60 /* Pods-RCloudMessage-dummy.m */; };
+		002D64AA47F02F23693FCDCE2A7A4E72 /* RPRedpacketPreView.h in Headers */ = {isa = PBXBuildFile; fileRef = B76F1DBD67542FD59672D32E09148B91 /* RPRedpacketPreView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02DF3EF5E9001C51AD03184F8BCEDDCC /* RedpacketTypeBaseHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = 83EF1799ECFCA5774F2781D264E7D688 /* RedpacketTypeBaseHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		050A9DBCFC7B7D6F39C491F1A6ABCCA2 /* YZHRefreshComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = DDE85D1D6B4021D1F104DA2B9B92EF6B /* YZHRefreshComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0624FA09CC4EBC462B2FB680FA479F11 /* RPConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EF1320FF288EB6826BCABF6E603BC246 /* RPConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		066AA86A6C78917B7A20EB11D401FB68 /* YZHHanyuPinyinOutputFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = D674A478744A6D33DB9FDE993E140EFA /* YZHHanyuPinyinOutputFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06AF61DAEDE4CBF8673F35CECC2A93AF /* RPAlipayAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = C72D7A271158A61604CC9F192D835420 /* RPAlipayAuth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		081071F0D80EA3D740BE95AF77F9B4A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4FCA07BD38831E1DFADC5A552E8237 /* Foundation.framework */; };
+		0856003EFA38EC70FD6B45F6C0D9296E /* Pods-RCloudMessage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 424A953B010CA9B71BE6CAEC394ECD32 /* Pods-RCloudMessage-dummy.m */; };
+		0A9BE342A5A005AE348B7EBDBE38B532 /* RPSendAmountRedpacketPreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8910F867914E2FB44BF8AEC7E05568DC /* RPSendAmountRedpacketPreView.m */; };
+		0BDC847F1791D0673468454F72048945 /* UIScrollView+YZHRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7BC155CAC197F9D5E0AFFD57AC040 /* UIScrollView+YZHRefresh.m */; };
+		0CE2EFB801D1A9AF25A788FF992A46D1 /* RPRedpackeNavgationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E4EBA421341B8EC9AF28F2161E85F25 /* RPRedpackeNavgationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CF49FC048EF14397A808420C966C908 /* RPBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B85D9B11CA200D2CA804A5CB4C9846C2 /* RPBaseViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D8D023E7EF2E198C9CDF9ED49392803 /* RedpacketTypeBaseHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD2C060B55455CB3D1307825C4267D8 /* RedpacketTypeBaseHandle.m */; };
+		0DAD0B7155345AE6A32F6C04F296E15F /* YZHMBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2F29DB61B25277EFC9E34E5D763AC3 /* YZHMBProgressHUD.m */; };
+		0DEB0B93DD64E26669761C7D5BBC5F0E /* RPConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF48BE88C22CBC817743FFC9C00C390 /* RPConstraint.m */; };
+		0E29769C5DA0D666BE3487C8C676AE9C /* YZHChineseInclude.h in Headers */ = {isa = PBXBuildFile; fileRef = 92092E8613E6610972D48E9A3AF76E40 /* YZHChineseInclude.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10D05B735F50D9A488D48B791269D682 /* YZHZYPinYinSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 623C7A868AE69DFE565B3BF9052401F8 /* YZHZYPinYinSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10DEC4FFA757F269BA6812E86C750872 /* YZHSDImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 045B165CADA42B41D6BBE9E62D0F4F3C /* YZHSDImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1194509DC1569D04CDF9F26432F75BD8 /* RedpacketDetailCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C0AA7EB6FEC1EF66BF0898BBDD3F12E /* RedpacketDetailCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12669B4DD9801E0FFF666474BFDC6E52 /* YZHRefreshAutoFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 59966F98F3DFFACBB6359C2463AC211F /* YZHRefreshAutoFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		126DBF9E08482368CEDEB5A9C91EB4D2 /* RPReceiotsInAlipayHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = A3B9136B4B89FE274EDDCCB289002F48 /* RPReceiotsInAlipayHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12FF61DC3230CE2DF94F1339A632E67C /* YZHRefreshNormalHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A370D711D15DAF94B8D7DCFBDBC9A50 /* YZHRefreshNormalHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		139C599E94A5FC9079C59F4AE5156CB0 /* RPBaseCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C647080401B8212954389F1A7E59EC7 /* RPBaseCellItem.m */; };
+		14D6458D6CC85E092530D24132301F0B /* YZHRefreshAutoGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = F3EC5E9E92DB45C3DBFE02A425E8F98D /* YZHRefreshAutoGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15F49FC28245ECB489DE82138B7A813B /* RPReceiotsInAlipayHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 062D6890F16171C08DCD0FA4E2BC1C55 /* RPReceiotsInAlipayHeaderView.m */; };
+		163535CA109ECFA8B63AD814DBD0CBE7 /* RedpacketColorStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 951308FA858B77880E6219A985DA928B /* RedpacketColorStore.m */; };
+		1878A924D3808B572315E58E9758DB08 /* UIScrollView+YZHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5D099040118999DB44FEED6A8495BD /* UIScrollView+YZHExtension.m */; };
+		1B269D54115434A731268C321FAC79A2 /* YZHRefreshAutoStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8815035CE983E983C5A4FDA556EBE181 /* YZHRefreshAutoStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B3F52F81E43C1F8DD71078883495BC5 /* YZHSDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AC8C60CE25E524D462B49FB623B4 /* YZHSDWebImageDecoder.m */; };
+		1B70E452FBBE1A2C36D0B542FF336163 /* RPCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A34300B0CD8855100484ACF48A9C65D /* RPCompositeConstraint.m */; };
+		1E58F9A98BC0023FBB61F116C7D4FDF7 /* YZHChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F2AC9EEDFA48A5434514EB1245432 /* YZHChineseString.m */; };
+		2242547B6F282F5448AB9A714E4E6AD3 /* RPSendRedPacketDescribeTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3386D8B4EA17ABC5911E1197B13359F5 /* RPSendRedPacketDescribeTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22BF2074242901C416F1462FFB8581CB /* RPSendRedPacketCertainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A13E6033D4DFB3FE1078DC9271DED24 /* RPSendRedPacketCertainTableViewCell.m */; };
+		26BD73F9C38D096121E1FDDF9C56F389 /* RPLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 927CB8ADF15AE7F5B789561631262C1C /* RPLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2719C123D7F8189A17A1105BF9BEC569 /* RedpacketTypeRandHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 206AC50956096D5449364FD4567F161A /* RedpacketTypeRandHandle.m */; };
+		2783B731D52A1483DDFD84B83605D334 /* YZHPinyinHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BE742BF0458D8799CF1F2DF32D96632 /* YZHPinyinHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27E15A5810C19C106B72436C56A814FB /* RPSendRedPacketCertainTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 121D018B0791770D573BAA0AD07A2980 /* RPSendRedPacketCertainTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29D808AF6E41A708E81F37B90D06DC55 /* RPAdvertisementDetailViewContrroller.h in Headers */ = {isa = PBXBuildFile; fileRef = 558534E3E54F0B8EDE708AF43CA18F4A /* RPAdvertisementDetailViewContrroller.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A568466E34887A497A0DAD1F3853908 /* PlaceHolderTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 69C63E458635443B74B1670BEFFE90D1 /* PlaceHolderTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2AD4ED85D68347D7E8ED0B9AD999AEDA /* RPSendRedPacketItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7B785575EAD5B28FD9E88922046C7C /* RPSendRedPacketItem.m */; };
+		2AFD848D5E66C56A6753D71F0E379813 /* RedpacketTypeAmountHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E452F48F56EF3C8E19B0777F8077FB /* RedpacketTypeAmountHandle.m */; };
+		2C58D1E406861011AD3A9709A2E8BF1B /* YZHPinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E8695F843C9FA5ACA4B7DADB6037BD /* YZHPinYinForObjc.m */; };
+		2E36360C35EF0EA8DB6240A44173D698 /* RedpacketColorStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 71DB99765BC0637FCD190B5ED4515DA4 /* RedpacketColorStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2EDC1B8815863A9FC5E8AC6E143C2366 /* YZHSDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = A6476ABE6F88BADC9457F3BD7B9859CC /* YZHSDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2EF3008BC8E1612C27DCFF52BB74B601 /* RPSendRedPacketMemberTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D08E91BBFF5D8AF4BBAA90CE30F54B8 /* RPSendRedPacketMemberTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		307E09102598D30F2519E6AB88EFA659 /* RPViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD7B04FC881E4465F5700281C479BF2 /* RPViewConstraint.m */; };
+		3173C3AC889267EF614A89FA5386EC27 /* RPSendRedPacketMemberCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DB409C7350BE8F54D44FC444FFFC97 /* RPSendRedPacketMemberCellItem.m */; };
+		3395F4E005F4550773C3A44A8C65CC15 /* RPViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D16311FC3553C63C2F8F62BC4ECBC1 /* RPViewAttribute.m */; };
+		33A74300F7EED0DD30BB60A91D003A31 /* RPSendRedPacketAutoKeyboardHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = D8B5CE8F350B400972683837BFAC91B3 /* RPSendRedPacketAutoKeyboardHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		352CDCAA55B287DAAD20D80D13019BA4 /* RPBaseCellItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CF0882E7BE8EA9CD6D66AE52E078D6B /* RPBaseCellItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3747203B22B8604A6293B75CB4A4B47A /* YZHRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0E94ED4557BA26A18EBCC6D4974F2D /* YZHRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		386456B203381E4AD14DCDEB72380221 /* RedPacketAliAuthUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE61B910EAB0E28BB50CBBD48A8A003 /* RedPacketAliAuthUI-dummy.m */; };
+		390076077F1F72422E9137B2EBC77414 /* UIView+YZHAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 877904B0494B7E2D786F3CDB64F9857C /* UIView+YZHAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C6C69C5B0E05153F7574F49774AE55D /* YZHSDWebImageDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 114A751EE2C7A4EFB05B5EF7B6EE3E78 /* YZHSDWebImageDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CB926832D99480A7D1E28D87F3280DC /* YZHRefreshBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 98707E66F4AA97A3CF4D9D4F6AED959F /* YZHRefreshBackNormalFooter.m */; };
+		3DC9ED69B1A18589033BF35B9783CAC4 /* RPConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = A289B5B78724595485161B293C033E69 /* RPConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DF577D1598C591053277E74152D8A46 /* RPSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8A03CF6E2FFD57B5C9EB8B655524C1 /* RPSoundPlayer.m */; };
+		3E75860DC3F8D9C4EB090CF4E22ECE29 /* RPSendRedPacketChangeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D53BBA16908D88EDE72F3CDD29AD54 /* RPSendRedPacketChangeTableViewCell.m */; };
+		3EF00BD80C8BC7BAB0C47D7D0FF9DB47 /* RPAliPayEmpower.m in Sources */ = {isa = PBXBuildFile; fileRef = FE52CADC8C1F7D04648B361CE2FEFD13 /* RPAliPayEmpower.m */; };
+		40A4A375A59933689F243CC0232A96FA /* View+RPAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0290522D5984607D99DCA88E8FD57E46 /* View+RPAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4166435DCE5032C277A749A58D40A6BE /* NSArray+RPAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD42A542C1A9083811C0875E6C84907 /* NSArray+RPAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		425DBA3B49AC53CE8CEF730CCE259ACC /* RPSendRedPacketAutoKeyboardHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 469E2760F9267BD184496EC1DD904398 /* RPSendRedPacketAutoKeyboardHandle.m */; };
+		4537DE2AD53DDCA92CFB1EC6BEF89A5E /* RedpacketTypeAdvertisementHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8627CBD2961CD6DB125983F99D4D2047 /* RedpacketTypeAdvertisementHandle.m */; };
+		45487BDDDC5981613712D989FBCE28ED /* RedPacketDetailViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CACF0987BCAAC25158C55866FAC1FAA /* RedPacketDetailViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45EAB22B41A5232CEC254BC03366CA39 /* UIImage+YZHGIF.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E3224E033776AD8234101ECDD87865 /* UIImage+YZHGIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4614A98F0EF3D1487578E568B863D41B /* RPSendAmountPacketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFFE24E90BE987ACAD757208569EF8F /* RPSendAmountPacketViewController.m */; };
+		48B792B5E59DCAB4EC567C9056B11EFE /* RedpacketTypeAvgHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF44FA3AC35F34DE2404F32F88FFEA /* RedpacketTypeAvgHandle.m */; };
+		48EBED0F5520E967301E4DD78FBE3CE8 /* SearchMemberViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 05EC13E0CB5A46F12C39EA2109606889 /* SearchMemberViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49003256541CE0A6F0F4353E8BCB4445 /* RPRedpacketViews.h in Headers */ = {isa = PBXBuildFile; fileRef = D16D23379192E79DD42A27736F5EF10C /* RPRedpacketViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49985A41DFDBC285C1ADB500B9305C0D /* YZHPinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F92372615C374C82E0CE0381A17922 /* YZHPinyinFormatter.m */; };
+		4D78F6F4360965C7EB757B10B5AA9350 /* RPMemberRedpacketPreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 716FC477667EA2E17A8FAD84EEFFFA86 /* RPMemberRedpacketPreView.m */; };
+		519180494537C28D2EFB9F7F6FE86C6F /* RPReceiotsInAlipayEmptyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A432AC80E2220FA8CE87089703199 /* RPReceiotsInAlipayEmptyTableViewCell.m */; };
+		53090226C955D5ED31F09C2FF97F3B80 /* RPSendRedPacketChangeCellItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 53CE947FDAA95C2DB728827D9566157E /* RPSendRedPacketChangeCellItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5329B76383B38AA7C54B5DDEA23967F7 /* RPSendRedPacketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 417F24C4650C32D33A6D66291A44B7C1 /* RPSendRedPacketViewController.m */; };
+		54B19FA40103A2DFDE59435444D783D1 /* YZHSDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 681E42B3A3AC9F3863B15D05432FE032 /* YZHSDWebImageDownloader.m */; };
+		5514CBE414CBD68E8A2F51F3FBA86DF6 /* YZHPinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D1F97C7BFD1A1560DFBF43A3521C58 /* YZHPinyinHelper.m */; };
+		553F04B810BA425DC58A538BAC0E5231 /* YZHRefreshBackFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CFC962A92AF70EF19EE979BCEA5B7489 /* YZHRefreshBackFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58FE8D8EB6F2A837F7D928B0A226BFB7 /* UIView+YZHPrompting.h in Headers */ = {isa = PBXBuildFile; fileRef = 26241CE5DD213EBBB7D67A8A36975CB5 /* UIView+YZHPrompting.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5992314E782B21648D608867E77CF4A3 /* UIAlertView+YZHAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 999DC7F5FC8AA2D878B51990B3711014 /* UIAlertView+YZHAlert.m */; };
+		5ABA19E906FC26CACB0C185ED406D459 /* RPBaseTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B99BCA3FD76A4FCA5D1EC5E10F215FD /* RPBaseTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B0ABB5DD15182DBF7F1192A5D043BDE /* RedpacketLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 44518416789ECB9137DF6929D82AE565 /* RedpacketLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CE38589DB0B508DA279BCAE9A798BA3 /* YZHSDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F260A8764510D23575EAB034A1DAE912 /* YZHSDImageCache.m */; };
+		5D026534D9DC352B189DD16CD1B85879 /* RPNormalRedpacketPreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9267E40EC35478C6592D491B0513A409 /* RPNormalRedpacketPreView.m */; };
+		5DBEF1262E2291BF6FA971C6FEEEDBBC /* RPBaseTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 227DDD57946458E281677267F2729EC9 /* RPBaseTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F6D0BEA6FF068E140B7081A407FA588 /* RPSendAmountPacketViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = CD659183FA7A7C5C56F55B015FDA6110 /* RPSendAmountPacketViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F9273D2354C1D05BFE8DDC43319801D /* UIButton+RPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 019A315258F751CF324FD74B69303715 /* UIButton+RPAction.m */; };
+		5FD0A7A812F8A3E51445CF7DB6CFEB0A /* SearchMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4244911880F3EB2736B0BF5389AB9BB5 /* SearchMemberViewController.m */; };
+		60AF48EA5F3DB4B54C286D9A7A28FD03 /* RPSendRedPacketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB933896726CFBAC52AA68D91210E46 /* RPSendRedPacketTableViewCell.m */; };
+		60F141D00BEC2C54BFCF904A70B1E8E6 /* RPViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 83A88B66F9003A2E65844FAE8B39CE04 /* RPViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		627DD46D1154F5A99AD55FBAE8F99D27 /* YZHHanyuPinyinOutputFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1E12DD4289268140C484AB7A7F3B1B /* YZHHanyuPinyinOutputFormat.m */; };
+		62C14FF2ACF737BF0924B40E05E14B44 /* RedpacketErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A99013B9D0BD476A0D293AAA0CBC59BE /* RedpacketErrorView.m */; };
+		62D2A50C67FE6AD365DB1727E6A5A6E1 /* YZHRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 49419D6192145027FC42F07F60FDD559 /* YZHRefreshAutoNormalFooter.m */; };
+		62DE13C28CAFD16E065E265DCAA327AF /* UIViewController+RP_Private.m in Sources */ = {isa = PBXBuildFile; fileRef = B830CA72A264EFC0F74B9C2E43365325 /* UIViewController+RP_Private.m */; };
+		6549AD0B5796D6122CE58E592770CFC3 /* NSArray+RPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BA01B39CBB18F3D53B4F8A33BB86EE /* NSArray+RPAdditions.m */; };
+		65AAEFF626CDB6E10C1D5F3AD28F0310 /* RPSendRedPacketDescribeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D154826B1E1EE007695EAA0A0565B28C /* RPSendRedPacketDescribeTableViewCell.m */; };
+		673E4E9FDC4A97E1CB189D2442D672F7 /* UIImage+YZHGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 7128ECD9C6AD92DD21797A02C2A9A8D3 /* UIImage+YZHGIF.m */; };
+		690C33ED326206E3D6B696BBDCE9A44D /* UIView+YZHAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86859AE29E3C80A34A9B75007B556FA0 /* UIView+YZHAnimation.m */; };
+		6AA5A9DBFF5CCB8A4F713470778E3A1A /* RedpacketTypeAvgHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = 808500E542F44C956534EEA7F3EC4569 /* RedpacketTypeAvgHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B46855742378EF430514CC53F7AC27B /* RPLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D3E53E54687A9E2E86B931B14B5E4DC3 /* RPLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C2C49978C6E64CB2CF1CD1084BAA6BD /* YZHSDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 78431E22133358CE96623CDAA16BB109 /* YZHSDWebImagePrefetcher.m */; };
+		6D63962453F67D49485B7AD9D56458F9 /* RPBaseTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3692625A1597CA32EC80045CA69D9F96 /* RPBaseTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DC74D5C5E9879D0B9033FEC4E618787 /* YZHRefreshBackGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3039C1E5FE6321E7CC09931CB65B9B /* YZHRefreshBackGifFooter.m */; };
+		6DE99DAE398E414C652B366D94C5DAEB /* RPSendRedPacketViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A70C2F9899BAA5662C1017DE6D9E231 /* RPSendRedPacketViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6EF0FCBF49C8C0CE356FE55E514A94C8 /* YZHPinYinForObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = ED6066AFF0CF87D7DCBD7A223D3586A6 /* YZHPinYinForObjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		706AC6120438D0239E12D9D7A46D3C13 /* UIAlertView+YZHAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E4CE0EA5AEA06F73873323829EB1F54 /* UIAlertView+YZHAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72AD9653047EB761EC2245CA615F2284 /* RPSendRedPacketChangeTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 646466334D2959767DF1EB3723F433E8 /* RPSendRedPacketChangeTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		768F85A6DFAD49989A688738956D32C1 /* RPSendRedPacketCountCellItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B32A8DA580DA51A89C237686EA39ED2 /* RPSendRedPacketCountCellItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79E676E49ED3FDB781BF68BBFA297D54 /* YZHSDWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 23774FD18766B02DFDF15A5D5C60B031 /* YZHSDWebImageManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A1F73F9BCE04BEDD4F0D6878B5A6E20 /* RPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7AD0EF063D857DFA847F42F9CE770 /* RPBaseViewController.m */; };
+		7A952F466257C859AD267E3F3E0184D5 /* YZHSDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = C734DD92BF63ACA2A4463BFD9FE34604 /* YZHSDWebImagePrefetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AB8848AEABE6C88EB7A9345550830A8 /* RPReceiotsInAlipayEmptyTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CD44FB36111FFC30D65926EABAA861D /* RPReceiotsInAlipayEmptyTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C0EEB859B5A65DA93292E1F4E7A1FEB /* RPRedpacketSendControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D347FFCFF920714C91103982BF9C32AF /* RPRedpacketSendControl.m */; };
+		7C167DBD20842CFFC2F908AFED753EF8 /* YZHRefreshBackNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 855AA9EEE66FC3CF6F3416048D2DBB01 /* YZHRefreshBackNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DF343903C4FC624AAE00F7BB1FA5455 /* YZHRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E323E1FD4C55A4A42A38ACFCEA2CAB /* YZHRefreshHeader.m */; };
+		7E2F076FD8A1B772C0AB30B87B7758DE /* YZHSDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7979C57BE0BDE30490F5BBDBBAC292F0 /* YZHSDWebImageManager.m */; };
+		7FBCCA0E4DCE7891AD37FFDBAF0D0C27 /* UIView+YZHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1817F7C9EF9A5E4687D9A2862BFBB1 /* UIView+YZHExtension.m */; };
+		800C0931FCF344001327C15BC8529F4B /* YZHRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 7667CC0D01B34CF574BCF0CA44C43AC1 /* YZHRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		815EC5CEFB94C60EC09551BAF389654A /* YZHRefreshAutoNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = EC1E3CBC3854499C6CA02A195829DF06 /* YZHRefreshAutoNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		826AFAC0786C26AFBD15B28013F5DAF5 /* YZHRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C219C953BD1DDF860E21DECCD03ACA /* YZHRefreshStateHeader.m */; };
+		82A8F5F8702C6B5BC96246542F53B887 /* YZHRefreshConst.h in Headers */ = {isa = PBXBuildFile; fileRef = FE05E97A14DD22CB9093DBDDE5C21742 /* YZHRefreshConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8383A3A0C224D21E42BA11CD63AAC0AD /* UIView+YZHWebCacheOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 38E8663309F7C0257AA08C03FB28BF28 /* UIView+YZHWebCacheOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86783A3F3E0D1AF00A70791D6A47E3B1 /* RPSendRedPacketDescribeCellItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BED3B9EA30475BBCD5ED4B3F8DC8787 /* RPSendRedPacketDescribeCellItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87ADACBA34C7DAAA31ADF1CE7002C19D /* YZHChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FFA9DC901AD151E320FD07A18CD259 /* YZHChineseToPinyinResource.m */; };
+		88F4BBC6BE95B17F28BD818DE2D968C5 /* YZHHCHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F86FA96DDAE6F7C024FD0A82CF6B370 /* YZHHCHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89830F302FE3372F05477A367AFD6838 /* RPRedpacketPreView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4374F85F69452BFE35208A05AF450F /* RPRedpacketPreView.m */; };
+		8B6F98BCF07F38F973266720D6E7751F /* RedpacketTypeRandpiHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = 56D4E63855DF2B18919C3D79751812FA /* RedpacketTypeRandpiHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CF8D140539C18243A3D5EBA6F659BD2 /* RPAlipayAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E521F4E620D3875E7452FEDC201288A /* RPAlipayAuth.m */; };
+		8D18E88A54489F240052742B288EDD06 /* RPReceiveAmountRedpacketPreView.h in Headers */ = {isa = PBXBuildFile; fileRef = CD671B7DCC2728C754E2ECEF6C431F1D /* RPReceiveAmountRedpacketPreView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8DA049DD18B301038D2E6C6F23209619 /* RPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2AB44EB0D2F6707969F971ECEC04F46 /* RPBaseTableViewController.m */; };
+		8EC578B0B7A55D70359EE0D59233050A /* RPCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BB260DA77B64963A4E58BB25FA4060 /* RPCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F734DDA8B931D0077DEB33B738D7E50 /* RPSendRedPacketBaseTableViewCellProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A29D87B1154792597D6F9E04C9A60E0 /* RPSendRedPacketBaseTableViewCellProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		901251C84DD9E322B183DECFB48D145B /* RPAdvertisementDetailView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ED1882256805F88D2CB96E00CCCD4FC /* RPAdvertisementDetailView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9090EBD1C75D7ED33A8247E1DEB24831 /* UIScrollView+YZHExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A036E0787FE25309DDA73D2785574CB /* UIScrollView+YZHExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		925586B4EBB7DE9E37F310EBD3106A64 /* RedpacketTypeRandpiHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1E5441564CC58132269731DE285573 /* RedpacketTypeRandpiHandle.m */; };
+		930A4B17170758153D3CC0BCC812A991 /* RPRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEF5CCE0FA0666D91BE227B327F2F75 /* RPRefreshTableViewController.m */; };
+		933BDCD1EA0BC9DC3CF2B684A25526E0 /* UIImage+YZHMultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4873C2156831F75BF4C9664BE0E25BEA /* UIImage+YZHMultiFormat.m */; };
+		93793CA461C17A02293CCCAC7A25B490 /* RPRefreshTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B73D1BBCAEC416EE462DD4977BE87508 /* RPRefreshTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9568E4C379120B654DE08B9770977C2B /* RedpacketViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB4B9D400AFBB49E20609C8349C52A7 /* RedpacketViewControl.m */; };
+		974169D0D4F25A5198EDAE44307AD344 /* YZHChineseToPinyinResource.h in Headers */ = {isa = PBXBuildFile; fileRef = E9CAEC8307ACCD48FF2B853806CF9B91 /* YZHChineseToPinyinResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		984DEE4795F0EA1FAA9D4FD50267DA35 /* RPSendRedPacketMemberCellItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 9514E08AEB3BF0D047D9D40A248FDE2D /* RPSendRedPacketMemberCellItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B5F4642F58F1322C7CD81776B067F05 /* RedpacketTypeSingleHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = B01DA9CF1A0DAF0EB18058A6329DB45B /* RedpacketTypeSingleHandle.m */; };
+		9CEAF4EA0BBADD98216253D2E945EFDD /* NSBundle+RedpacketBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 28FE344FD3318C8F0332D741F52CE01A /* NSBundle+RedpacketBundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CFE0ABDBAE39A91BC517F432197EA0E /* RPUntility.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AE26B7884FE47CB9052A441E88663C /* RPUntility.m */; };
+		9D8D620530CB8B1D1D3BA8A627FE4917 /* RPSendRedPacketChangeCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBA298A64947D1EF9F5B68FEF3E22 /* RPSendRedPacketChangeCellItem.m */; };
+		9EE70964F97E07183111176FA6B398B3 /* SeachMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A886E2104CCE35E25BC971DEB3BD2579 /* SeachMemberCell.m */; };
+		9F8D77ECEF875B7A8C29449B6CE12964 /* RPConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8BB49DBD1DA5329D6920C664834FB0 /* RPConstraintMaker.m */; };
+		A07BA49913D3101EA40CD13EFDC9BA80 /* UIButton+RPAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ECC9DED7EE5B731B05FF75DD9F828F9 /* UIButton+RPAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A143D3625A88655C2466437AAF9FDC08 /* UIImage+YZHMultiFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = B2AA51120A5368ADAC2EECE067044522 /* UIImage+YZHMultiFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A15C2B1D0BAFDB4ABC094243506DAE2F /* YZHRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFFA79E0C481B632EA7E20182F0B086 /* YZHRefreshBackFooter.m */; };
+		A2204B124F84D35EF265A3FE976EF1AC /* YZHRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D9415521F06FBED02CDDAB7F1ABD781A /* YZHRefreshAutoFooter.m */; };
+		A292F42031ED9D201C1062837E690855 /* RPMemberRedpacketPreView.h in Headers */ = {isa = PBXBuildFile; fileRef = 28C0F6EA25EBB924B5104129B769B2BD /* RPMemberRedpacketPreView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A427E7AFB0B792A95B203E9CC07956D2 /* YZHChineseInclude.m in Sources */ = {isa = PBXBuildFile; fileRef = 090417B22E050A649D56A593F831B390 /* YZHChineseInclude.m */; };
+		A4CCD818DDBDB7F130250908C258DE89 /* RPSendRedPacketTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AB4E81A14BCB2C9C421797F452DA9A39 /* RPSendRedPacketTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5B3D5E7A4A3CA15E1C835D1C6A46781 /* YZHSDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 889D55A278829119095F17A58DAE4E8B /* YZHSDWebImageDownloaderOperation.m */; };
+		A61437EFB0F5D93FFDDE3DF5D282B84C /* PlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A189FB862D88601DEB7E746EDAD3EB11 /* PlaceHolderTextView.m */; };
+		A66C195E3C02F1BA92C80C46B11F02DB /* YZHSDWebImageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BF34DDBD8BBC372CD1F291EB7A80C83C /* YZHSDWebImageOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A71AFEA3D089D1911036218D325A0A2E /* RedpacketTypeAdvertisementHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DFA9E5DE2C2B32B500CA5D660C54267 /* RedpacketTypeAdvertisementHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8E958C77166BF69032EF334183318BC /* RPLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D84FE57BFFFB24EA6D1C3877C7B23F /* RPLayoutConstraint.m */; };
+		A9EDA21AEBFF55AC357185EA7F64BE9E /* UIImageView+YZHWebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 56FFA4A9511D9799528DC38F2C50FE3C /* UIImageView+YZHWebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA903850BE5C202F189478489DC87570 /* UIView+YZHWebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75B22146CE038355A36A7E64D70DBC /* UIView+YZHWebCacheOperation.m */; };
+		AAA41515FCC3D27675740E9E55055E3D /* RPAdvertisementDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84770F7460682A28B90E53AB8F13A27F /* RPAdvertisementDetailView.m */; };
+		AAF3619163A79CBFE815D604C682CCE7 /* NSString+YZHPinYin4Cocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F4E352C53BB2F6758D5D052B15AF2A5 /* NSString+YZHPinYin4Cocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC7F4E071236B4C07FFD7D3E4141BD15 /* RPRedpacketTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 742047FD8593F958E0C3761AE915ECFE /* RPRedpacketTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACB92C53D5852A0DCB73923E3518F51D /* YZHMBProgressHUD+YZHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = C441EC2DC5B0D2BF2E87D6FAB8C136C4 /* YZHMBProgressHUD+YZHAdd.m */; };
+		B00F613EFAACF7262AF1BC1FAE3A5230 /* RPRedpacketDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 592715F662B28B9DA56E976616249824 /* RPRedpacketDetailHeaderView.m */; };
+		B22268C95FDAE7E6FCD2FA91214D43E9 /* YZTransparent.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCBD932DC09A66DE60E92B2ACCF7A28 /* YZTransparent.m */; };
+		B3359C4668C5BDBDED55EA5B7E78E13C /* YZHMBProgressHUD+YZHAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F5C672A0F851FF01C8DBFD00BBBEE14 /* YZHMBProgressHUD+YZHAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3A3DF6CAD1188F415DA909B533851B3 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EE69AA2FFF7B0B97D78F7049E6080C14 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4D0B216343D0C1C58215F6D8A013AD4 /* YZHPinyinFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1CF88959024CC14A591B0BC1C09DCB /* YZHPinyinFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B95D32C803F173B92BB8006FA073165D /* RedpacketErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 98ED3D87533CA8726C9FC84CC7CDE46B /* RedpacketErrorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9C0357687663318E232F4E212D021D0 /* YZHRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1F13BC71414B3C902A6959BCE7E560 /* YZHRefreshComponent.m */; };
+		BBCEDE3B6460BF87403D51B38F863739 /* RPSendRedPacketCountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC57D1EC2F1D79D23813A3FE048F3460 /* RPSendRedPacketCountTableViewCell.m */; };
+		BC030D41E023F06C573159EC01881244 /* View+RPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0991866F0450C366793400C96C75B79 /* View+RPAdditions.m */; };
+		BCAEE59D336FA735A7C7A4AB9BF9345B /* NSData+YZHImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FE0953F53E86A997DF02D3788C9C07 /* NSData+YZHImageContentType.m */; };
+		BEEC4D970867CD075DB67E00AA9013F9 /* RPSendRedPacketDescribeCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D2624F861715487978A2409864254DBA /* RPSendRedPacketDescribeCellItem.m */; };
+		BFA303716FE120343B7BD32CEF9C8E48 /* YZHRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF6D01044B912093B4D7F3356F70143 /* YZHRefreshFooter.m */; };
+		C0D2D85EBC501A5ED9F7F89FA8CE8927 /* YZHRefreshStateHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = AA5DBD9E123732A87C268D31C340B348 /* YZHRefreshStateHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1F01B0B145C69B0C28EFC4C13A69AE0 /* NSBundle+RedpacketBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F44C06F1246BB3F01BB99697786216 /* NSBundle+RedpacketBundle.m */; };
+		C25628EE182D2AF17D651E70B8A7B347 /* RPUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 87333E5AAB432B994A1F94357221F2F8 /* RPUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3CFE277D94EA11610D2A6DFF0D7A4E6 /* RPConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5796C6C4F1C8BC8DB5F67829C0032C42 /* RPConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C41C596BA34A8A9D0963DEEFB6FF30FF /* YZHSDWebImageDownloaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C47D3457544E604B426BD3CF3B140B4 /* YZHSDWebImageDownloaderOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C44E0A275D85E352C9BAE25A8C9BBE1F /* RPRedpackeNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6009C5BEFEE5554479CEEF2A7ED7684C /* RPRedpackeNavgationController.m */; };
+		C45345D36A4461525E9007B41992350F /* RedpacketTypeAmountHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AA27BEB79F69D5A86796AABA5091020 /* RedpacketTypeAmountHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C819DCB2DD70CD8112F18D8BE2F5E964 /* RedpacketTypeMemberHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 776093F49D8AED0E0F0E346BC9C311B3 /* RedpacketTypeMemberHandle.m */; };
+		C886CDFC70B84B805EC530E2CC8F1AD9 /* YZHRefreshBackGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8102A684797D0BFBFC66A4CF6786C967 /* YZHRefreshBackGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C92EBF8877E2FFD0161B9A0B5E272220 /* RPAliAuthPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD31A90CC00410B8D5A5E0411F8F86 /* RPAliAuthPay.m */; };
+		C99E0C7262637AE9F6D986F0C8FBF668 /* RPAliPayEmpower.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C81D4A1C636355C38722668A91CA4EA /* RPAliPayEmpower.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA39B1EC13656DE9B3444594469C8BBE /* RPMyIncomeRedPacketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9A94206156BB8C74F67846CD91F4A4 /* RPMyIncomeRedPacketCell.m */; };
+		CA5FEAFA3E774F97E3004436F47E4C8B /* RPRedpacketTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F965A821E9F5BF7F75EA0D62E7BF90 /* RPRedpacketTool.m */; };
+		CC2144F056E2F4AF0FE14880FA1E80F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4FCA07BD38831E1DFADC5A552E8237 /* Foundation.framework */; };
+		CE31D577D04F30300A4729C222F59CE7 /* RPRedpacketDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 09ABC304CDF7CC809B1F5E454A429030 /* RPRedpacketDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF0B8AB4E4D07A7A12F7B6131CB4C4FA /* RedpacketTypeRandHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = 79C343B4B42A6A6AF243FE1B633B3CF4 /* RedpacketTypeRandHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D15290C40362549C0FC6B6B4273D051C /* RPUntility.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F945661718AAC16B54E30851717835B /* RPUntility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2362D7D90A2E29B967B854F1B70C8B6 /* YZTransparent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C1E1B73DA0166E3A0621612E8468591 /* YZTransparent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D261DD39245B8BBB4C8621FCAA31CED1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201918DE0A4ADFAFD14D9671313437B7 /* AudioToolbox.framework */; };
+		D358E2F9C1A5CB181E265F3F95ED0FB8 /* RedPacketDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8EFA7BB9F5F7D38C07ADB88FF08E90 /* RedPacketDetailViewController.m */; };
+		D3958895B9E769C9B7464285B307B9F8 /* YZHRefreshBackStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C1F45F1FDF568F0BE50BB76D934816A /* YZHRefreshBackStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3E8533AFDE492FA2C3F18CAEFB087A1 /* RedpacketTypeMemberHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE1D9F81D1815D6FD05D3BA18C5A034 /* RedpacketTypeMemberHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3F29247CC3CA25C3EBBB0D98B5B933B /* SeachMemberCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D8687FEA373ABEBEBC142137F88477F4 /* SeachMemberCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D44D03DC5BC04EAC9A0F7061E3A1D42F /* UIColor+RedpacketColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A6D59E67B80963BDD34E57DFCFFE6A5 /* UIColor+RedpacketColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D45D5892BA9D3FEA95F71AE27518CEEC /* APayAuthInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E0DF2F9B1AC855231745A5D7A0742B7 /* APayAuthInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5008C56A39D50EBD6682F08602B5319 /* RPSendRedPacketCertainCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BC6D0A360EFEDBC4DA814987D26301 /* RPSendRedPacketCertainCellItem.m */; };
+		D5F3E798DBCC42CC91D7994E4A43770C /* RPRedpacketDetailHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3DBD8B3FCB955C02015FD61B859AF5E /* RPRedpacketDetailHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D664F207D264814B9C4D2E157ECC7E53 /* UIView+YZHPrompting.m in Sources */ = {isa = PBXBuildFile; fileRef = E22C845B6077CBC619E7992399600DA4 /* UIView+YZHPrompting.m */; };
+		D6D8B0441F96FAFD04F01B72B7D856BC /* RPSendRedPacketMemberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6A42762FEA77EB56BCEAD4B4712D1 /* RPSendRedPacketMemberTableViewCell.m */; };
+		D708B5422FAEA6C2255EB05E49DFE50A /* UIColor+RedpacketColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A80B3CB05F38760D006802DCBEC7F /* UIColor+RedpacketColors.m */; };
+		D736F2C4085FAC5B454B00364A392C9C /* AlipaySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 00F0B8E5437172BA20C2B17021C3C086 /* AlipaySDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D788B3953DC63C47F54E3E1DA42E1CC3 /* RPSendAmountRedpacketPreView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2219EDB33D9B92D1A7B3B8A221F1A385 /* RPSendAmountRedpacketPreView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D88743DD03285ECCF8A9CBE5B37DAD6C /* UIView+YZHExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8CEE7499C65EFD62B3BA5667D5DF5C /* UIView+YZHExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D89AF33482453A233A5CDDC6F56703C0 /* RPAdvertisementDetailViewContrroller.m in Sources */ = {isa = PBXBuildFile; fileRef = F47A9DAB387AC13BB9613CEB89D10D7F /* RPAdvertisementDetailViewContrroller.m */; };
+		D913B6831231DAAACDEB53C323070015 /* UIImageView+YZHWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01779D01132710AB2352BDA342E758A9 /* UIImageView+YZHWebCache.m */; };
+		DB65ED1E12D265234EBECDA385F978B7 /* NSString+YZHPinYin4Cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = E904E4383E84DE087F12B6571F09FA9E /* NSString+YZHPinYin4Cocoa.m */; };
+		DB943D1EEF82B718BF3B93C7FC59ACC0 /* YZHRefreshBackStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE8155CA000D6D8427F5E7126BEC50 /* YZHRefreshBackStateFooter.m */; };
+		DBB8465F13CDE6BD0B4BC7B347EFC01D /* RPReceiptsInAlipayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4187C9020811F82FC37C5EEC1AF6A0C3 /* RPReceiptsInAlipayViewController.m */; };
+		DC25FF47F5660F910019819157222EEF /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B48BC524C3CA220431087EA46D827A5C /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD5C7BFF94B5787D1BE3D50DCBED88D4 /* YZHSDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE1504D2B374EE2D526F915A0D9F1B3 /* YZHSDWebImageCompat.m */; };
+		DDDBAACB80F6C2FCDEA5B58FAC32E7FF /* YZHRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC139F5DF2F6D29DA77A6FC1FE9CB9B /* YZHRefreshNormalHeader.m */; };
+		DF9D6D5BA657C5B0454BD5C474C0427D /* RedpacketDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEF417A64899393B88DB8C4842CF28D /* RedpacketDetailCell.m */; };
+		DF9FD73DF403CBE5A5E158038B80CD14 /* RPSendRedPacketItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 366092C0EFB4467E51C2B2B08DCBF6FC /* RPSendRedPacketItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFA868584C9FC45EEE600E249348E089 /* RPSendRedPacketCountTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BB1A98B3792A4799BE70B766589016B /* RPSendRedPacketCountTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFB3BFF92D1F75DBDCF08CD8A402DCDA /* YZHSDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 2470945E062B04F9B74DD977FE39D445 /* YZHSDWebImageCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFFB48B19B72C667264E1E11C812D373 /* RedpacketViewControl.h in Headers */ = {isa = PBXBuildFile; fileRef = D0AB62F46BE1C0E2E8652B6EF8EB2117 /* RedpacketViewControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E067F6494C4B17B052C8DDD680649940 /* NSData+YZHImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = A0162F43EA0FAAA23256184EE92058D9 /* NSData+YZHImageContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1980BD5323BDC2C6EDAEE34B215FF88 /* RPSoundPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 214FD9ED221AA6E8A108DA51B37973DB /* RPSoundPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2DDA8FD1EE9C78C280752AD89CE716C /* RPMyIncomeRedPacketCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 57512EE69DFDB9CD66448788DD5AAD34 /* RPMyIncomeRedPacketCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E38B1D30F28ACFB86EF378F3DD1DDF39 /* UIScrollView+YZHRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F593996C41E5ADD16B62BB3505110BB /* UIScrollView+YZHRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4653639E5C7B348C297867C55AEAB3F /* RPRedpacketViews.m in Sources */ = {isa = PBXBuildFile; fileRef = A95A6821A91301C12BDC7A78BAF82874 /* RPRedpacketViews.m */; };
+		E5A3F39BC8F0B00F50B6995F39FC4BC3 /* YZHRefreshGifHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C084F06A68C4FFFA51890CADAEAEBFC /* YZHRefreshGifHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E797C66C2E2D41007E16CA8A0823EA4E /* YZHMBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = AA165DEF3F7004C0B536B26FD027776E /* YZHMBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA072BF5FC2BC7AFE3F72B6B4285A6FB /* YZHRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BC4B73A20E1649CDD19B3334F034D6 /* YZHRefreshConst.m */; };
+		ED6BEC2879AF9C7D59F0956B044E258B /* RPRedpacketSendControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 720A1772285FBE7210FDF7A9874DF041 /* RPRedpacketSendControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED744951695F9C6B86B7A7AD6AAB395C /* RPBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 770FF0E7E169E2536BC50F41F2136F02 /* RPBaseTableView.m */; };
+		EFFF123D41D7E94D2467DA15DCFB9056 /* UIViewController+RP_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = D84D948E8C1657DFAA2038AC726DA4B2 /* UIViewController+RP_Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0C5413761E598ABA6E0F9CF5DF3E377 /* YZHRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4574D8B0A59BA8E9A751CADE2746AF84 /* YZHRefreshGifHeader.m */; };
+		F13DBB6EF86389EA635C0F3AD4C879B9 /* RPViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 3570A795B92D08AF95740728D77A250C /* RPViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F24DA816751E10DE83424C7CF57F6377 /* RedpacketTypeSingleHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = FF455F9733AC953DD3573728ABB79993 /* RedpacketTypeSingleHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F344D1751B7F5E0BB17E45F6B8F97A99 /* YZHRefreshAutoStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE06476672BDF62E315BFD21EC3F152B /* YZHRefreshAutoStateFooter.m */; };
+		F5BDBD9195EE9E0F6D9CE0BD0F89C010 /* RPAliAuthPay.h in Headers */ = {isa = PBXBuildFile; fileRef = FA8119661BA52901F84C761C3EA04A4E /* RPAliAuthPay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7C9593BE53EA2359263456CB926DD20 /* YZHZYPinYinSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D557EDF437C572ADCFBCA281F9B0239B /* YZHZYPinYinSearch.m */; };
+		F8985A7A21A7F365734243DD2CA5718D /* RPBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7FADB6D9BFA277368345B7941A2C34 /* RPBaseTableViewCell.m */; };
+		F937858DA884275CBA81DA2C6BF8553C /* YZHRefreshAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C400B9016F33AC74B439F083F416121 /* YZHRefreshAutoGifFooter.m */; };
+		FAB4FFE49CC39893F01823031C4B532D /* YZHChineseString.h in Headers */ = {isa = PBXBuildFile; fileRef = F943B46514D5B733893EAF653C339B4C /* YZHChineseString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAE99DA679F4DD29C6EC97A06E6B2EE7 /* RPSendRedPacketCertainCellItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B5A5C3DB0C067FED45F3B0836781F9 /* RPSendRedPacketCertainCellItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB26649423EB04FB196382F310312273 /* RPSendRedPacketCountCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A83E17018CC3D91B351C42E2633F855 /* RPSendRedPacketCountCellItem.m */; };
+		FBD91E0674D32131D7239FCC4BCD773B /* YZHRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = D3F3BE8D47C6FF9F297FEAE2A9E34953 /* YZHRefreshFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD244F1B5B1D4DACF1CA1D485F735600 /* RPReceiptsInAlipayViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E12509157AC5C9AC0654AED46BD4DE8 /* RPReceiptsInAlipayViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF6FE55BAE4EFD34E130EE7627C46C1A /* RPNormalRedpacketPreView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AADAA1CDA765887EE72ADAB61937319 /* RPNormalRedpacketPreView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFFEAC5ABE5D070973CB028ED95BF1DF /* RPReceiveAmountRedpacketPreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8DE052F003D8C826406CD68C3C3EE2 /* RPReceiveAmountRedpacketPreView.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A96FD2B8B4F0A69B74457D6CCE93A62E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7756A4714A76730383C886E247E8F931;
+			remoteInfo = RedPacketAliAuthUI;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		197596382AFFCFECB65552A06ACF17DB /* AlipaySDK.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		1D35D7A7A2A6D9CE6AAC59D71DDBE4B2 /* RedpacketMessageModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RedpacketMessageModel.h; path = Redpacket/RedpacketMessageModel.h; sourceTree = "<group>"; };
-		209CCA5569317451760D665E5FBE45A7 /* RedpacketLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RedpacketLib.h; path = Redpacket/RedpacketLib.h; sourceTree = "<group>"; };
-		25857F68049F919FAA89398075157AD9 /* libRedpacketLibAliAuthPay.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libRedpacketLibAliAuthPay.a; path = Redpacket/lib/libRedpacketLibAliAuthPay.a; sourceTree = "<group>"; };
-		2630B600A78430EAB9C07ABD1113EE60 /* Pods-RCloudMessage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RCloudMessage-dummy.m"; sourceTree = "<group>"; };
-		359C6230709D9583E04114C88C028CE1 /* RedpacketErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RedpacketErrorCode.h; path = RedpacketStaticLib/RedpacketErrorCode.h; sourceTree = "<group>"; };
-		369A968B143387359D548F14FE893700 /* Pods-RCloudMessage-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RCloudMessage-acknowledgements.markdown"; sourceTree = "<group>"; };
-		37B99E8DD41105D2198F98654D26C7FF /* Pods-RCloudMessage-JDpay.autodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage-JDpay.autodebug.xcconfig"; sourceTree = "<group>"; };
-		3CCCAD8172048347B1E041633893FB22 /* Pods-RCloudMessage-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RCloudMessage-resources.sh"; sourceTree = "<group>"; };
-		3EDC6722AE657932C5B46045FA1DD381 /* RedpacketErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RedpacketErrorCode.h; path = Redpacket/RedpacketErrorCode.h; sourceTree = "<group>"; };
-		463612E4C626C90B90D8B777D0F21936 /* Pods-RCloudMessage.autodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage.autodebug.xcconfig"; sourceTree = "<group>"; };
-		4BEEF8705D44A21531E92EB2959244E1 /* RedpacketBundle.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = RedpacketBundle.bundle; path = Redpacket/resources/RedpacketBundle.bundle; sourceTree = "<group>"; };
-		539685D4F404B2B86EE3D07C91114811 /* YZHRedpacketBridgeProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YZHRedpacketBridgeProtocol.h; path = RedpacketStaticLib/YZHRedpacketBridgeProtocol.h; sourceTree = "<group>"; };
-		571DE6368A379959B061F71426428C43 /* libRedpacketLib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libRedpacketLib.a; path = RedpacketStaticLib/lib/libRedpacketLib.a; sourceTree = "<group>"; };
-		5AA2D0B72D45969BDD458E7F4F349511 /* Pods-RCloudMessage.autorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage.autorelease.xcconfig"; sourceTree = "<group>"; };
-		64C88F6EB4EC3ED2C218A62F79E2BDEA /* Pods-RCloudMessage-JDpay-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RCloudMessage-JDpay-frameworks.sh"; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7907F71889EACE6938BA84F08718618E /* Pods-RCloudMessage-JDpay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RCloudMessage-JDpay-dummy.m"; sourceTree = "<group>"; };
-		79B14D22A791542FEB1E59DCF65DDBDB /* Pods-RCloudMessage-JDpay-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RCloudMessage-JDpay-resources.sh"; sourceTree = "<group>"; };
-		802E83F378F3904B2EED2C5BBDEB6D17 /* YZHRedpacketBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YZHRedpacketBridge.h; path = RedpacketStaticLib/YZHRedpacketBridge.h; sourceTree = "<group>"; };
+		00F0B8E5437172BA20C2B17021C3C086 /* AlipaySDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AlipaySDK.h; sourceTree = "<group>"; };
+		01779D01132710AB2352BDA342E758A9 /* UIImageView+YZHWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+YZHWebCache.m"; sourceTree = "<group>"; };
+		019A315258F751CF324FD74B69303715 /* UIButton+RPAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIButton+RPAction.m"; sourceTree = "<group>"; };
+		01C219C953BD1DDF860E21DECCD03ACA /* YZHRefreshStateHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshStateHeader.m; sourceTree = "<group>"; };
+		0290522D5984607D99DCA88E8FD57E46 /* View+RPAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "View+RPAdditions.h"; sourceTree = "<group>"; };
+		045B165CADA42B41D6BBE9E62D0F4F3C /* YZHSDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHSDImageCache.h; sourceTree = "<group>"; };
+		05EC13E0CB5A46F12C39EA2109606889 /* SearchMemberViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SearchMemberViewController.h; sourceTree = "<group>"; };
+		062D6890F16171C08DCD0FA4E2BC1C55 /* RPReceiotsInAlipayHeaderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPReceiotsInAlipayHeaderView.m; sourceTree = "<group>"; };
+		090417B22E050A649D56A593F831B390 /* YZHChineseInclude.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHChineseInclude.m; sourceTree = "<group>"; };
+		09ABC304CDF7CC809B1F5E454A429030 /* RPRedpacketDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPRedpacketDefines.h; sourceTree = "<group>"; };
+		0B7A80B3CB05F38760D006802DCBEC7F /* UIColor+RedpacketColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RedpacketColors.m"; sourceTree = "<group>"; };
+		0BED3B9EA30475BBCD5ED4B3F8DC8787 /* RPSendRedPacketDescribeCellItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketDescribeCellItem.h; sourceTree = "<group>"; };
+		0D08E91BBFF5D8AF4BBAA90CE30F54B8 /* RPSendRedPacketMemberTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketMemberTableViewCell.h; sourceTree = "<group>"; };
+		0D1E5441564CC58132269731DE285573 /* RedpacketTypeRandpiHandle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketTypeRandpiHandle.m; sourceTree = "<group>"; };
+		0ECC9DED7EE5B731B05FF75DD9F828F9 /* UIButton+RPAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+RPAction.h"; sourceTree = "<group>"; };
+		114A751EE2C7A4EFB05B5EF7B6EE3E78 /* YZHSDWebImageDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHSDWebImageDecoder.h; sourceTree = "<group>"; };
+		121D018B0791770D573BAA0AD07A2980 /* RPSendRedPacketCertainTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketCertainTableViewCell.h; sourceTree = "<group>"; };
+		17D1F97C7BFD1A1560DFBF43A3521C58 /* YZHPinyinHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHPinyinHelper.m; sourceTree = "<group>"; };
+		1CACF0987BCAAC25158C55866FAC1FAA /* RedPacketDetailViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedPacketDetailViewController.h; sourceTree = "<group>"; };
+		1CBDBA298A64947D1EF9F5B68FEF3E22 /* RPSendRedPacketChangeCellItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketChangeCellItem.m; sourceTree = "<group>"; };
+		1E12509157AC5C9AC0654AED46BD4DE8 /* RPReceiptsInAlipayViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPReceiptsInAlipayViewController.h; sourceTree = "<group>"; };
+		1E4EBA421341B8EC9AF28F2161E85F25 /* RPRedpackeNavgationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPRedpackeNavgationController.h; sourceTree = "<group>"; };
+		1F0E94ED4557BA26A18EBCC6D4974F2D /* YZHRefreshHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshHeader.h; sourceTree = "<group>"; };
+		1F86FA96DDAE6F7C024FD0A82CF6B370 /* YZHHCHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHHCHeader.h; sourceTree = "<group>"; };
+		1FD42A542C1A9083811C0875E6C84907 /* NSArray+RPAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSArray+RPAdditions.h"; sourceTree = "<group>"; };
+		1FD7B04FC881E4465F5700281C479BF2 /* RPViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPViewConstraint.m; sourceTree = "<group>"; };
+		201918DE0A4ADFAFD14D9671313437B7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		206AC50956096D5449364FD4567F161A /* RedpacketTypeRandHandle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketTypeRandHandle.m; sourceTree = "<group>"; };
+		214FD9ED221AA6E8A108DA51B37973DB /* RPSoundPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSoundPlayer.h; sourceTree = "<group>"; };
+		2219EDB33D9B92D1A7B3B8A221F1A385 /* RPSendAmountRedpacketPreView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendAmountRedpacketPreView.h; sourceTree = "<group>"; };
+		227DDD57946458E281677267F2729EC9 /* RPBaseTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPBaseTableViewController.h; sourceTree = "<group>"; };
+		23774FD18766B02DFDF15A5D5C60B031 /* YZHSDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHSDWebImageManager.h; sourceTree = "<group>"; };
+		23F965A821E9F5BF7F75EA0D62E7BF90 /* RPRedpacketTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPRedpacketTool.m; sourceTree = "<group>"; };
+		2470945E062B04F9B74DD977FE39D445 /* YZHSDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHSDWebImageCompat.h; sourceTree = "<group>"; };
+		26241CE5DD213EBBB7D67A8A36975CB5 /* UIView+YZHPrompting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+YZHPrompting.h"; sourceTree = "<group>"; };
+		28C0F6EA25EBB924B5104129B769B2BD /* RPMemberRedpacketPreView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPMemberRedpacketPreView.h; sourceTree = "<group>"; };
+		28FE344FD3318C8F0332D741F52CE01A /* NSBundle+RedpacketBundle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSBundle+RedpacketBundle.h"; sourceTree = "<group>"; };
+		28FFA9DC901AD151E320FD07A18CD259 /* YZHChineseToPinyinResource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHChineseToPinyinResource.m; sourceTree = "<group>"; };
+		2AA27BEB79F69D5A86796AABA5091020 /* RedpacketTypeAmountHandle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketTypeAmountHandle.h; sourceTree = "<group>"; };
+		2ABF44FA3AC35F34DE2404F32F88FFEA /* RedpacketTypeAvgHandle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketTypeAvgHandle.m; sourceTree = "<group>"; };
+		2B99BCA3FD76A4FCA5D1EC5E10F215FD /* RPBaseTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPBaseTableViewCell.h; sourceTree = "<group>"; };
+		2BE2DEEBF6CF3C156A8BD7A341DC2B95 /* RPAdvertInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RPAdvertInfo.h; path = RedpacketAliAuthAPILib/Model/RPAdvertInfo.h; sourceTree = "<group>"; };
+		2D1817F7C9EF9A5E4687D9A2862BFBB1 /* UIView+YZHExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+YZHExtension.m"; sourceTree = "<group>"; };
+		2ED1882256805F88D2CB96E00CCCD4FC /* RPAdvertisementDetailView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPAdvertisementDetailView.h; sourceTree = "<group>"; };
+		328D9FDF14C94C7E5EB551B53A7F40F1 /* libRedpacketAliAuthAPILib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libRedpacketAliAuthAPILib.a; path = RedpacketAliAuthAPILib/lib/libRedpacketAliAuthAPILib.a; sourceTree = "<group>"; };
+		3386D8B4EA17ABC5911E1197B13359F5 /* RPSendRedPacketDescribeTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketDescribeTableViewCell.h; sourceTree = "<group>"; };
+		3570A795B92D08AF95740728D77A250C /* RPViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPViewAttribute.h; sourceTree = "<group>"; };
+		366092C0EFB4467E51C2B2B08DCBF6FC /* RPSendRedPacketItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketItem.h; sourceTree = "<group>"; };
+		3692625A1597CA32EC80045CA69D9F96 /* RPBaseTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPBaseTableView.h; sourceTree = "<group>"; };
+		36E00D9B732F42E8408D86D776E63958 /* RPPersonalRedpacketInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RPPersonalRedpacketInfo.h; path = RedpacketAliAuthAPILib/Model/RPPersonalRedpacketInfo.h; sourceTree = "<group>"; };
+		38E8663309F7C0257AA08C03FB28BF28 /* UIView+YZHWebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+YZHWebCacheOperation.h"; sourceTree = "<group>"; };
+		39C910D3C27E88AF143D667F91AA5270 /* libPods-RCloudMessage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RCloudMessage.a"; path = "libPods-RCloudMessage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C1E1B73DA0166E3A0621612E8468591 /* YZTransparent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZTransparent.h; sourceTree = "<group>"; };
+		3C47D3457544E604B426BD3CF3B140B4 /* YZHSDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHSDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		3C8DE052F003D8C826406CD68C3C3EE2 /* RPReceiveAmountRedpacketPreView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPReceiveAmountRedpacketPreView.m; sourceTree = "<group>"; };
+		3CF5628E92F1E977E8ABF6100631BD50 /* Pods-RCloudMessage-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RCloudMessage-frameworks.sh"; sourceTree = "<group>"; };
+		3E0DF2F9B1AC855231745A5D7A0742B7 /* APayAuthInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = APayAuthInfo.h; sourceTree = "<group>"; };
+		3E4CE0EA5AEA06F73873323829EB1F54 /* UIAlertView+YZHAlert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+YZHAlert.h"; sourceTree = "<group>"; };
+		3F5C672A0F851FF01C8DBFD00BBBEE14 /* YZHMBProgressHUD+YZHAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YZHMBProgressHUD+YZHAdd.h"; sourceTree = "<group>"; };
+		40E3224E033776AD8234101ECDD87865 /* UIImage+YZHGIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+YZHGIF.h"; sourceTree = "<group>"; };
+		41376FED7A7D48E05A24946FFE100953 /* Pods-RCloudMessage-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RCloudMessage-acknowledgements.markdown"; sourceTree = "<group>"; };
+		417F24C4650C32D33A6D66291A44B7C1 /* RPSendRedPacketViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketViewController.m; sourceTree = "<group>"; };
+		4187C9020811F82FC37C5EEC1AF6A0C3 /* RPReceiptsInAlipayViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPReceiptsInAlipayViewController.m; sourceTree = "<group>"; };
+		4244911880F3EB2736B0BF5389AB9BB5 /* SearchMemberViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SearchMemberViewController.m; sourceTree = "<group>"; };
+		424A953B010CA9B71BE6CAEC394ECD32 /* Pods-RCloudMessage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RCloudMessage-dummy.m"; sourceTree = "<group>"; };
+		43F44C06F1246BB3F01BB99697786216 /* NSBundle+RedpacketBundle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+RedpacketBundle.m"; sourceTree = "<group>"; };
+		44518416789ECB9137DF6929D82AE565 /* RedpacketLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketLib.h; sourceTree = "<group>"; };
+		4574D8B0A59BA8E9A751CADE2746AF84 /* YZHRefreshGifHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshGifHeader.m; sourceTree = "<group>"; };
+		469E2760F9267BD184496EC1DD904398 /* RPSendRedPacketAutoKeyboardHandle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketAutoKeyboardHandle.m; sourceTree = "<group>"; };
+		4873C2156831F75BF4C9664BE0E25BEA /* UIImage+YZHMultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YZHMultiFormat.m"; sourceTree = "<group>"; };
+		49419D6192145027FC42F07F60FDD559 /* YZHRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
+		4A6D59E67B80963BDD34E57DFCFFE6A5 /* UIColor+RedpacketColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+RedpacketColors.h"; sourceTree = "<group>"; };
+		4BB1A98B3792A4799BE70B766589016B /* RPSendRedPacketCountTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketCountTableViewCell.h; sourceTree = "<group>"; };
+		4BE742BF0458D8799CF1F2DF32D96632 /* YZHPinyinHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHPinyinHelper.h; sourceTree = "<group>"; };
+		4C0AA7EB6FEC1EF66BF0898BBDD3F12E /* RedpacketDetailCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketDetailCell.h; sourceTree = "<group>"; };
+		4C81D4A1C636355C38722668A91CA4EA /* RPAliPayEmpower.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPAliPayEmpower.h; sourceTree = "<group>"; };
+		4CD44FB36111FFC30D65926EABAA861D /* RPReceiotsInAlipayEmptyTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPReceiotsInAlipayEmptyTableViewCell.h; sourceTree = "<group>"; };
+		4F4E352C53BB2F6758D5D052B15AF2A5 /* NSString+YZHPinYin4Cocoa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+YZHPinYin4Cocoa.h"; sourceTree = "<group>"; };
+		53CE947FDAA95C2DB728827D9566157E /* RPSendRedPacketChangeCellItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketChangeCellItem.h; sourceTree = "<group>"; };
+		558534E3E54F0B8EDE708AF43CA18F4A /* RPAdvertisementDetailViewContrroller.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPAdvertisementDetailViewContrroller.h; sourceTree = "<group>"; };
+		55F7BC155CAC197F9D5E0AFFD57AC040 /* UIScrollView+YZHRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YZHRefresh.m"; sourceTree = "<group>"; };
+		56D4E63855DF2B18919C3D79751812FA /* RedpacketTypeRandpiHandle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketTypeRandpiHandle.h; sourceTree = "<group>"; };
+		56FFA4A9511D9799528DC38F2C50FE3C /* UIImageView+YZHWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YZHWebCache.h"; sourceTree = "<group>"; };
+		57512EE69DFDB9CD66448788DD5AAD34 /* RPMyIncomeRedPacketCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPMyIncomeRedPacketCell.h; sourceTree = "<group>"; };
+		5796C6C4F1C8BC8DB5F67829C0032C42 /* RPConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPConstraint.h; sourceTree = "<group>"; };
+		590D7E8E457BFF664857B4EA0C4610CC /* Pods-RCloudMessage.autodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage.autodebug.xcconfig"; sourceTree = "<group>"; };
+		592715F662B28B9DA56E976616249824 /* RPRedpacketDetailHeaderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPRedpacketDetailHeaderView.m; sourceTree = "<group>"; };
+		597C87A5976B08AE9A10208E81B18514 /* RPRedpacketModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RPRedpacketModel.h; path = RedpacketAliAuthAPILib/Model/RPRedpacketModel.h; sourceTree = "<group>"; };
+		59966F98F3DFFACBB6359C2463AC211F /* YZHRefreshAutoFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshAutoFooter.h; sourceTree = "<group>"; };
+		5ACE8155CA000D6D8427F5E7126BEC50 /* YZHRefreshBackStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshBackStateFooter.m; sourceTree = "<group>"; };
+		5B2F29DB61B25277EFC9E34E5D763AC3 /* YZHMBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHMBProgressHUD.m; sourceTree = "<group>"; };
+		5C400B9016F33AC74B439F083F416121 /* YZHRefreshAutoGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshAutoGifFooter.m; sourceTree = "<group>"; };
+		5E521F4E620D3875E7452FEDC201288A /* RPAlipayAuth.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPAlipayAuth.m; sourceTree = "<group>"; };
+		6009C5BEFEE5554479CEEF2A7ED7684C /* RPRedpackeNavgationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPRedpackeNavgationController.m; sourceTree = "<group>"; };
+		623C7A868AE69DFE565B3BF9052401F8 /* YZHZYPinYinSearch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHZYPinYinSearch.h; sourceTree = "<group>"; };
+		63C02D39EEF3E7E51E20AFA62529E77E /* Pods-RCloudMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage.debug.xcconfig"; sourceTree = "<group>"; };
+		646466334D2959767DF1EB3723F433E8 /* RPSendRedPacketChangeTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketChangeTableViewCell.h; sourceTree = "<group>"; };
+		655CC3B7B305A3F9C51EEA03403A2222 /* RPRedpacketSetting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RPRedpacketSetting.h; path = RedpacketAliAuthAPILib/RPRedpacketSetting.h; sourceTree = "<group>"; };
+		681E42B3A3AC9F3863B15D05432FE032 /* YZHSDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHSDWebImageDownloader.m; sourceTree = "<group>"; };
+		69C63E458635443B74B1670BEFFE90D1 /* PlaceHolderTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PlaceHolderTextView.h; sourceTree = "<group>"; };
+		6A13E6033D4DFB3FE1078DC9271DED24 /* RPSendRedPacketCertainTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketCertainTableViewCell.m; sourceTree = "<group>"; };
+		6A370D711D15DAF94B8D7DCFBDBC9A50 /* YZHRefreshNormalHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshNormalHeader.h; sourceTree = "<group>"; };
+		6A83E17018CC3D91B351C42E2633F855 /* RPSendRedPacketCountCellItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketCountCellItem.m; sourceTree = "<group>"; };
+		6A9F2AC9EEDFA48A5434514EB1245432 /* YZHChineseString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHChineseString.m; sourceTree = "<group>"; };
+		6AADAA1CDA765887EE72ADAB61937319 /* RPNormalRedpacketPreView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPNormalRedpacketPreView.h; sourceTree = "<group>"; };
+		6AF48BE88C22CBC817743FFC9C00C390 /* RPConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPConstraint.m; sourceTree = "<group>"; };
+		6B32A8DA580DA51A89C237686EA39ED2 /* RPSendRedPacketCountCellItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketCountCellItem.h; sourceTree = "<group>"; };
+		6C329A72BABD823E8009F391E5B39965 /* RedPacketAliAuthUI.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RedPacketAliAuthUI.xcconfig; sourceTree = "<group>"; };
+		6DE1504D2B374EE2D526F915A0D9F1B3 /* YZHSDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHSDWebImageCompat.m; sourceTree = "<group>"; };
+		6F3A432AC80E2220FA8CE87089703199 /* RPReceiotsInAlipayEmptyTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPReceiotsInAlipayEmptyTableViewCell.m; sourceTree = "<group>"; };
+		6F593996C41E5ADD16B62BB3505110BB /* UIScrollView+YZHRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YZHRefresh.h"; sourceTree = "<group>"; };
+		7128ECD9C6AD92DD21797A02C2A9A8D3 /* UIImage+YZHGIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YZHGIF.m"; sourceTree = "<group>"; };
+		716FC477667EA2E17A8FAD84EEFFFA86 /* RPMemberRedpacketPreView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPMemberRedpacketPreView.m; sourceTree = "<group>"; };
+		71DB99765BC0637FCD190B5ED4515DA4 /* RedpacketColorStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketColorStore.h; sourceTree = "<group>"; };
+		720A1772285FBE7210FDF7A9874DF041 /* RPRedpacketSendControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPRedpacketSendControl.h; sourceTree = "<group>"; };
+		72AD31A90CC00410B8D5A5E0411F8F86 /* RPAliAuthPay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPAliAuthPay.m; sourceTree = "<group>"; };
+		73E323E1FD4C55A4A42A38ACFCEA2CAB /* YZHRefreshHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshHeader.m; sourceTree = "<group>"; };
+		742047FD8593F958E0C3761AE915ECFE /* RPRedpacketTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPRedpacketTool.h; sourceTree = "<group>"; };
+		7667CC0D01B34CF574BCF0CA44C43AC1 /* YZHRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefresh.h; sourceTree = "<group>"; };
+		76E3798C3659EB6A59255ADC24FEE782 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		770FF0E7E169E2536BC50F41F2136F02 /* RPBaseTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPBaseTableView.m; sourceTree = "<group>"; };
+		776093F49D8AED0E0F0E346BC9C311B3 /* RedpacketTypeMemberHandle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketTypeMemberHandle.m; sourceTree = "<group>"; };
+		7810E41F7BAF8A85EBB9DA1341AEB57D /* RPRedpacketBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RPRedpacketBridge.h; path = RedpacketAliAuthAPILib/RPRedpacketBridge.h; sourceTree = "<group>"; };
+		78431E22133358CE96623CDAA16BB109 /* YZHSDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHSDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		7979C57BE0BDE30490F5BBDBBAC292F0 /* YZHSDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHSDWebImageManager.m; sourceTree = "<group>"; };
+		79C343B4B42A6A6AF243FE1B633B3CF4 /* RedpacketTypeRandHandle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketTypeRandHandle.h; sourceTree = "<group>"; };
+		7A036E0787FE25309DDA73D2785574CB /* UIScrollView+YZHExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YZHExtension.h"; sourceTree = "<group>"; };
+		7A1F13BC71414B3C902A6959BCE7E560 /* YZHRefreshComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshComponent.m; sourceTree = "<group>"; };
+		7A70C2F9899BAA5662C1017DE6D9E231 /* RPSendRedPacketViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketViewController.h; sourceTree = "<group>"; };
+		7AE5BA2653965D6706D0D4F70265A320 /* RedPacketAliAuthUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RedPacketAliAuthUI-prefix.pch"; sourceTree = "<group>"; };
+		7AF6A42762FEA77EB56BCEAD4B4712D1 /* RPSendRedPacketMemberTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketMemberTableViewCell.m; sourceTree = "<group>"; };
+		7B4FCA07BD38831E1DFADC5A552E8237 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7C647080401B8212954389F1A7E59EC7 /* RPBaseCellItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPBaseCellItem.m; sourceTree = "<group>"; };
+		7CF0882E7BE8EA9CD6D66AE52E078D6B /* RPBaseCellItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPBaseCellItem.h; sourceTree = "<group>"; };
+		7EB7F82CA8522267A0519A6A2AEDBA3F /* Pods-RCloudMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage.release.xcconfig"; sourceTree = "<group>"; };
+		7FB7AD0EF063D857DFA847F42F9CE770 /* RPBaseViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPBaseViewController.m; sourceTree = "<group>"; };
+		804F83511BEE831AF61F6FF3A7133815 /* Pods-RCloudMessage.autorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage.autorelease.xcconfig"; sourceTree = "<group>"; };
+		808500E542F44C956534EEA7F3EC4569 /* RedpacketTypeAvgHandle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketTypeAvgHandle.h; sourceTree = "<group>"; };
+		80E8695F843C9FA5ACA4B7DADB6037BD /* YZHPinYinForObjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHPinYinForObjc.m; sourceTree = "<group>"; };
+		8102A684797D0BFBFC66A4CF6786C967 /* YZHRefreshBackGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshBackGifFooter.h; sourceTree = "<group>"; };
+		836C7C6A4586E0FF883B945A8378BB9D /* RPUserInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RPUserInfo.h; path = RedpacketAliAuthAPILib/Model/RPUserInfo.h; sourceTree = "<group>"; };
+		83A88B66F9003A2E65844FAE8B39CE04 /* RPViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPViewConstraint.h; sourceTree = "<group>"; };
+		83EF1799ECFCA5774F2781D264E7D688 /* RedpacketTypeBaseHandle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketTypeBaseHandle.h; sourceTree = "<group>"; };
+		84770F7460682A28B90E53AB8F13A27F /* RPAdvertisementDetailView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPAdvertisementDetailView.m; sourceTree = "<group>"; };
+		855AA9EEE66FC3CF6F3416048D2DBB01 /* YZHRefreshBackNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshBackNormalFooter.h; sourceTree = "<group>"; };
+		8627CBD2961CD6DB125983F99D4D2047 /* RedpacketTypeAdvertisementHandle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketTypeAdvertisementHandle.m; sourceTree = "<group>"; };
+		86859AE29E3C80A34A9B75007B556FA0 /* UIView+YZHAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+YZHAnimation.m"; sourceTree = "<group>"; };
+		87333E5AAB432B994A1F94357221F2F8 /* RPUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPUtilities.h; sourceTree = "<group>"; };
+		877904B0494B7E2D786F3CDB64F9857C /* UIView+YZHAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+YZHAnimation.h"; sourceTree = "<group>"; };
+		8815035CE983E983C5A4FDA556EBE181 /* YZHRefreshAutoStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshAutoStateFooter.h; sourceTree = "<group>"; };
+		889D55A278829119095F17A58DAE4E8B /* YZHSDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHSDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		88EF0B66425C7E24244865CACD3ADA8C /* AlipaySDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlipaySDK.h; path = AlipaySDK.framework/Headers/AlipaySDK.h; sourceTree = "<group>"; };
+		8910F867914E2FB44BF8AEC7E05568DC /* RPSendAmountRedpacketPreView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendAmountRedpacketPreView.m; sourceTree = "<group>"; };
+		8A01A8F99E5E0BC45954EB2DADBD3B19 /* RPRedpacketManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RPRedpacketManager.h; path = RedpacketAliAuthAPILib/RPRedpacketManager.h; sourceTree = "<group>"; };
+		8A29D87B1154792597D6F9E04C9A60E0 /* RPSendRedPacketBaseTableViewCellProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketBaseTableViewCellProtocol.h; sourceTree = "<group>"; };
+		8A34300B0CD8855100484ACF48A9C65D /* RPCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPCompositeConstraint.m; sourceTree = "<group>"; };
+		8CB4B9D400AFBB49E20609C8349C52A7 /* RedpacketViewControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketViewControl.m; sourceTree = "<group>"; };
+		8DFA9E5DE2C2B32B500CA5D660C54267 /* RedpacketTypeAdvertisementHandle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketTypeAdvertisementHandle.h; sourceTree = "<group>"; };
+		8F945661718AAC16B54E30851717835B /* RPUntility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPUntility.h; sourceTree = "<group>"; };
+		90B5A5C3DB0C067FED45F3B0836781F9 /* RPSendRedPacketCertainCellItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketCertainCellItem.h; sourceTree = "<group>"; };
+		91BC4B73A20E1649CDD19B3334F034D6 /* YZHRefreshConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshConst.m; sourceTree = "<group>"; };
+		91DB409C7350BE8F54D44FC444FFFC97 /* RPSendRedPacketMemberCellItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketMemberCellItem.m; sourceTree = "<group>"; };
+		92092E8613E6610972D48E9A3AF76E40 /* YZHChineseInclude.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHChineseInclude.h; sourceTree = "<group>"; };
+		9267E40EC35478C6592D491B0513A409 /* RPNormalRedpacketPreView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPNormalRedpacketPreView.m; sourceTree = "<group>"; };
+		927CB8ADF15AE7F5B789561631262C1C /* RPLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPLayoutConstraint.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93F2752AD499F984209450ED05589A68 /* YZHRedpacketBridgeProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YZHRedpacketBridgeProtocol.h; path = Redpacket/YZHRedpacketBridgeProtocol.h; sourceTree = "<group>"; };
-		94AE986468455CD366B5760DE36A0DAF /* RedpacketOpenConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RedpacketOpenConst.h; path = Redpacket/RedpacketOpenConst.h; sourceTree = "<group>"; };
-		9C37C52E3E2D9BCC65AC2F8820A0E6F4 /* APayAuthInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APayAuthInfo.h; path = AlipaySDK.framework/Headers/APayAuthInfo.h; sourceTree = "<group>"; };
-		A482FB66B7BF320E57A40C05E0B8450B /* Pods-RCloudMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage.debug.xcconfig"; sourceTree = "<group>"; };
-		A4C280BDE48D051DA4D988FB5E48E6A2 /* RedpacketViewControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RedpacketViewControl.h; path = RedpacketStaticLib/RedpacketViewControl.h; sourceTree = "<group>"; };
-		AA23EE45456B4781D8DDFE0D38BCD829 /* Pods-RCloudMessage-JDpay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage-JDpay.debug.xcconfig"; sourceTree = "<group>"; };
-		B0832E171033432980D5EA37BE0D380C /* YZHRedpacketBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YZHRedpacketBridge.h; path = Redpacket/YZHRedpacketBridge.h; sourceTree = "<group>"; };
-		B2B5BB399271491E98C3E21A4E3C2895 /* Pods-RCloudMessage-JDpay.autorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage-JDpay.autorelease.xcconfig"; sourceTree = "<group>"; };
-		C60480224FCA2ACA1ED29BFB8A6F1EEB /* Pods-RCloudMessage-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RCloudMessage-acknowledgements.plist"; sourceTree = "<group>"; };
-		C9350AF419D1C8848A5BEB7966666280 /* Pods-RCloudMessage-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RCloudMessage-frameworks.sh"; sourceTree = "<group>"; };
-		CA9A2973EA0D27B93A076867873C54E7 /* Pods-RCloudMessage-JDpay-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RCloudMessage-JDpay-acknowledgements.plist"; sourceTree = "<group>"; };
-		D88C4B787F7FE9D6EA6419A39B71CA1F /* libPods-RCloudMessage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RCloudMessage.a"; path = "libPods-RCloudMessage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA2F5545120DA0320C00569DA750D705 /* Pods-RCloudMessage-JDpay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage-JDpay.release.xcconfig"; sourceTree = "<group>"; };
-		E02F7DE3B6544B46096E68D7AC744B5D /* AlipaySDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AlipaySDK.h; path = AlipaySDK.framework/Headers/AlipaySDK.h; sourceTree = "<group>"; };
-		E03FF0C69B592B09F0EA0AE0D6F66FA6 /* libPods-RCloudMessage-JDpay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RCloudMessage-JDpay.a"; path = "libPods-RCloudMessage-JDpay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3DF5C221D5CE0D3B492B253CE55CD67 /* RedpacketMessageModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RedpacketMessageModel.h; path = RedpacketStaticLib/RedpacketMessageModel.h; sourceTree = "<group>"; };
-		E588259403EE8729A74F0FB73D1CFDFA /* RedpacketLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RedpacketLib.h; path = RedpacketStaticLib/RedpacketLib.h; sourceTree = "<group>"; };
-		E5896FB3B38DA9DE65B829C4FCE60E2A /* RedpacketOpenConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RedpacketOpenConst.h; path = RedpacketStaticLib/RedpacketOpenConst.h; sourceTree = "<group>"; };
-		E681B36040AD10D4E9A15AF6FA940B9E /* RedpacketBundle.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = RedpacketBundle.bundle; path = RedpacketStaticLib/resources/RedpacketBundle.bundle; sourceTree = "<group>"; };
-		E8F4845A8BD7410CF60A2682FB985915 /* Pods-RCloudMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RCloudMessage.release.xcconfig"; sourceTree = "<group>"; };
-		ED882D89D9D89A9C0C0FBCAC21C3823C /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
-		F5B4C31BA2714183FADAEA51DB1402ED /* Pods-RCloudMessage-JDpay-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RCloudMessage-JDpay-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F6746D720C75AC67B2B6B146EEE2C153 /* RedpacketViewControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RedpacketViewControl.h; path = Redpacket/RedpacketViewControl.h; sourceTree = "<group>"; };
+		94D84FE57BFFFB24EA6D1C3877C7B23F /* RPLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPLayoutConstraint.m; sourceTree = "<group>"; };
+		951308FA858B77880E6219A985DA928B /* RedpacketColorStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketColorStore.m; sourceTree = "<group>"; };
+		9514E08AEB3BF0D047D9D40A248FDE2D /* RPSendRedPacketMemberCellItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketMemberCellItem.h; sourceTree = "<group>"; };
+		95D16311FC3553C63C2F8F62BC4ECBC1 /* RPViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPViewAttribute.m; sourceTree = "<group>"; };
+		98707E66F4AA97A3CF4D9D4F6AED959F /* YZHRefreshBackNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshBackNormalFooter.m; sourceTree = "<group>"; };
+		98ED3D87533CA8726C9FC84CC7CDE46B /* RedpacketErrorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketErrorView.h; sourceTree = "<group>"; };
+		999DC7F5FC8AA2D878B51990B3711014 /* UIAlertView+YZHAlert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+YZHAlert.m"; sourceTree = "<group>"; };
+		9A8BB49DBD1DA5329D6920C664834FB0 /* RPConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPConstraintMaker.m; sourceTree = "<group>"; };
+		9C084F06A68C4FFFA51890CADAEAEBFC /* YZHRefreshGifHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshGifHeader.h; sourceTree = "<group>"; };
+		9C1F45F1FDF568F0BE50BB76D934816A /* YZHRefreshBackStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshBackStateFooter.h; sourceTree = "<group>"; };
+		9C5D099040118999DB44FEED6A8495BD /* UIScrollView+YZHExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YZHExtension.m"; sourceTree = "<group>"; };
+		A0162F43EA0FAAA23256184EE92058D9 /* NSData+YZHImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSData+YZHImageContentType.h"; sourceTree = "<group>"; };
+		A189FB862D88601DEB7E746EDAD3EB11 /* PlaceHolderTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PlaceHolderTextView.m; sourceTree = "<group>"; };
+		A289B5B78724595485161B293C033E69 /* RPConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPConstraintMaker.h; sourceTree = "<group>"; };
+		A3B9136B4B89FE274EDDCCB289002F48 /* RPReceiotsInAlipayHeaderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPReceiotsInAlipayHeaderView.h; sourceTree = "<group>"; };
+		A6476ABE6F88BADC9457F3BD7B9859CC /* YZHSDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHSDWebImageDownloader.h; sourceTree = "<group>"; };
+		A886E2104CCE35E25BC971DEB3BD2579 /* SeachMemberCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SeachMemberCell.m; sourceTree = "<group>"; };
+		A95A6821A91301C12BDC7A78BAF82874 /* RPRedpacketViews.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPRedpacketViews.m; sourceTree = "<group>"; };
+		A99013B9D0BD476A0D293AAA0CBC59BE /* RedpacketErrorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketErrorView.m; sourceTree = "<group>"; };
+		AA165DEF3F7004C0B536B26FD027776E /* YZHMBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHMBProgressHUD.h; sourceTree = "<group>"; };
+		AA4374F85F69452BFE35208A05AF450F /* RPRedpacketPreView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPRedpacketPreView.m; sourceTree = "<group>"; };
+		AA5DBD9E123732A87C268D31C340B348 /* YZHRefreshStateHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshStateHeader.h; sourceTree = "<group>"; };
+		AB4E81A14BCB2C9C421797F452DA9A39 /* RPSendRedPacketTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketTableViewCell.h; sourceTree = "<group>"; };
+		ACD2C060B55455CB3D1307825C4267D8 /* RedpacketTypeBaseHandle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketTypeBaseHandle.m; sourceTree = "<group>"; };
+		AEE61B910EAB0E28BB50CBBD48A8A003 /* RedPacketAliAuthUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RedPacketAliAuthUI-dummy.m"; sourceTree = "<group>"; };
+		B01DA9CF1A0DAF0EB18058A6329DB45B /* RedpacketTypeSingleHandle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketTypeSingleHandle.m; sourceTree = "<group>"; };
+		B0F92372615C374C82E0CE0381A17922 /* YZHPinyinFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHPinyinFormatter.m; sourceTree = "<group>"; };
+		B2AA51120A5368ADAC2EECE067044522 /* UIImage+YZHMultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+YZHMultiFormat.h"; sourceTree = "<group>"; };
+		B3BA01B39CBB18F3D53B4F8A33BB86EE /* NSArray+RPAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSArray+RPAdditions.m"; sourceTree = "<group>"; };
+		B3DBD8B3FCB955C02015FD61B859AF5E /* RPRedpacketDetailHeaderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPRedpacketDetailHeaderView.h; sourceTree = "<group>"; };
+		B48BC524C3CA220431087EA46D827A5C /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		B73D1BBCAEC416EE462DD4977BE87508 /* RPRefreshTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPRefreshTableViewController.h; sourceTree = "<group>"; };
+		B76F1DBD67542FD59672D32E09148B91 /* RPRedpacketPreView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPRedpacketPreView.h; sourceTree = "<group>"; };
+		B830CA72A264EFC0F74B9C2E43365325 /* UIViewController+RP_Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RP_Private.m"; sourceTree = "<group>"; };
+		B85D9B11CA200D2CA804A5CB4C9846C2 /* RPBaseViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPBaseViewController.h; sourceTree = "<group>"; };
+		B8E452F48F56EF3C8E19B0777F8077FB /* RedpacketTypeAmountHandle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketTypeAmountHandle.m; sourceTree = "<group>"; };
+		BB1CF88959024CC14A591B0BC1C09DCB /* YZHPinyinFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHPinyinFormatter.h; sourceTree = "<group>"; };
+		BC7FADB6D9BFA277368345B7941A2C34 /* RPBaseTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPBaseTableViewCell.m; sourceTree = "<group>"; };
+		BCB933896726CFBAC52AA68D91210E46 /* RPSendRedPacketTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketTableViewCell.m; sourceTree = "<group>"; };
+		BCEF417A64899393B88DB8C4842CF28D /* RedpacketDetailCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedpacketDetailCell.m; sourceTree = "<group>"; };
+		BF34DDBD8BBC372CD1F291EB7A80C83C /* YZHSDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHSDWebImageOperation.h; sourceTree = "<group>"; };
+		C441EC2DC5B0D2BF2E87D6FAB8C136C4 /* YZHMBProgressHUD+YZHAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YZHMBProgressHUD+YZHAdd.m"; sourceTree = "<group>"; };
+		C4BB260DA77B64963A4E58BB25FA4060 /* RPCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPCompositeConstraint.h; sourceTree = "<group>"; };
+		C5AE26B7884FE47CB9052A441E88663C /* RPUntility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPUntility.m; sourceTree = "<group>"; };
+		C65A0A55091ED967359ACDF1D6FEA9A9 /* AlipaySDK.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		C7162A44E2FD3D3C12511AE3C4449233 /* RPRedpacketErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RPRedpacketErrorCode.h; path = RedpacketAliAuthAPILib/RPRedpacketErrorCode.h; sourceTree = "<group>"; };
+		C72D7A271158A61604CC9F192D835420 /* RPAlipayAuth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPAlipayAuth.h; sourceTree = "<group>"; };
+		C734DD92BF63ACA2A4463BFD9FE34604 /* YZHSDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHSDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		C8FDC74011B0C75641F60D2F2806594E /* libRedPacketAliAuthUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libRedPacketAliAuthUI.a; path = libRedPacketAliAuthUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB8A03CF6E2FFD57B5C9EB8B655524C1 /* RPSoundPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSoundPlayer.m; sourceTree = "<group>"; };
+		CD659183FA7A7C5C56F55B015FDA6110 /* RPSendAmountPacketViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendAmountPacketViewController.h; sourceTree = "<group>"; };
+		CD671B7DCC2728C754E2ECEF6C431F1D /* RPReceiveAmountRedpacketPreView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPReceiveAmountRedpacketPreView.h; sourceTree = "<group>"; };
+		CDCBD932DC09A66DE60E92B2ACCF7A28 /* YZTransparent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZTransparent.m; sourceTree = "<group>"; };
+		CDFFA79E0C481B632EA7E20182F0B086 /* YZHRefreshBackFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshBackFooter.m; sourceTree = "<group>"; };
+		CE3039C1E5FE6321E7CC09931CB65B9B /* YZHRefreshBackGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshBackGifFooter.m; sourceTree = "<group>"; };
+		CEFFE24E90BE987ACAD757208569EF8F /* RPSendAmountPacketViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendAmountPacketViewController.m; sourceTree = "<group>"; };
+		CFA3D51794A8DF8DEB1FBA40CFD499A8 /* RedpacketBundle.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = RedpacketBundle.bundle; sourceTree = "<group>"; };
+		CFC139F5DF2F6D29DA77A6FC1FE9CB9B /* YZHRefreshNormalHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshNormalHeader.m; sourceTree = "<group>"; };
+		CFC962A92AF70EF19EE979BCEA5B7489 /* YZHRefreshBackFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshBackFooter.h; sourceTree = "<group>"; };
+		D05310AA6C8C264E4A2A9D4BC8EF2014 /* APayAuthInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APayAuthInfo.h; path = AlipaySDK.framework/Headers/APayAuthInfo.h; sourceTree = "<group>"; };
+		D0991866F0450C366793400C96C75B79 /* View+RPAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "View+RPAdditions.m"; sourceTree = "<group>"; };
+		D0AB62F46BE1C0E2E8652B6EF8EB2117 /* RedpacketViewControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketViewControl.h; sourceTree = "<group>"; };
+		D154826B1E1EE007695EAA0A0565B28C /* RPSendRedPacketDescribeTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketDescribeTableViewCell.m; sourceTree = "<group>"; };
+		D16D23379192E79DD42A27736F5EF10C /* RPRedpacketViews.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPRedpacketViews.h; sourceTree = "<group>"; };
+		D2624F861715487978A2409864254DBA /* RPSendRedPacketDescribeCellItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketDescribeCellItem.m; sourceTree = "<group>"; };
+		D347FFCFF920714C91103982BF9C32AF /* RPRedpacketSendControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPRedpacketSendControl.m; sourceTree = "<group>"; };
+		D3E53E54687A9E2E86B931B14B5E4DC3 /* RPLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPLayout.h; sourceTree = "<group>"; };
+		D3F3BE8D47C6FF9F297FEAE2A9E34953 /* YZHRefreshFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshFooter.h; sourceTree = "<group>"; };
+		D47DD8AC70770940583DA28216C17E83 /* Pods-RCloudMessage-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RCloudMessage-resources.sh"; sourceTree = "<group>"; };
+		D557EDF437C572ADCFBCA281F9B0239B /* YZHZYPinYinSearch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHZYPinYinSearch.m; sourceTree = "<group>"; };
+		D674A478744A6D33DB9FDE993E140EFA /* YZHHanyuPinyinOutputFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHHanyuPinyinOutputFormat.h; sourceTree = "<group>"; };
+		D84D948E8C1657DFAA2038AC726DA4B2 /* UIViewController+RP_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RP_Private.h"; sourceTree = "<group>"; };
+		D8687FEA373ABEBEBC142137F88477F4 /* SeachMemberCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SeachMemberCell.h; sourceTree = "<group>"; };
+		D8B5CE8F350B400972683837BFAC91B3 /* RPSendRedPacketAutoKeyboardHandle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPSendRedPacketAutoKeyboardHandle.h; sourceTree = "<group>"; };
+		D9415521F06FBED02CDDAB7F1ABD781A /* YZHRefreshAutoFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshAutoFooter.m; sourceTree = "<group>"; };
+		DBE1D9F81D1815D6FD05D3BA18C5A034 /* RedpacketTypeMemberHandle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketTypeMemberHandle.h; sourceTree = "<group>"; };
+		DD7B785575EAD5B28FD9E88922046C7C /* RPSendRedPacketItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketItem.m; sourceTree = "<group>"; };
+		DDE85D1D6B4021D1F104DA2B9B92EF6B /* YZHRefreshComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshComponent.h; sourceTree = "<group>"; };
+		DE06476672BDF62E315BFD21EC3F152B /* YZHRefreshAutoStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshAutoStateFooter.m; sourceTree = "<group>"; };
+		E0FE0953F53E86A997DF02D3788C9C07 /* NSData+YZHImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSData+YZHImageContentType.m"; sourceTree = "<group>"; };
+		E1CD67D436641CD1A59A836B25F352A5 /* Pods-RCloudMessage-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RCloudMessage-acknowledgements.plist"; sourceTree = "<group>"; };
+		E22C845B6077CBC619E7992399600DA4 /* UIView+YZHPrompting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+YZHPrompting.m"; sourceTree = "<group>"; };
+		E4880AAE280C66398B04E8DAF716030B /* RPRedpacketUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RPRedpacketUser.h; path = RedpacketAliAuthAPILib/RPRedpacketUser.h; sourceTree = "<group>"; };
+		E5BC6D0A360EFEDBC4DA814987D26301 /* RPSendRedPacketCertainCellItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketCertainCellItem.m; sourceTree = "<group>"; };
+		E904E4383E84DE087F12B6571F09FA9E /* NSString+YZHPinYin4Cocoa.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+YZHPinYin4Cocoa.m"; sourceTree = "<group>"; };
+		E9CAEC8307ACCD48FF2B853806CF9B91 /* YZHChineseToPinyinResource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHChineseToPinyinResource.h; sourceTree = "<group>"; };
+		EC1E3CBC3854499C6CA02A195829DF06 /* YZHRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
+		EC57D1EC2F1D79D23813A3FE048F3460 /* RPSendRedPacketCountTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketCountTableViewCell.m; sourceTree = "<group>"; };
+		EC8CEE7499C65EFD62B3BA5667D5DF5C /* UIView+YZHExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+YZHExtension.h"; sourceTree = "<group>"; };
+		ED6066AFF0CF87D7DCBD7A223D3586A6 /* YZHPinYinForObjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHPinYinForObjc.h; sourceTree = "<group>"; };
+		EDEF5CCE0FA0666D91BE227B327F2F75 /* RPRefreshTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPRefreshTableViewController.m; sourceTree = "<group>"; };
+		EE69AA2FFF7B0B97D78F7049E6080C14 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		EF1320FF288EB6826BCABF6E603BC246 /* RPConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RPConstraint+Private.h"; sourceTree = "<group>"; };
+		EF8EFA7BB9F5F7D38C07ADB88FF08E90 /* RedPacketDetailViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RedPacketDetailViewController.m; sourceTree = "<group>"; };
+		F0D53BBA16908D88EDE72F3CDD29AD54 /* RPSendRedPacketChangeTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPSendRedPacketChangeTableViewCell.m; sourceTree = "<group>"; };
+		F260A8764510D23575EAB034A1DAE912 /* YZHSDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHSDImageCache.m; sourceTree = "<group>"; };
+		F2AB44EB0D2F6707969F971ECEC04F46 /* RPBaseTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPBaseTableViewController.m; sourceTree = "<group>"; };
+		F3EC5E9E92DB45C3DBFE02A425E8F98D /* YZHRefreshAutoGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshAutoGifFooter.h; sourceTree = "<group>"; };
+		F47A9DAB387AC13BB9613CEB89D10D7F /* RPAdvertisementDetailViewContrroller.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPAdvertisementDetailViewContrroller.m; sourceTree = "<group>"; };
+		F943B46514D5B733893EAF653C339B4C /* YZHChineseString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHChineseString.h; sourceTree = "<group>"; };
+		FA75B22146CE038355A36A7E64D70DBC /* UIView+YZHWebCacheOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+YZHWebCacheOperation.m"; sourceTree = "<group>"; };
+		FA8119661BA52901F84C761C3EA04A4E /* RPAliAuthPay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RPAliAuthPay.h; sourceTree = "<group>"; };
+		FAC1AC8C60CE25E524D462B49FB623B4 /* YZHSDWebImageDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHSDWebImageDecoder.m; sourceTree = "<group>"; };
+		FCF6D01044B912093B4D7F3356F70143 /* YZHRefreshFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHRefreshFooter.m; sourceTree = "<group>"; };
+		FE05E97A14DD22CB9093DBDDE5C21742 /* YZHRefreshConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YZHRefreshConst.h; sourceTree = "<group>"; };
+		FE1E12DD4289268140C484AB7A7F3B1B /* YZHHanyuPinyinOutputFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YZHHanyuPinyinOutputFormat.m; sourceTree = "<group>"; };
+		FE52CADC8C1F7D04648B361CE2FEFD13 /* RPAliPayEmpower.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPAliPayEmpower.m; sourceTree = "<group>"; };
+		FE9A94206156BB8C74F67846CD91F4A4 /* RPMyIncomeRedPacketCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RPMyIncomeRedPacketCell.m; sourceTree = "<group>"; };
+		FF455F9733AC953DD3573728ABB79993 /* RedpacketTypeSingleHandle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RedpacketTypeSingleHandle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		38031003A39CCB19B8F792D7A13D8B82 /* Frameworks */ = {
+		5ABB34026D422461F80C652B5F88FA07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AEC2907A73A3F190508C179EF5F1638 /* Foundation.framework in Frameworks */,
+				081071F0D80EA3D740BE95AF77F9B4A3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		669918EF89E89207F45F490A53CE221D /* Frameworks */ = {
+		FCF0434434799018E1757270CCE960E5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C7024741A724C9D98EFEC6549BE83E0 /* Foundation.framework in Frameworks */,
+				D261DD39245B8BBB4C8621FCAA31CED1 /* AudioToolbox.framework in Frameworks */,
+				CC2144F056E2F4AF0FE14880FA1E80F3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0CDD25257ADF8B3F8C7FEC6ECDA1F6E0 /* RedPacketAlipay */ = {
+		00A27DCDE02ED54BC410B79FF8F08356 /* Auto */ = {
 			isa = PBXGroup;
 			children = (
-				E02F7DE3B6544B46096E68D7AC744B5D /* AlipaySDK.h */,
-				9C37C52E3E2D9BCC65AC2F8820A0E6F4 /* APayAuthInfo.h */,
-				5EBF4DE30163A097458D9B6516223993 /* Frameworks */,
-				AA6FE72D091432D890C4DA52C4896B64 /* Resources */,
+				F3EC5E9E92DB45C3DBFE02A425E8F98D /* YZHRefreshAutoGifFooter.h */,
+				5C400B9016F33AC74B439F083F416121 /* YZHRefreshAutoGifFooter.m */,
+				EC1E3CBC3854499C6CA02A195829DF06 /* YZHRefreshAutoNormalFooter.h */,
+				49419D6192145027FC42F07F60FDD559 /* YZHRefreshAutoNormalFooter.m */,
+				8815035CE983E983C5A4FDA556EBE181 /* YZHRefreshAutoStateFooter.h */,
+				DE06476672BDF62E315BFD21EC3F152B /* YZHRefreshAutoStateFooter.m */,
 			);
-			name = RedPacketAlipay;
-			path = RedPacketAlipay;
+			name = Auto;
+			path = Auto;
 			sourceTree = "<group>";
 		};
-		4D195BE0079DFE143471D665158B03AC /* RedpacketLib */ = {
+		011060A9B9A335C3F35EB2C09A86D64D /* MyInComeRedPacketViewController */ = {
 			isa = PBXGroup;
 			children = (
-				359C6230709D9583E04114C88C028CE1 /* RedpacketErrorCode.h */,
-				E588259403EE8729A74F0FB73D1CFDFA /* RedpacketLib.h */,
-				E3DF5C221D5CE0D3B492B253CE55CD67 /* RedpacketMessageModel.h */,
-				E5896FB3B38DA9DE65B829C4FCE60E2A /* RedpacketOpenConst.h */,
-				A4C280BDE48D051DA4D988FB5E48E6A2 /* RedpacketViewControl.h */,
-				802E83F378F3904B2EED2C5BBDEB6D17 /* YZHRedpacketBridge.h */,
-				539685D4F404B2B86EE3D07C91114811 /* YZHRedpacketBridgeProtocol.h */,
-				5528FA6F94460CAC83849134C7C67A44 /* Frameworks */,
-				5C05288E1A30C411DCCB64EB7BC8D7CB /* Resources */,
+				1E12509157AC5C9AC0654AED46BD4DE8 /* RPReceiptsInAlipayViewController.h */,
+				4187C9020811F82FC37C5EEC1AF6A0C3 /* RPReceiptsInAlipayViewController.m */,
+				40C798D5E65180948989E446FA34BC44 /* Views */,
 			);
-			name = RedpacketLib;
-			path = RedpacketLib;
+			name = MyInComeRedPacketViewController;
+			path = MyInComeRedPacketViewController;
 			sourceTree = "<group>";
 		};
-		5528FA6F94460CAC83849134C7C67A44 /* Frameworks */ = {
+		1059330A75DEECBFF071FC2C4C89B538 /* Back */ = {
 			isa = PBXGroup;
 			children = (
-				571DE6368A379959B061F71426428C43 /* libRedpacketLib.a */,
+				8102A684797D0BFBFC66A4CF6786C967 /* YZHRefreshBackGifFooter.h */,
+				CE3039C1E5FE6321E7CC09931CB65B9B /* YZHRefreshBackGifFooter.m */,
+				855AA9EEE66FC3CF6F3416048D2DBB01 /* YZHRefreshBackNormalFooter.h */,
+				98707E66F4AA97A3CF4D9D4F6AED959F /* YZHRefreshBackNormalFooter.m */,
+				9C1F45F1FDF568F0BE50BB76D934816A /* YZHRefreshBackStateFooter.h */,
+				5ACE8155CA000D6D8427F5E7126BEC50 /* YZHRefreshBackStateFooter.m */,
+			);
+			name = Back;
+			path = Back;
+			sourceTree = "<group>";
+		};
+		12707FB6A80D2A0BE611BD92233B557D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4C0AA7EB6FEC1EF66BF0898BBDD3F12E /* RedpacketDetailCell.h */,
+				BCEF417A64899393B88DB8C4842CF28D /* RedpacketDetailCell.m */,
+			);
+			name = Cells;
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		19864CD2BEDF70D3D27C983F30C0ACD9 /* RedPacketAliAuthUI */ = {
+			isa = PBXGroup;
+			children = (
+				B7E0BBB83A430FBA1D8D40701062E296 /* RedPacketAliAuthUI */,
+				8CF82C4A3A74A96868B2266B159C321E /* Resources */,
+				C38D2755060FF338EB76849669ACEACC /* Support Files */,
+			);
+			name = RedPacketAliAuthUI;
+			path = "../RedpacketSDK/cocoapods-redpacket-ui-2.0.0";
+			sourceTree = "<group>";
+		};
+		2399D51D2A48D154081EFE28B07768F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				328D9FDF14C94C7E5EB551B53A7F40F1 /* libRedpacketAliAuthAPILib.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5C05288E1A30C411DCCB64EB7BC8D7CB /* Resources */ = {
+		2B1FBB129D06457D8259EDB3951F356C /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				E681B36040AD10D4E9A15AF6FA940B9E /* RedpacketBundle.bundle */,
+				AA165DEF3F7004C0B536B26FD027776E /* YZHMBProgressHUD.h */,
+				5B2F29DB61B25277EFC9E34E5D763AC3 /* YZHMBProgressHUD.m */,
+				3F5C672A0F851FF01C8DBFD00BBBEE14 /* YZHMBProgressHUD+YZHAdd.h */,
+				C441EC2DC5B0D2BF2E87D6FAB8C136C4 /* YZHMBProgressHUD+YZHAdd.m */,
 			);
-			name = Resources;
+			name = MBProgressHUD;
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
-		5EBF4DE30163A097458D9B6516223993 /* Frameworks */ = {
+		30DE93B337B5F6E68F52D39ABC337F64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ED882D89D9D89A9C0C0FBCAC21C3823C /* AlipaySDK.framework */,
+				76E3798C3659EB6A59255ADC24FEE782 /* AlipaySDK.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39F09B906A15F5AA1A66C03B105A38BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				69C63E458635443B74B1670BEFFE90D1 /* PlaceHolderTextView.h */,
+				A189FB862D88601DEB7E746EDAD3EB11 /* PlaceHolderTextView.m */,
+				3C1E1B73DA0166E3A0621612E8468591 /* YZTransparent.h */,
+				CDCBD932DC09A66DE60E92B2ACCF7A28 /* YZTransparent.m */,
+			);
+			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3CA59CEBD6641B63FCFB2780F46BE39E /* HCSearch */ = {
+			isa = PBXGroup;
+			children = (
+				1F86FA96DDAE6F7C024FD0A82CF6B370 /* YZHHCHeader.h */,
+				C1936E25838FE0033BAD3E26CC3F6535 /* LetterGroups */,
+				F643322F4EF5C6E5FB3A445B693298DC /* PinYinSearchLib */,
+			);
+			name = HCSearch;
+			path = HCSearch;
+			sourceTree = "<group>";
+		};
+		3D87C1D705F6A69777E815A9E0D469A9 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				CFA3D51794A8DF8DEB1FBA40CFD499A8 /* RedpacketBundle.bundle */,
+			);
+			name = resources;
+			path = resources;
+			sourceTree = "<group>";
+		};
+		40C798D5E65180948989E446FA34BC44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57512EE69DFDB9CD66448788DD5AAD34 /* RPMyIncomeRedPacketCell.h */,
+				FE9A94206156BB8C74F67846CD91F4A4 /* RPMyIncomeRedPacketCell.m */,
+				4CD44FB36111FFC30D65926EABAA861D /* RPReceiotsInAlipayEmptyTableViewCell.h */,
+				6F3A432AC80E2220FA8CE87089703199 /* RPReceiotsInAlipayEmptyTableViewCell.m */,
+				A3B9136B4B89FE274EDDCCB289002F48 /* RPReceiotsInAlipayHeaderView.h */,
+				062D6890F16171C08DCD0FA4E2BC1C55 /* RPReceiotsInAlipayHeaderView.m */,
+			);
+			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4A4EE7D48D5E5BC986FA1920593F167 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		492238DD3D94F7FDE9F08D33251A3FA5 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				9C084F06A68C4FFFA51890CADAEAEBFC /* YZHRefreshGifHeader.h */,
+				4574D8B0A59BA8E9A751CADE2746AF84 /* YZHRefreshGifHeader.m */,
+				6A370D711D15DAF94B8D7DCFBDBC9A50 /* YZHRefreshNormalHeader.h */,
+				CFC139F5DF2F6D29DA77A6FC1FE9CB9B /* YZHRefreshNormalHeader.m */,
+				AA5DBD9E123732A87C268D31C340B348 /* YZHRefreshStateHeader.h */,
+				01C219C953BD1DDF860E21DECCD03ACA /* YZHRefreshStateHeader.m */,
+			);
+			name = Header;
+			path = Header;
+			sourceTree = "<group>";
+		};
+		4D2AF7706FCE991243BD3C99FF4C3A8F /* ThirdPart */ = {
+			isa = PBXGroup;
+			children = (
+				65DB91B13026E5F6EAC8A69895269666 /* AliPay */,
+				2B1FBB129D06457D8259EDB3951F356C /* MBProgressHUD */,
+				AF689D79605480D033F6C2FCCBEC22FB /* MJRefresh */,
+				F2C5B03CEA35F1F452C72A26EE0B20F2 /* SDWebImage */,
+			);
+			name = ThirdPart;
+			path = ThirdPart;
+			sourceTree = "<group>";
+		};
+		5288A6F598764C18279E212E7C7C75C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				28C0F6EA25EBB924B5104129B769B2BD /* RPMemberRedpacketPreView.h */,
+				716FC477667EA2E17A8FAD84EEFFFA86 /* RPMemberRedpacketPreView.m */,
+				6AADAA1CDA765887EE72ADAB61937319 /* RPNormalRedpacketPreView.h */,
+				9267E40EC35478C6592D491B0513A409 /* RPNormalRedpacketPreView.m */,
+				CD671B7DCC2728C754E2ECEF6C431F1D /* RPReceiveAmountRedpacketPreView.h */,
+				3C8DE052F003D8C826406CD68C3C3EE2 /* RPReceiveAmountRedpacketPreView.m */,
+				B76F1DBD67542FD59672D32E09148B91 /* RPRedpacketPreView.h */,
+				AA4374F85F69452BFE35208A05AF450F /* RPRedpacketPreView.m */,
+				2219EDB33D9B92D1A7B3B8A221F1A385 /* RPSendAmountRedpacketPreView.h */,
+				8910F867914E2FB44BF8AEC7E05568DC /* RPSendAmountRedpacketPreView.m */,
+			);
+			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5513F25E9F580E57D0578AFBAE68F565 /* RedpacketAliAuthAPILib */ = {
+			isa = PBXGroup;
+			children = (
+				2BE2DEEBF6CF3C156A8BD7A341DC2B95 /* RPAdvertInfo.h */,
+				36E00D9B732F42E8408D86D776E63958 /* RPPersonalRedpacketInfo.h */,
+				7810E41F7BAF8A85EBB9DA1341AEB57D /* RPRedpacketBridge.h */,
+				C7162A44E2FD3D3C12511AE3C4449233 /* RPRedpacketErrorCode.h */,
+				8A01A8F99E5E0BC45954EB2DADBD3B19 /* RPRedpacketManager.h */,
+				597C87A5976B08AE9A10208E81B18514 /* RPRedpacketModel.h */,
+				655CC3B7B305A3F9C51EEA03403A2222 /* RPRedpacketSetting.h */,
+				E4880AAE280C66398B04E8DAF716030B /* RPRedpacketUser.h */,
+				836C7C6A4586E0FF883B945A8378BB9D /* RPUserInfo.h */,
+				2399D51D2A48D154081EFE28B07768F0 /* Frameworks */,
+			);
+			name = RedpacketAliAuthAPILib;
+			path = RedpacketAliAuthAPILib;
+			sourceTree = "<group>";
+		};
+		568C05472405B75A2F3064682DA4234A /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				A99CF803944B715AAD7ECD0497024355 /* Footer */,
+				492238DD3D94F7FDE9F08D33251A3FA5 /* Header */,
+			);
+			name = Custom;
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		57B790E9580BAA83E8ED3400F6AEEBF2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				98ED3D87533CA8726C9FC84CC7CDE46B /* RedpacketErrorView.h */,
+				A99013B9D0BD476A0D293AAA0CBC59BE /* RedpacketErrorView.m */,
+				4C81D4A1C636355C38722668A91CA4EA /* RPAliPayEmpower.h */,
+				FE52CADC8C1F7D04648B361CE2FEFD13 /* RPAliPayEmpower.m */,
+				B85D9B11CA200D2CA804A5CB4C9846C2 /* RPBaseViewController.h */,
+				7FB7AD0EF063D857DFA847F42F9CE770 /* RPBaseViewController.m */,
+				1E4EBA421341B8EC9AF28F2161E85F25 /* RPRedpackeNavgationController.h */,
+				6009C5BEFEE5554479CEEF2A7ED7684C /* RPRedpackeNavgationController.m */,
+				09ABC304CDF7CC809B1F5E454A429030 /* RPRedpacketDefines.h */,
+				742047FD8593F958E0C3761AE915ECFE /* RPRedpacketTool.h */,
+				23F965A821E9F5BF7F75EA0D62E7BF90 /* RPRedpacketTool.m */,
+				B73D1BBCAEC416EE462DD4977BE87508 /* RPRefreshTableViewController.h */,
+				EDEF5CCE0FA0666D91BE227B327F2F75 /* RPRefreshTableViewController.m */,
+				D8B5CE8F350B400972683837BFAC91B3 /* RPSendRedPacketAutoKeyboardHandle.h */,
+				469E2760F9267BD184496EC1DD904398 /* RPSendRedPacketAutoKeyboardHandle.m */,
+				214FD9ED221AA6E8A108DA51B37973DB /* RPSoundPlayer.h */,
+				CB8A03CF6E2FFD57B5C9EB8B655524C1 /* RPSoundPlayer.m */,
+				8F945661718AAC16B54E30851717835B /* RPUntility.h */,
+				C5AE26B7884FE47CB9052A441E88663C /* RPUntility.m */,
+				9506581E1E6D71753A50254814A6A475 /* Category */,
+				E285C12B00F70C6AC0647ECE7140FDDE /* Layout */,
+				39F09B906A15F5AA1A66C03B105A38BB /* Views */,
+			);
+			name = Tools;
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		5C390112A1CE85782A00C563619F40A9 /* RedpacketPayControl */ = {
+			isa = PBXGroup;
+			children = (
+				FA8119661BA52901F84C761C3EA04A4E /* RPAliAuthPay.h */,
+				72AD31A90CC00410B8D5A5E0411F8F86 /* RPAliAuthPay.m */,
+				C72D7A271158A61604CC9F192D835420 /* RPAlipayAuth.h */,
+				5E521F4E620D3875E7452FEDC201288A /* RPAlipayAuth.m */,
+				720A1772285FBE7210FDF7A9874DF041 /* RPRedpacketSendControl.h */,
+				D347FFCFF920714C91103982BF9C32AF /* RPRedpacketSendControl.m */,
+			);
+			name = RedpacketPayControl;
+			path = RedpacketPayControl;
+			sourceTree = "<group>";
+		};
+		6487BD12128E7B7E271759C9152E04B6 /* RedpacketDetailController */ = {
+			isa = PBXGroup;
+			children = (
+				1CACF0987BCAAC25158C55866FAC1FAA /* RedPacketDetailViewController.h */,
+				EF8EFA7BB9F5F7D38C07ADB88FF08E90 /* RedPacketDetailViewController.m */,
+				558534E3E54F0B8EDE708AF43CA18F4A /* RPAdvertisementDetailViewContrroller.h */,
+				F47A9DAB387AC13BB9613CEB89D10D7F /* RPAdvertisementDetailViewContrroller.m */,
+				12707FB6A80D2A0BE611BD92233B557D /* Cells */,
+				83013A748AB0D093ABE46F61CCA49F41 /* Views */,
+			);
+			name = RedpacketDetailController;
+			path = RedpacketDetailController;
+			sourceTree = "<group>";
+		};
+		65DB91B13026E5F6EAC8A69895269666 /* AliPay */ = {
+			isa = PBXGroup;
+			children = (
+				00F0B8E5437172BA20C2B17021C3C086 /* AlipaySDK.h */,
+				3E0DF2F9B1AC855231745A5D7A0742B7 /* APayAuthInfo.h */,
+			);
+			name = AliPay;
+			path = AliPay;
+			sourceTree = "<group>";
+		};
+		672AF0BB45DA02C1B832DE852A0FDEA0 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19864CD2BEDF70D3D27C983F30C0ACD9 /* RedPacketAliAuthUI */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		699D64F087E0E019A80007B5C896E2B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A29D87B1154792597D6F9E04C9A60E0 /* RPSendRedPacketBaseTableViewCellProtocol.h */,
+				121D018B0791770D573BAA0AD07A2980 /* RPSendRedPacketCertainTableViewCell.h */,
+				6A13E6033D4DFB3FE1078DC9271DED24 /* RPSendRedPacketCertainTableViewCell.m */,
+				646466334D2959767DF1EB3723F433E8 /* RPSendRedPacketChangeTableViewCell.h */,
+				F0D53BBA16908D88EDE72F3CDD29AD54 /* RPSendRedPacketChangeTableViewCell.m */,
+				4BB1A98B3792A4799BE70B766589016B /* RPSendRedPacketCountTableViewCell.h */,
+				EC57D1EC2F1D79D23813A3FE048F3460 /* RPSendRedPacketCountTableViewCell.m */,
+				3386D8B4EA17ABC5911E1197B13359F5 /* RPSendRedPacketDescribeTableViewCell.h */,
+				D154826B1E1EE007695EAA0A0565B28C /* RPSendRedPacketDescribeTableViewCell.m */,
+				0D08E91BBFF5D8AF4BBAA90CE30F54B8 /* RPSendRedPacketMemberTableViewCell.h */,
+				7AF6A42762FEA77EB56BCEAD4B4712D1 /* RPSendRedPacketMemberTableViewCell.m */,
+				AB4E81A14BCB2C9C421797F452DA9A39 /* RPSendRedPacketTableViewCell.h */,
+				BCB933896726CFBAC52AA68D91210E46 /* RPSendRedPacketTableViewCell.m */,
+			);
+			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				D1EA492575FB101D0D81FCC169403C03 /* Pods */,
-				E0674D8C128335D5667DAB06AD80C87C /* Products */,
-				AFB1FD43F7C8AA734ECBA8F8BD84FC19 /* Targets Support Files */,
+				672AF0BB45DA02C1B832DE852A0FDEA0 /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				B283F4FD7C5941D972DE5727DD0B4E0A /* Pods */,
+				EAF57B669D34BC90D121804716FB8A6B /* Products */,
+				9F78CBCBC7F2D64758CAFACDFE75D3DA /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		87482F12FD0932FC85755817670DBDC5 /* Pods-RCloudMessage-JDpay */ = {
+		83013A748AB0D093ABE46F61CCA49F41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F5B4C31BA2714183FADAEA51DB1402ED /* Pods-RCloudMessage-JDpay-acknowledgements.markdown */,
-				CA9A2973EA0D27B93A076867873C54E7 /* Pods-RCloudMessage-JDpay-acknowledgements.plist */,
-				7907F71889EACE6938BA84F08718618E /* Pods-RCloudMessage-JDpay-dummy.m */,
-				64C88F6EB4EC3ED2C218A62F79E2BDEA /* Pods-RCloudMessage-JDpay-frameworks.sh */,
-				79B14D22A791542FEB1E59DCF65DDBDB /* Pods-RCloudMessage-JDpay-resources.sh */,
-				37B99E8DD41105D2198F98654D26C7FF /* Pods-RCloudMessage-JDpay.autodebug.xcconfig */,
-				B2B5BB399271491E98C3E21A4E3C2895 /* Pods-RCloudMessage-JDpay.autorelease.xcconfig */,
-				AA23EE45456B4781D8DDFE0D38BCD829 /* Pods-RCloudMessage-JDpay.debug.xcconfig */,
-				DA2F5545120DA0320C00569DA750D705 /* Pods-RCloudMessage-JDpay.release.xcconfig */,
+				2ED1882256805F88D2CB96E00CCCD4FC /* RPAdvertisementDetailView.h */,
+				84770F7460682A28B90E53AB8F13A27F /* RPAdvertisementDetailView.m */,
+				B3DBD8B3FCB955C02015FD61B859AF5E /* RPRedpacketDetailHeaderView.h */,
+				592715F662B28B9DA56E976616249824 /* RPRedpacketDetailHeaderView.m */,
 			);
-			name = "Pods-RCloudMessage-JDpay";
-			path = "Target Support Files/Pods-RCloudMessage-JDpay";
+			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		8E3128512847542F65D18A5E93798E9F /* RedpacketAliAuthLib */ = {
+		8CF82C4A3A74A96868B2266B159C321E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3EDC6722AE657932C5B46045FA1DD381 /* RedpacketErrorCode.h */,
-				209CCA5569317451760D665E5FBE45A7 /* RedpacketLib.h */,
-				1D35D7A7A2A6D9CE6AAC59D71DDBE4B2 /* RedpacketMessageModel.h */,
-				94AE986468455CD366B5760DE36A0DAF /* RedpacketOpenConst.h */,
-				F6746D720C75AC67B2B6B146EEE2C153 /* RedpacketViewControl.h */,
-				B0832E171033432980D5EA37BE0D380C /* YZHRedpacketBridge.h */,
-				93F2752AD499F984209450ED05589A68 /* YZHRedpacketBridgeProtocol.h */,
-				E5135967A0A205277CDAD0C17575B04A /* Frameworks */,
-				EDFFBF8C467783BD7170DC730948F80C /* Resources */,
-			);
-			name = RedpacketAliAuthLib;
-			path = RedpacketAliAuthLib;
-			sourceTree = "<group>";
-		};
-		AA6FE72D091432D890C4DA52C4896B64 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				197596382AFFCFECB65552A06ACF17DB /* AlipaySDK.bundle */,
+				3D87C1D705F6A69777E815A9E0D469A9 /* resources */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		AFB1FD43F7C8AA734ECBA8F8BD84FC19 /* Targets Support Files */ = {
+		8F2ACEF3B1385A783662475621080D1D /* SendRedPacketViewController */ = {
 			isa = PBXGroup;
 			children = (
-				ED324F9C40D716B40A5B9683370F1669 /* Pods-RCloudMessage */,
-				87482F12FD0932FC85755817670DBDC5 /* Pods-RCloudMessage-JDpay */,
+				CD659183FA7A7C5C56F55B015FDA6110 /* RPSendAmountPacketViewController.h */,
+				CEFFE24E90BE987ACAD757208569EF8F /* RPSendAmountPacketViewController.m */,
+				7A70C2F9899BAA5662C1017DE6D9E231 /* RPSendRedPacketViewController.h */,
+				417F24C4650C32D33A6D66291A44B7C1 /* RPSendRedPacketViewController.m */,
+				D8687FEA373ABEBEBC142137F88477F4 /* SeachMemberCell.h */,
+				A886E2104CCE35E25BC971DEB3BD2579 /* SeachMemberCell.m */,
+				05EC13E0CB5A46F12C39EA2109606889 /* SearchMemberViewController.h */,
+				4244911880F3EB2736B0BF5389AB9BB5 /* SearchMemberViewController.m */,
+				F1C7AD8C02A5F579A86701F8EABE34EB /* CellItem */,
+				3CA59CEBD6641B63FCFB2780F46BE39E /* HCSearch */,
+				F44F39D66AB5C5A6BF3AC727E1CF4685 /* Public */,
+				699D64F087E0E019A80007B5C896E2B0 /* Views */,
+			);
+			name = SendRedPacketViewController;
+			path = SendRedPacketViewController;
+			sourceTree = "<group>";
+		};
+		9506581E1E6D71753A50254814A6A475 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				28FE344FD3318C8F0332D741F52CE01A /* NSBundle+RedpacketBundle.h */,
+				43F44C06F1246BB3F01BB99697786216 /* NSBundle+RedpacketBundle.m */,
+				71DB99765BC0637FCD190B5ED4515DA4 /* RedpacketColorStore.h */,
+				951308FA858B77880E6219A985DA928B /* RedpacketColorStore.m */,
+				3E4CE0EA5AEA06F73873323829EB1F54 /* UIAlertView+YZHAlert.h */,
+				999DC7F5FC8AA2D878B51990B3711014 /* UIAlertView+YZHAlert.m */,
+				0ECC9DED7EE5B731B05FF75DD9F828F9 /* UIButton+RPAction.h */,
+				019A315258F751CF324FD74B69303715 /* UIButton+RPAction.m */,
+				4A6D59E67B80963BDD34E57DFCFFE6A5 /* UIColor+RedpacketColors.h */,
+				0B7A80B3CB05F38760D006802DCBEC7F /* UIColor+RedpacketColors.m */,
+				877904B0494B7E2D786F3CDB64F9857C /* UIView+YZHAnimation.h */,
+				86859AE29E3C80A34A9B75007B556FA0 /* UIView+YZHAnimation.m */,
+				EC8CEE7499C65EFD62B3BA5667D5DF5C /* UIView+YZHExtension.h */,
+				2D1817F7C9EF9A5E4687D9A2862BFBB1 /* UIView+YZHExtension.m */,
+				26241CE5DD213EBBB7D67A8A36975CB5 /* UIView+YZHPrompting.h */,
+				E22C845B6077CBC619E7992399600DA4 /* UIView+YZHPrompting.m */,
+			);
+			name = Category;
+			path = Category;
+			sourceTree = "<group>";
+		};
+		9F78CBCBC7F2D64758CAFACDFE75D3DA /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB2C1E259B39096A42626F5CA135914D /* Pods-RCloudMessage */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		A4A4EE7D48D5E5BC986FA1920593F167 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D1EA492575FB101D0D81FCC169403C03 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8E3128512847542F65D18A5E93798E9F /* RedpacketAliAuthLib */,
-				0CDD25257ADF8B3F8C7FEC6ECDA1F6E0 /* RedPacketAlipay */,
-				4D195BE0079DFE143471D665158B03AC /* RedpacketLib */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+				201918DE0A4ADFAFD14D9671313437B7 /* AudioToolbox.framework */,
+				7B4FCA07BD38831E1DFADC5A552E8237 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		E0674D8C128335D5667DAB06AD80C87C /* Products */ = {
+		A99CF803944B715AAD7ECD0497024355 /* Footer */ = {
 			isa = PBXGroup;
 			children = (
-				D88C4B787F7FE9D6EA6419A39B71CA1F /* libPods-RCloudMessage.a */,
-				E03FF0C69B592B09F0EA0AE0D6F66FA6 /* libPods-RCloudMessage-JDpay.a */,
+				00A27DCDE02ED54BC410B79FF8F08356 /* Auto */,
+				1059330A75DEECBFF071FC2C4C89B538 /* Back */,
 			);
-			name = Products;
+			name = Footer;
+			path = Footer;
 			sourceTree = "<group>";
 		};
-		E5135967A0A205277CDAD0C17575B04A /* Frameworks */ = {
+		AF689D79605480D033F6C2FCCBEC22FB /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				25857F68049F919FAA89398075157AD9 /* libRedpacketLibAliAuthPay.a */,
+				7A036E0787FE25309DDA73D2785574CB /* UIScrollView+YZHExtension.h */,
+				9C5D099040118999DB44FEED6A8495BD /* UIScrollView+YZHExtension.m */,
+				6F593996C41E5ADD16B62BB3505110BB /* UIScrollView+YZHRefresh.h */,
+				55F7BC155CAC197F9D5E0AFFD57AC040 /* UIScrollView+YZHRefresh.m */,
+				7667CC0D01B34CF574BCF0CA44C43AC1 /* YZHRefresh.h */,
+				FE05E97A14DD22CB9093DBDDE5C21742 /* YZHRefreshConst.h */,
+				91BC4B73A20E1649CDD19B3334F034D6 /* YZHRefreshConst.m */,
+				EE7A4E52D0816380083A1BE9003E8FAA /* Base */,
+				568C05472405B75A2F3064682DA4234A /* Custom */,
 			);
-			name = Frameworks;
+			name = MJRefresh;
+			path = MJRefresh;
 			sourceTree = "<group>";
 		};
-		ED324F9C40D716B40A5B9683370F1669 /* Pods-RCloudMessage */ = {
+		B283F4FD7C5941D972DE5727DD0B4E0A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				369A968B143387359D548F14FE893700 /* Pods-RCloudMessage-acknowledgements.markdown */,
-				C60480224FCA2ACA1ED29BFB8A6F1EEB /* Pods-RCloudMessage-acknowledgements.plist */,
-				2630B600A78430EAB9C07ABD1113EE60 /* Pods-RCloudMessage-dummy.m */,
-				C9350AF419D1C8848A5BEB7966666280 /* Pods-RCloudMessage-frameworks.sh */,
-				3CCCAD8172048347B1E041633893FB22 /* Pods-RCloudMessage-resources.sh */,
-				463612E4C626C90B90D8B777D0F21936 /* Pods-RCloudMessage.autodebug.xcconfig */,
-				5AA2D0B72D45969BDD458E7F4F349511 /* Pods-RCloudMessage.autorelease.xcconfig */,
-				A482FB66B7BF320E57A40C05E0B8450B /* Pods-RCloudMessage.debug.xcconfig */,
-				E8F4845A8BD7410CF60A2682FB985915 /* Pods-RCloudMessage.release.xcconfig */,
+				5513F25E9F580E57D0578AFBAE68F565 /* RedpacketAliAuthAPILib */,
+				D5D2869391C9E949B14A1511F6806672 /* RPAlipayLib */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B7E0BBB83A430FBA1D8D40701062E296 /* RedPacketAliAuthUI */ = {
+			isa = PBXGroup;
+			children = (
+				44518416789ECB9137DF6929D82AE565 /* RedpacketLib.h */,
+				DECF38972073B8322FCCE6262943BE44 /* ChatRedpacketViewController */,
+				011060A9B9A335C3F35EB2C09A86D64D /* MyInComeRedPacketViewController */,
+				6487BD12128E7B7E271759C9152E04B6 /* RedpacketDetailController */,
+				5C390112A1CE85782A00C563619F40A9 /* RedpacketPayControl */,
+				D446801A74278F65B9CA7E4DABF47B52 /* RPRedpacketVIews */,
+				8F2ACEF3B1385A783662475621080D1D /* SendRedPacketViewController */,
+				4D2AF7706FCE991243BD3C99FF4C3A8F /* ThirdPart */,
+				57B790E9580BAA83E8ED3400F6AEEBF2 /* Tools */,
+			);
+			name = RedPacketAliAuthUI;
+			path = RedPacketAliAuthUI;
+			sourceTree = "<group>";
+		};
+		C1936E25838FE0033BAD3E26CC3F6535 /* LetterGroups */ = {
+			isa = PBXGroup;
+			children = (
+				F943B46514D5B733893EAF653C339B4C /* YZHChineseString.h */,
+				6A9F2AC9EEDFA48A5434514EB1245432 /* YZHChineseString.m */,
+			);
+			name = LetterGroups;
+			path = LetterGroups;
+			sourceTree = "<group>";
+		};
+		C38D2755060FF338EB76849669ACEACC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C329A72BABD823E8009F391E5B39965 /* RedPacketAliAuthUI.xcconfig */,
+				AEE61B910EAB0E28BB50CBBD48A8A003 /* RedPacketAliAuthUI-dummy.m */,
+				7AE5BA2653965D6706D0D4F70265A320 /* RedPacketAliAuthUI-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../Pods/Target Support Files/RedPacketAliAuthUI";
+			sourceTree = "<group>";
+		};
+		CB2C1E259B39096A42626F5CA135914D /* Pods-RCloudMessage */ = {
+			isa = PBXGroup;
+			children = (
+				41376FED7A7D48E05A24946FFE100953 /* Pods-RCloudMessage-acknowledgements.markdown */,
+				E1CD67D436641CD1A59A836B25F352A5 /* Pods-RCloudMessage-acknowledgements.plist */,
+				424A953B010CA9B71BE6CAEC394ECD32 /* Pods-RCloudMessage-dummy.m */,
+				3CF5628E92F1E977E8ABF6100631BD50 /* Pods-RCloudMessage-frameworks.sh */,
+				D47DD8AC70770940583DA28216C17E83 /* Pods-RCloudMessage-resources.sh */,
+				590D7E8E457BFF664857B4EA0C4610CC /* Pods-RCloudMessage.autodebug.xcconfig */,
+				804F83511BEE831AF61F6FF3A7133815 /* Pods-RCloudMessage.autorelease.xcconfig */,
+				63C02D39EEF3E7E51E20AFA62529E77E /* Pods-RCloudMessage.debug.xcconfig */,
+				7EB7F82CA8522267A0519A6A2AEDBA3F /* Pods-RCloudMessage.release.xcconfig */,
 			);
 			name = "Pods-RCloudMessage";
 			path = "Target Support Files/Pods-RCloudMessage";
 			sourceTree = "<group>";
 		};
-		EDFFBF8C467783BD7170DC730948F80C /* Resources */ = {
+		D446801A74278F65B9CA7E4DABF47B52 /* RPRedpacketVIews */ = {
 			isa = PBXGroup;
 			children = (
-				4BEEF8705D44A21531E92EB2959244E1 /* RedpacketBundle.bundle */,
+				D16D23379192E79DD42A27736F5EF10C /* RPRedpacketViews.h */,
+				A95A6821A91301C12BDC7A78BAF82874 /* RPRedpacketViews.m */,
+			);
+			name = RPRedpacketVIews;
+			path = RPRedpacketVIews;
+			sourceTree = "<group>";
+		};
+		D5D2869391C9E949B14A1511F6806672 /* RPAlipayLib */ = {
+			isa = PBXGroup;
+			children = (
+				88EF0B66425C7E24244865CACD3ADA8C /* AlipaySDK.h */,
+				D05310AA6C8C264E4A2A9D4BC8EF2014 /* APayAuthInfo.h */,
+				30DE93B337B5F6E68F52D39ABC337F64 /* Frameworks */,
+				E018B07655525657A0C944CE09C77DC8 /* Resources */,
+			);
+			name = RPAlipayLib;
+			path = RPAlipayLib;
+			sourceTree = "<group>";
+		};
+		DECF38972073B8322FCCE6262943BE44 /* ChatRedpacketViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8DFA9E5DE2C2B32B500CA5D660C54267 /* RedpacketTypeAdvertisementHandle.h */,
+				8627CBD2961CD6DB125983F99D4D2047 /* RedpacketTypeAdvertisementHandle.m */,
+				2AA27BEB79F69D5A86796AABA5091020 /* RedpacketTypeAmountHandle.h */,
+				B8E452F48F56EF3C8E19B0777F8077FB /* RedpacketTypeAmountHandle.m */,
+				808500E542F44C956534EEA7F3EC4569 /* RedpacketTypeAvgHandle.h */,
+				2ABF44FA3AC35F34DE2404F32F88FFEA /* RedpacketTypeAvgHandle.m */,
+				83EF1799ECFCA5774F2781D264E7D688 /* RedpacketTypeBaseHandle.h */,
+				ACD2C060B55455CB3D1307825C4267D8 /* RedpacketTypeBaseHandle.m */,
+				DBE1D9F81D1815D6FD05D3BA18C5A034 /* RedpacketTypeMemberHandle.h */,
+				776093F49D8AED0E0F0E346BC9C311B3 /* RedpacketTypeMemberHandle.m */,
+				79C343B4B42A6A6AF243FE1B633B3CF4 /* RedpacketTypeRandHandle.h */,
+				206AC50956096D5449364FD4567F161A /* RedpacketTypeRandHandle.m */,
+				56D4E63855DF2B18919C3D79751812FA /* RedpacketTypeRandpiHandle.h */,
+				0D1E5441564CC58132269731DE285573 /* RedpacketTypeRandpiHandle.m */,
+				FF455F9733AC953DD3573728ABB79993 /* RedpacketTypeSingleHandle.h */,
+				B01DA9CF1A0DAF0EB18058A6329DB45B /* RedpacketTypeSingleHandle.m */,
+				D0AB62F46BE1C0E2E8652B6EF8EB2117 /* RedpacketViewControl.h */,
+				8CB4B9D400AFBB49E20609C8349C52A7 /* RedpacketViewControl.m */,
+				D84D948E8C1657DFAA2038AC726DA4B2 /* UIViewController+RP_Private.h */,
+				B830CA72A264EFC0F74B9C2E43365325 /* UIViewController+RP_Private.m */,
+				5288A6F598764C18279E212E7C7C75C5 /* Views */,
+			);
+			name = ChatRedpacketViewController;
+			path = ChatRedpacketViewController;
+			sourceTree = "<group>";
+		};
+		E018B07655525657A0C944CE09C77DC8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C65A0A55091ED967359ACDF1D6FEA9A9 /* AlipaySDK.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		E285C12B00F70C6AC0647ECE7140FDDE /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				EE69AA2FFF7B0B97D78F7049E6080C14 /* NSArray+MASShorthandAdditions.h */,
+				1FD42A542C1A9083811C0875E6C84907 /* NSArray+RPAdditions.h */,
+				B3BA01B39CBB18F3D53B4F8A33BB86EE /* NSArray+RPAdditions.m */,
+				C4BB260DA77B64963A4E58BB25FA4060 /* RPCompositeConstraint.h */,
+				8A34300B0CD8855100484ACF48A9C65D /* RPCompositeConstraint.m */,
+				5796C6C4F1C8BC8DB5F67829C0032C42 /* RPConstraint.h */,
+				6AF48BE88C22CBC817743FFC9C00C390 /* RPConstraint.m */,
+				EF1320FF288EB6826BCABF6E603BC246 /* RPConstraint+Private.h */,
+				A289B5B78724595485161B293C033E69 /* RPConstraintMaker.h */,
+				9A8BB49DBD1DA5329D6920C664834FB0 /* RPConstraintMaker.m */,
+				D3E53E54687A9E2E86B931B14B5E4DC3 /* RPLayout.h */,
+				927CB8ADF15AE7F5B789561631262C1C /* RPLayoutConstraint.h */,
+				94D84FE57BFFFB24EA6D1C3877C7B23F /* RPLayoutConstraint.m */,
+				87333E5AAB432B994A1F94357221F2F8 /* RPUtilities.h */,
+				3570A795B92D08AF95740728D77A250C /* RPViewAttribute.h */,
+				95D16311FC3553C63C2F8F62BC4ECBC1 /* RPViewAttribute.m */,
+				83A88B66F9003A2E65844FAE8B39CE04 /* RPViewConstraint.h */,
+				1FD7B04FC881E4465F5700281C479BF2 /* RPViewConstraint.m */,
+				B48BC524C3CA220431087EA46D827A5C /* View+MASShorthandAdditions.h */,
+				0290522D5984607D99DCA88E8FD57E46 /* View+RPAdditions.h */,
+				D0991866F0450C366793400C96C75B79 /* View+RPAdditions.m */,
+			);
+			name = Layout;
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		EAF57B669D34BC90D121804716FB8A6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39C910D3C27E88AF143D667F91AA5270 /* libPods-RCloudMessage.a */,
+				C8FDC74011B0C75641F60D2F2806594E /* libRedPacketAliAuthUI.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE7A4E52D0816380083A1BE9003E8FAA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				59966F98F3DFFACBB6359C2463AC211F /* YZHRefreshAutoFooter.h */,
+				D9415521F06FBED02CDDAB7F1ABD781A /* YZHRefreshAutoFooter.m */,
+				CFC962A92AF70EF19EE979BCEA5B7489 /* YZHRefreshBackFooter.h */,
+				CDFFA79E0C481B632EA7E20182F0B086 /* YZHRefreshBackFooter.m */,
+				DDE85D1D6B4021D1F104DA2B9B92EF6B /* YZHRefreshComponent.h */,
+				7A1F13BC71414B3C902A6959BCE7E560 /* YZHRefreshComponent.m */,
+				D3F3BE8D47C6FF9F297FEAE2A9E34953 /* YZHRefreshFooter.h */,
+				FCF6D01044B912093B4D7F3356F70143 /* YZHRefreshFooter.m */,
+				1F0E94ED4557BA26A18EBCC6D4974F2D /* YZHRefreshHeader.h */,
+				73E323E1FD4C55A4A42A38ACFCEA2CAB /* YZHRefreshHeader.m */,
+			);
+			name = Base;
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F1C7AD8C02A5F579A86701F8EABE34EB /* CellItem */ = {
+			isa = PBXGroup;
+			children = (
+				90B5A5C3DB0C067FED45F3B0836781F9 /* RPSendRedPacketCertainCellItem.h */,
+				E5BC6D0A360EFEDBC4DA814987D26301 /* RPSendRedPacketCertainCellItem.m */,
+				53CE947FDAA95C2DB728827D9566157E /* RPSendRedPacketChangeCellItem.h */,
+				1CBDBA298A64947D1EF9F5B68FEF3E22 /* RPSendRedPacketChangeCellItem.m */,
+				6B32A8DA580DA51A89C237686EA39ED2 /* RPSendRedPacketCountCellItem.h */,
+				6A83E17018CC3D91B351C42E2633F855 /* RPSendRedPacketCountCellItem.m */,
+				0BED3B9EA30475BBCD5ED4B3F8DC8787 /* RPSendRedPacketDescribeCellItem.h */,
+				D2624F861715487978A2409864254DBA /* RPSendRedPacketDescribeCellItem.m */,
+				366092C0EFB4467E51C2B2B08DCBF6FC /* RPSendRedPacketItem.h */,
+				DD7B785575EAD5B28FD9E88922046C7C /* RPSendRedPacketItem.m */,
+				9514E08AEB3BF0D047D9D40A248FDE2D /* RPSendRedPacketMemberCellItem.h */,
+				91DB409C7350BE8F54D44FC444FFFC97 /* RPSendRedPacketMemberCellItem.m */,
+			);
+			name = CellItem;
+			path = CellItem;
+			sourceTree = "<group>";
+		};
+		F2C5B03CEA35F1F452C72A26EE0B20F2 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				A0162F43EA0FAAA23256184EE92058D9 /* NSData+YZHImageContentType.h */,
+				E0FE0953F53E86A997DF02D3788C9C07 /* NSData+YZHImageContentType.m */,
+				40E3224E033776AD8234101ECDD87865 /* UIImage+YZHGIF.h */,
+				7128ECD9C6AD92DD21797A02C2A9A8D3 /* UIImage+YZHGIF.m */,
+				B2AA51120A5368ADAC2EECE067044522 /* UIImage+YZHMultiFormat.h */,
+				4873C2156831F75BF4C9664BE0E25BEA /* UIImage+YZHMultiFormat.m */,
+				56FFA4A9511D9799528DC38F2C50FE3C /* UIImageView+YZHWebCache.h */,
+				01779D01132710AB2352BDA342E758A9 /* UIImageView+YZHWebCache.m */,
+				38E8663309F7C0257AA08C03FB28BF28 /* UIView+YZHWebCacheOperation.h */,
+				FA75B22146CE038355A36A7E64D70DBC /* UIView+YZHWebCacheOperation.m */,
+				045B165CADA42B41D6BBE9E62D0F4F3C /* YZHSDImageCache.h */,
+				F260A8764510D23575EAB034A1DAE912 /* YZHSDImageCache.m */,
+				2470945E062B04F9B74DD977FE39D445 /* YZHSDWebImageCompat.h */,
+				6DE1504D2B374EE2D526F915A0D9F1B3 /* YZHSDWebImageCompat.m */,
+				114A751EE2C7A4EFB05B5EF7B6EE3E78 /* YZHSDWebImageDecoder.h */,
+				FAC1AC8C60CE25E524D462B49FB623B4 /* YZHSDWebImageDecoder.m */,
+				A6476ABE6F88BADC9457F3BD7B9859CC /* YZHSDWebImageDownloader.h */,
+				681E42B3A3AC9F3863B15D05432FE032 /* YZHSDWebImageDownloader.m */,
+				3C47D3457544E604B426BD3CF3B140B4 /* YZHSDWebImageDownloaderOperation.h */,
+				889D55A278829119095F17A58DAE4E8B /* YZHSDWebImageDownloaderOperation.m */,
+				23774FD18766B02DFDF15A5D5C60B031 /* YZHSDWebImageManager.h */,
+				7979C57BE0BDE30490F5BBDBBAC292F0 /* YZHSDWebImageManager.m */,
+				BF34DDBD8BBC372CD1F291EB7A80C83C /* YZHSDWebImageOperation.h */,
+				C734DD92BF63ACA2A4463BFD9FE34604 /* YZHSDWebImagePrefetcher.h */,
+				78431E22133358CE96623CDAA16BB109 /* YZHSDWebImagePrefetcher.m */,
+			);
+			name = SDWebImage;
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		F44F39D66AB5C5A6BF3AC727E1CF4685 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				7CF0882E7BE8EA9CD6D66AE52E078D6B /* RPBaseCellItem.h */,
+				7C647080401B8212954389F1A7E59EC7 /* RPBaseCellItem.m */,
+				3692625A1597CA32EC80045CA69D9F96 /* RPBaseTableView.h */,
+				770FF0E7E169E2536BC50F41F2136F02 /* RPBaseTableView.m */,
+				2B99BCA3FD76A4FCA5D1EC5E10F215FD /* RPBaseTableViewCell.h */,
+				BC7FADB6D9BFA277368345B7941A2C34 /* RPBaseTableViewCell.m */,
+				227DDD57946458E281677267F2729EC9 /* RPBaseTableViewController.h */,
+				F2AB44EB0D2F6707969F971ECEC04F46 /* RPBaseTableViewController.m */,
+			);
+			name = Public;
+			path = Public;
+			sourceTree = "<group>";
+		};
+		F643322F4EF5C6E5FB3A445B693298DC /* PinYinSearchLib */ = {
+			isa = PBXGroup;
+			children = (
+				4F4E352C53BB2F6758D5D052B15AF2A5 /* NSString+YZHPinYin4Cocoa.h */,
+				E904E4383E84DE087F12B6571F09FA9E /* NSString+YZHPinYin4Cocoa.m */,
+				92092E8613E6610972D48E9A3AF76E40 /* YZHChineseInclude.h */,
+				090417B22E050A649D56A593F831B390 /* YZHChineseInclude.m */,
+				E9CAEC8307ACCD48FF2B853806CF9B91 /* YZHChineseToPinyinResource.h */,
+				28FFA9DC901AD151E320FD07A18CD259 /* YZHChineseToPinyinResource.m */,
+				D674A478744A6D33DB9FDE993E140EFA /* YZHHanyuPinyinOutputFormat.h */,
+				FE1E12DD4289268140C484AB7A7F3B1B /* YZHHanyuPinyinOutputFormat.m */,
+				BB1CF88959024CC14A591B0BC1C09DCB /* YZHPinyinFormatter.h */,
+				B0F92372615C374C82E0CE0381A17922 /* YZHPinyinFormatter.m */,
+				ED6066AFF0CF87D7DCBD7A223D3586A6 /* YZHPinYinForObjc.h */,
+				80E8695F843C9FA5ACA4B7DADB6037BD /* YZHPinYinForObjc.m */,
+				4BE742BF0458D8799CF1F2DF32D96632 /* YZHPinyinHelper.h */,
+				17D1F97C7BFD1A1560DFBF43A3521C58 /* YZHPinyinHelper.m */,
+				623C7A868AE69DFE565B3BF9052401F8 /* YZHZYPinYinSearch.h */,
+				D557EDF437C572ADCFBCA281F9B0239B /* YZHZYPinYinSearch.m */,
+			);
+			name = PinYinSearchLib;
+			path = PinYinSearchLib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
-/* Begin PBXNativeTarget section */
-		3AD6C65FDC136F8224D550A36B40D3CA /* Pods-RCloudMessage-JDpay */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E877D09832A65033D8A461FA8EE1766B /* Build configuration list for PBXNativeTarget "Pods-RCloudMessage-JDpay" */;
-			buildPhases = (
-				E8607BDB85D486699F3193A31AE23C7E /* Sources */,
-				38031003A39CCB19B8F792D7A13D8B82 /* Frameworks */,
+/* Begin PBXHeadersBuildPhase section */
+		7E13920EF836EC7CD08E85817F72EDBB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D736F2C4085FAC5B454B00364A392C9C /* AlipaySDK.h in Headers */,
+				D45D5892BA9D3FEA95F71AE27518CEEC /* APayAuthInfo.h in Headers */,
+				B3A3DF6CAD1188F415DA909B533851B3 /* NSArray+MASShorthandAdditions.h in Headers */,
+				4166435DCE5032C277A749A58D40A6BE /* NSArray+RPAdditions.h in Headers */,
+				9CEAF4EA0BBADD98216253D2E945EFDD /* NSBundle+RedpacketBundle.h in Headers */,
+				E067F6494C4B17B052C8DDD680649940 /* NSData+YZHImageContentType.h in Headers */,
+				AAF3619163A79CBFE815D604C682CCE7 /* NSString+YZHPinYin4Cocoa.h in Headers */,
+				2A568466E34887A497A0DAD1F3853908 /* PlaceHolderTextView.h in Headers */,
+				2E36360C35EF0EA8DB6240A44173D698 /* RedpacketColorStore.h in Headers */,
+				1194509DC1569D04CDF9F26432F75BD8 /* RedpacketDetailCell.h in Headers */,
+				45487BDDDC5981613712D989FBCE28ED /* RedPacketDetailViewController.h in Headers */,
+				B95D32C803F173B92BB8006FA073165D /* RedpacketErrorView.h in Headers */,
+				5B0ABB5DD15182DBF7F1192A5D043BDE /* RedpacketLib.h in Headers */,
+				A71AFEA3D089D1911036218D325A0A2E /* RedpacketTypeAdvertisementHandle.h in Headers */,
+				C45345D36A4461525E9007B41992350F /* RedpacketTypeAmountHandle.h in Headers */,
+				6AA5A9DBFF5CCB8A4F713470778E3A1A /* RedpacketTypeAvgHandle.h in Headers */,
+				02DF3EF5E9001C51AD03184F8BCEDDCC /* RedpacketTypeBaseHandle.h in Headers */,
+				D3E8533AFDE492FA2C3F18CAEFB087A1 /* RedpacketTypeMemberHandle.h in Headers */,
+				CF0B8AB4E4D07A7A12F7B6131CB4C4FA /* RedpacketTypeRandHandle.h in Headers */,
+				8B6F98BCF07F38F973266720D6E7751F /* RedpacketTypeRandpiHandle.h in Headers */,
+				F24DA816751E10DE83424C7CF57F6377 /* RedpacketTypeSingleHandle.h in Headers */,
+				DFFB48B19B72C667264E1E11C812D373 /* RedpacketViewControl.h in Headers */,
+				901251C84DD9E322B183DECFB48D145B /* RPAdvertisementDetailView.h in Headers */,
+				29D808AF6E41A708E81F37B90D06DC55 /* RPAdvertisementDetailViewContrroller.h in Headers */,
+				F5BDBD9195EE9E0F6D9CE0BD0F89C010 /* RPAliAuthPay.h in Headers */,
+				06AF61DAEDE4CBF8673F35CECC2A93AF /* RPAlipayAuth.h in Headers */,
+				C99E0C7262637AE9F6D986F0C8FBF668 /* RPAliPayEmpower.h in Headers */,
+				352CDCAA55B287DAAD20D80D13019BA4 /* RPBaseCellItem.h in Headers */,
+				6D63962453F67D49485B7AD9D56458F9 /* RPBaseTableView.h in Headers */,
+				5ABA19E906FC26CACB0C185ED406D459 /* RPBaseTableViewCell.h in Headers */,
+				5DBEF1262E2291BF6FA971C6FEEEDBBC /* RPBaseTableViewController.h in Headers */,
+				0CF49FC048EF14397A808420C966C908 /* RPBaseViewController.h in Headers */,
+				8EC578B0B7A55D70359EE0D59233050A /* RPCompositeConstraint.h in Headers */,
+				0624FA09CC4EBC462B2FB680FA479F11 /* RPConstraint+Private.h in Headers */,
+				C3CFE277D94EA11610D2A6DFF0D7A4E6 /* RPConstraint.h in Headers */,
+				3DC9ED69B1A18589033BF35B9783CAC4 /* RPConstraintMaker.h in Headers */,
+				6B46855742378EF430514CC53F7AC27B /* RPLayout.h in Headers */,
+				26BD73F9C38D096121E1FDDF9C56F389 /* RPLayoutConstraint.h in Headers */,
+				A292F42031ED9D201C1062837E690855 /* RPMemberRedpacketPreView.h in Headers */,
+				E2DDA8FD1EE9C78C280752AD89CE716C /* RPMyIncomeRedPacketCell.h in Headers */,
+				FF6FE55BAE4EFD34E130EE7627C46C1A /* RPNormalRedpacketPreView.h in Headers */,
+				7AB8848AEABE6C88EB7A9345550830A8 /* RPReceiotsInAlipayEmptyTableViewCell.h in Headers */,
+				126DBF9E08482368CEDEB5A9C91EB4D2 /* RPReceiotsInAlipayHeaderView.h in Headers */,
+				FD244F1B5B1D4DACF1CA1D485F735600 /* RPReceiptsInAlipayViewController.h in Headers */,
+				8D18E88A54489F240052742B288EDD06 /* RPReceiveAmountRedpacketPreView.h in Headers */,
+				0CE2EFB801D1A9AF25A788FF992A46D1 /* RPRedpackeNavgationController.h in Headers */,
+				CE31D577D04F30300A4729C222F59CE7 /* RPRedpacketDefines.h in Headers */,
+				D5F3E798DBCC42CC91D7994E4A43770C /* RPRedpacketDetailHeaderView.h in Headers */,
+				002D64AA47F02F23693FCDCE2A7A4E72 /* RPRedpacketPreView.h in Headers */,
+				ED6BEC2879AF9C7D59F0956B044E258B /* RPRedpacketSendControl.h in Headers */,
+				AC7F4E071236B4C07FFD7D3E4141BD15 /* RPRedpacketTool.h in Headers */,
+				49003256541CE0A6F0F4353E8BCB4445 /* RPRedpacketViews.h in Headers */,
+				93793CA461C17A02293CCCAC7A25B490 /* RPRefreshTableViewController.h in Headers */,
+				5F6D0BEA6FF068E140B7081A407FA588 /* RPSendAmountPacketViewController.h in Headers */,
+				D788B3953DC63C47F54E3E1DA42E1CC3 /* RPSendAmountRedpacketPreView.h in Headers */,
+				33A74300F7EED0DD30BB60A91D003A31 /* RPSendRedPacketAutoKeyboardHandle.h in Headers */,
+				8F734DDA8B931D0077DEB33B738D7E50 /* RPSendRedPacketBaseTableViewCellProtocol.h in Headers */,
+				FAE99DA679F4DD29C6EC97A06E6B2EE7 /* RPSendRedPacketCertainCellItem.h in Headers */,
+				27E15A5810C19C106B72436C56A814FB /* RPSendRedPacketCertainTableViewCell.h in Headers */,
+				53090226C955D5ED31F09C2FF97F3B80 /* RPSendRedPacketChangeCellItem.h in Headers */,
+				72AD9653047EB761EC2245CA615F2284 /* RPSendRedPacketChangeTableViewCell.h in Headers */,
+				768F85A6DFAD49989A688738956D32C1 /* RPSendRedPacketCountCellItem.h in Headers */,
+				DFA868584C9FC45EEE600E249348E089 /* RPSendRedPacketCountTableViewCell.h in Headers */,
+				86783A3F3E0D1AF00A70791D6A47E3B1 /* RPSendRedPacketDescribeCellItem.h in Headers */,
+				2242547B6F282F5448AB9A714E4E6AD3 /* RPSendRedPacketDescribeTableViewCell.h in Headers */,
+				DF9FD73DF403CBE5A5E158038B80CD14 /* RPSendRedPacketItem.h in Headers */,
+				984DEE4795F0EA1FAA9D4FD50267DA35 /* RPSendRedPacketMemberCellItem.h in Headers */,
+				2EF3008BC8E1612C27DCFF52BB74B601 /* RPSendRedPacketMemberTableViewCell.h in Headers */,
+				A4CCD818DDBDB7F130250908C258DE89 /* RPSendRedPacketTableViewCell.h in Headers */,
+				6DE99DAE398E414C652B366D94C5DAEB /* RPSendRedPacketViewController.h in Headers */,
+				E1980BD5323BDC2C6EDAEE34B215FF88 /* RPSoundPlayer.h in Headers */,
+				D15290C40362549C0FC6B6B4273D051C /* RPUntility.h in Headers */,
+				C25628EE182D2AF17D651E70B8A7B347 /* RPUtilities.h in Headers */,
+				F13DBB6EF86389EA635C0F3AD4C879B9 /* RPViewAttribute.h in Headers */,
+				60F141D00BEC2C54BFCF904A70B1E8E6 /* RPViewConstraint.h in Headers */,
+				D3F29247CC3CA25C3EBBB0D98B5B933B /* SeachMemberCell.h in Headers */,
+				48EBED0F5520E967301E4DD78FBE3CE8 /* SearchMemberViewController.h in Headers */,
+				706AC6120438D0239E12D9D7A46D3C13 /* UIAlertView+YZHAlert.h in Headers */,
+				A07BA49913D3101EA40CD13EFDC9BA80 /* UIButton+RPAction.h in Headers */,
+				D44D03DC5BC04EAC9A0F7061E3A1D42F /* UIColor+RedpacketColors.h in Headers */,
+				45EAB22B41A5232CEC254BC03366CA39 /* UIImage+YZHGIF.h in Headers */,
+				A143D3625A88655C2466437AAF9FDC08 /* UIImage+YZHMultiFormat.h in Headers */,
+				A9EDA21AEBFF55AC357185EA7F64BE9E /* UIImageView+YZHWebCache.h in Headers */,
+				9090EBD1C75D7ED33A8247E1DEB24831 /* UIScrollView+YZHExtension.h in Headers */,
+				E38B1D30F28ACFB86EF378F3DD1DDF39 /* UIScrollView+YZHRefresh.h in Headers */,
+				390076077F1F72422E9137B2EBC77414 /* UIView+YZHAnimation.h in Headers */,
+				D88743DD03285ECCF8A9CBE5B37DAD6C /* UIView+YZHExtension.h in Headers */,
+				58FE8D8EB6F2A837F7D928B0A226BFB7 /* UIView+YZHPrompting.h in Headers */,
+				8383A3A0C224D21E42BA11CD63AAC0AD /* UIView+YZHWebCacheOperation.h in Headers */,
+				EFFF123D41D7E94D2467DA15DCFB9056 /* UIViewController+RP_Private.h in Headers */,
+				DC25FF47F5660F910019819157222EEF /* View+MASShorthandAdditions.h in Headers */,
+				40A4A375A59933689F243CC0232A96FA /* View+RPAdditions.h in Headers */,
+				0E29769C5DA0D666BE3487C8C676AE9C /* YZHChineseInclude.h in Headers */,
+				FAB4FFE49CC39893F01823031C4B532D /* YZHChineseString.h in Headers */,
+				974169D0D4F25A5198EDAE44307AD344 /* YZHChineseToPinyinResource.h in Headers */,
+				066AA86A6C78917B7A20EB11D401FB68 /* YZHHanyuPinyinOutputFormat.h in Headers */,
+				88F4BBC6BE95B17F28BD818DE2D968C5 /* YZHHCHeader.h in Headers */,
+				B3359C4668C5BDBDED55EA5B7E78E13C /* YZHMBProgressHUD+YZHAdd.h in Headers */,
+				E797C66C2E2D41007E16CA8A0823EA4E /* YZHMBProgressHUD.h in Headers */,
+				B4D0B216343D0C1C58215F6D8A013AD4 /* YZHPinyinFormatter.h in Headers */,
+				6EF0FCBF49C8C0CE356FE55E514A94C8 /* YZHPinYinForObjc.h in Headers */,
+				2783B731D52A1483DDFD84B83605D334 /* YZHPinyinHelper.h in Headers */,
+				800C0931FCF344001327C15BC8529F4B /* YZHRefresh.h in Headers */,
+				12669B4DD9801E0FFF666474BFDC6E52 /* YZHRefreshAutoFooter.h in Headers */,
+				14D6458D6CC85E092530D24132301F0B /* YZHRefreshAutoGifFooter.h in Headers */,
+				815EC5CEFB94C60EC09551BAF389654A /* YZHRefreshAutoNormalFooter.h in Headers */,
+				1B269D54115434A731268C321FAC79A2 /* YZHRefreshAutoStateFooter.h in Headers */,
+				553F04B810BA425DC58A538BAC0E5231 /* YZHRefreshBackFooter.h in Headers */,
+				C886CDFC70B84B805EC530E2CC8F1AD9 /* YZHRefreshBackGifFooter.h in Headers */,
+				7C167DBD20842CFFC2F908AFED753EF8 /* YZHRefreshBackNormalFooter.h in Headers */,
+				D3958895B9E769C9B7464285B307B9F8 /* YZHRefreshBackStateFooter.h in Headers */,
+				050A9DBCFC7B7D6F39C491F1A6ABCCA2 /* YZHRefreshComponent.h in Headers */,
+				82A8F5F8702C6B5BC96246542F53B887 /* YZHRefreshConst.h in Headers */,
+				FBD91E0674D32131D7239FCC4BCD773B /* YZHRefreshFooter.h in Headers */,
+				E5A3F39BC8F0B00F50B6995F39FC4BC3 /* YZHRefreshGifHeader.h in Headers */,
+				3747203B22B8604A6293B75CB4A4B47A /* YZHRefreshHeader.h in Headers */,
+				12FF61DC3230CE2DF94F1339A632E67C /* YZHRefreshNormalHeader.h in Headers */,
+				C0D2D85EBC501A5ED9F7F89FA8CE8927 /* YZHRefreshStateHeader.h in Headers */,
+				10DEC4FFA757F269BA6812E86C750872 /* YZHSDImageCache.h in Headers */,
+				DFB3BFF92D1F75DBDCF08CD8A402DCDA /* YZHSDWebImageCompat.h in Headers */,
+				3C6C69C5B0E05153F7574F49774AE55D /* YZHSDWebImageDecoder.h in Headers */,
+				2EDC1B8815863A9FC5E8AC6E143C2366 /* YZHSDWebImageDownloader.h in Headers */,
+				C41C596BA34A8A9D0963DEEFB6FF30FF /* YZHSDWebImageDownloaderOperation.h in Headers */,
+				79E676E49ED3FDB781BF68BBFA297D54 /* YZHSDWebImageManager.h in Headers */,
+				A66C195E3C02F1BA92C80C46B11F02DB /* YZHSDWebImageOperation.h in Headers */,
+				7A952F466257C859AD267E3F3E0184D5 /* YZHSDWebImagePrefetcher.h in Headers */,
+				10D05B735F50D9A488D48B791269D682 /* YZHZYPinYinSearch.h in Headers */,
+				D2362D7D90A2E29B967B854F1B70C8B6 /* YZTransparent.h in Headers */,
 			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-RCloudMessage-JDpay";
-			productName = "Pods-RCloudMessage-JDpay";
-			productReference = E03FF0C69B592B09F0EA0AE0D6F66FA6 /* libPods-RCloudMessage-JDpay.a */;
-			productType = "com.apple.product-type.library.static";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1431B8E8752FE3DB9E7D736A4E72C60 /* Pods-RCloudMessage */ = {
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3293B0B9B4F3E7E70A84AB20B67FB956 /* Pods-RCloudMessage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F4B85729A690686CF92F76078F2E687 /* Build configuration list for PBXNativeTarget "Pods-RCloudMessage" */;
+			buildConfigurationList = 38E2BEB9E7D5675D72134B4E5A001B8A /* Build configuration list for PBXNativeTarget "Pods-RCloudMessage" */;
 			buildPhases = (
-				950473BEC2CB74385447A1657EEBAEEE /* Sources */,
-				669918EF89E89207F45F490A53CE221D /* Frameworks */,
+				654E74EFF7638BE875E99F26AE142CE0 /* Sources */,
+				5ABB34026D422461F80C652B5F88FA07 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				703D494C993F7366E6E8D1006AD6F540 /* PBXTargetDependency */,
 			);
 			name = "Pods-RCloudMessage";
 			productName = "Pods-RCloudMessage";
-			productReference = D88C4B787F7FE9D6EA6419A39B71CA1F /* libPods-RCloudMessage.a */;
+			productReference = 39C910D3C27E88AF143D667F91AA5270 /* libPods-RCloudMessage.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7756A4714A76730383C886E247E8F931 /* RedPacketAliAuthUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 860EC55C6F417F6B44A65BE19DDF0EF1 /* Build configuration list for PBXNativeTarget "RedPacketAliAuthUI" */;
+			buildPhases = (
+				08C580ABB9E1745A913786DFDD2B8834 /* Sources */,
+				FCF0434434799018E1757270CCE960E5 /* Frameworks */,
+				7E13920EF836EC7CD08E85817F72EDBB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RedPacketAliAuthUI;
+			productName = RedPacketAliAuthUI;
+			productReference = C8FDC74011B0C75641F60D2F2806594E /* libRedPacketAliAuthUI.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -315,34 +1461,158 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = E0674D8C128335D5667DAB06AD80C87C /* Products */;
+			productRefGroup = EAF57B669D34BC90D121804716FB8A6B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F1431B8E8752FE3DB9E7D736A4E72C60 /* Pods-RCloudMessage */,
-				3AD6C65FDC136F8224D550A36B40D3CA /* Pods-RCloudMessage-JDpay */,
+				3293B0B9B4F3E7E70A84AB20B67FB956 /* Pods-RCloudMessage */,
+				7756A4714A76730383C886E247E8F931 /* RedPacketAliAuthUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		950473BEC2CB74385447A1657EEBAEEE /* Sources */ = {
+		08C580ABB9E1745A913786DFDD2B8834 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8B9C2455C4FDA970BDE1B7E5D633417 /* Pods-RCloudMessage-dummy.m in Sources */,
+				6549AD0B5796D6122CE58E592770CFC3 /* NSArray+RPAdditions.m in Sources */,
+				C1F01B0B145C69B0C28EFC4C13A69AE0 /* NSBundle+RedpacketBundle.m in Sources */,
+				BCAEE59D336FA735A7C7A4AB9BF9345B /* NSData+YZHImageContentType.m in Sources */,
+				DB65ED1E12D265234EBECDA385F978B7 /* NSString+YZHPinYin4Cocoa.m in Sources */,
+				A61437EFB0F5D93FFDDE3DF5D282B84C /* PlaceHolderTextView.m in Sources */,
+				386456B203381E4AD14DCDEB72380221 /* RedPacketAliAuthUI-dummy.m in Sources */,
+				163535CA109ECFA8B63AD814DBD0CBE7 /* RedpacketColorStore.m in Sources */,
+				DF9D6D5BA657C5B0454BD5C474C0427D /* RedpacketDetailCell.m in Sources */,
+				D358E2F9C1A5CB181E265F3F95ED0FB8 /* RedPacketDetailViewController.m in Sources */,
+				62C14FF2ACF737BF0924B40E05E14B44 /* RedpacketErrorView.m in Sources */,
+				4537DE2AD53DDCA92CFB1EC6BEF89A5E /* RedpacketTypeAdvertisementHandle.m in Sources */,
+				2AFD848D5E66C56A6753D71F0E379813 /* RedpacketTypeAmountHandle.m in Sources */,
+				48B792B5E59DCAB4EC567C9056B11EFE /* RedpacketTypeAvgHandle.m in Sources */,
+				0D8D023E7EF2E198C9CDF9ED49392803 /* RedpacketTypeBaseHandle.m in Sources */,
+				C819DCB2DD70CD8112F18D8BE2F5E964 /* RedpacketTypeMemberHandle.m in Sources */,
+				2719C123D7F8189A17A1105BF9BEC569 /* RedpacketTypeRandHandle.m in Sources */,
+				925586B4EBB7DE9E37F310EBD3106A64 /* RedpacketTypeRandpiHandle.m in Sources */,
+				9B5F4642F58F1322C7CD81776B067F05 /* RedpacketTypeSingleHandle.m in Sources */,
+				9568E4C379120B654DE08B9770977C2B /* RedpacketViewControl.m in Sources */,
+				AAA41515FCC3D27675740E9E55055E3D /* RPAdvertisementDetailView.m in Sources */,
+				D89AF33482453A233A5CDDC6F56703C0 /* RPAdvertisementDetailViewContrroller.m in Sources */,
+				C92EBF8877E2FFD0161B9A0B5E272220 /* RPAliAuthPay.m in Sources */,
+				8CF8D140539C18243A3D5EBA6F659BD2 /* RPAlipayAuth.m in Sources */,
+				3EF00BD80C8BC7BAB0C47D7D0FF9DB47 /* RPAliPayEmpower.m in Sources */,
+				139C599E94A5FC9079C59F4AE5156CB0 /* RPBaseCellItem.m in Sources */,
+				ED744951695F9C6B86B7A7AD6AAB395C /* RPBaseTableView.m in Sources */,
+				F8985A7A21A7F365734243DD2CA5718D /* RPBaseTableViewCell.m in Sources */,
+				8DA049DD18B301038D2E6C6F23209619 /* RPBaseTableViewController.m in Sources */,
+				7A1F73F9BCE04BEDD4F0D6878B5A6E20 /* RPBaseViewController.m in Sources */,
+				1B70E452FBBE1A2C36D0B542FF336163 /* RPCompositeConstraint.m in Sources */,
+				0DEB0B93DD64E26669761C7D5BBC5F0E /* RPConstraint.m in Sources */,
+				9F8D77ECEF875B7A8C29449B6CE12964 /* RPConstraintMaker.m in Sources */,
+				A8E958C77166BF69032EF334183318BC /* RPLayoutConstraint.m in Sources */,
+				4D78F6F4360965C7EB757B10B5AA9350 /* RPMemberRedpacketPreView.m in Sources */,
+				CA39B1EC13656DE9B3444594469C8BBE /* RPMyIncomeRedPacketCell.m in Sources */,
+				5D026534D9DC352B189DD16CD1B85879 /* RPNormalRedpacketPreView.m in Sources */,
+				519180494537C28D2EFB9F7F6FE86C6F /* RPReceiotsInAlipayEmptyTableViewCell.m in Sources */,
+				15F49FC28245ECB489DE82138B7A813B /* RPReceiotsInAlipayHeaderView.m in Sources */,
+				DBB8465F13CDE6BD0B4BC7B347EFC01D /* RPReceiptsInAlipayViewController.m in Sources */,
+				FFFEAC5ABE5D070973CB028ED95BF1DF /* RPReceiveAmountRedpacketPreView.m in Sources */,
+				C44E0A275D85E352C9BAE25A8C9BBE1F /* RPRedpackeNavgationController.m in Sources */,
+				B00F613EFAACF7262AF1BC1FAE3A5230 /* RPRedpacketDetailHeaderView.m in Sources */,
+				89830F302FE3372F05477A367AFD6838 /* RPRedpacketPreView.m in Sources */,
+				7C0EEB859B5A65DA93292E1F4E7A1FEB /* RPRedpacketSendControl.m in Sources */,
+				CA5FEAFA3E774F97E3004436F47E4C8B /* RPRedpacketTool.m in Sources */,
+				E4653639E5C7B348C297867C55AEAB3F /* RPRedpacketViews.m in Sources */,
+				930A4B17170758153D3CC0BCC812A991 /* RPRefreshTableViewController.m in Sources */,
+				4614A98F0EF3D1487578E568B863D41B /* RPSendAmountPacketViewController.m in Sources */,
+				0A9BE342A5A005AE348B7EBDBE38B532 /* RPSendAmountRedpacketPreView.m in Sources */,
+				425DBA3B49AC53CE8CEF730CCE259ACC /* RPSendRedPacketAutoKeyboardHandle.m in Sources */,
+				D5008C56A39D50EBD6682F08602B5319 /* RPSendRedPacketCertainCellItem.m in Sources */,
+				22BF2074242901C416F1462FFB8581CB /* RPSendRedPacketCertainTableViewCell.m in Sources */,
+				9D8D620530CB8B1D1D3BA8A627FE4917 /* RPSendRedPacketChangeCellItem.m in Sources */,
+				3E75860DC3F8D9C4EB090CF4E22ECE29 /* RPSendRedPacketChangeTableViewCell.m in Sources */,
+				FB26649423EB04FB196382F310312273 /* RPSendRedPacketCountCellItem.m in Sources */,
+				BBCEDE3B6460BF87403D51B38F863739 /* RPSendRedPacketCountTableViewCell.m in Sources */,
+				BEEC4D970867CD075DB67E00AA9013F9 /* RPSendRedPacketDescribeCellItem.m in Sources */,
+				65AAEFF626CDB6E10C1D5F3AD28F0310 /* RPSendRedPacketDescribeTableViewCell.m in Sources */,
+				2AD4ED85D68347D7E8ED0B9AD999AEDA /* RPSendRedPacketItem.m in Sources */,
+				3173C3AC889267EF614A89FA5386EC27 /* RPSendRedPacketMemberCellItem.m in Sources */,
+				D6D8B0441F96FAFD04F01B72B7D856BC /* RPSendRedPacketMemberTableViewCell.m in Sources */,
+				60AF48EA5F3DB4B54C286D9A7A28FD03 /* RPSendRedPacketTableViewCell.m in Sources */,
+				5329B76383B38AA7C54B5DDEA23967F7 /* RPSendRedPacketViewController.m in Sources */,
+				3DF577D1598C591053277E74152D8A46 /* RPSoundPlayer.m in Sources */,
+				9CFE0ABDBAE39A91BC517F432197EA0E /* RPUntility.m in Sources */,
+				3395F4E005F4550773C3A44A8C65CC15 /* RPViewAttribute.m in Sources */,
+				307E09102598D30F2519E6AB88EFA659 /* RPViewConstraint.m in Sources */,
+				9EE70964F97E07183111176FA6B398B3 /* SeachMemberCell.m in Sources */,
+				5FD0A7A812F8A3E51445CF7DB6CFEB0A /* SearchMemberViewController.m in Sources */,
+				5992314E782B21648D608867E77CF4A3 /* UIAlertView+YZHAlert.m in Sources */,
+				5F9273D2354C1D05BFE8DDC43319801D /* UIButton+RPAction.m in Sources */,
+				D708B5422FAEA6C2255EB05E49DFE50A /* UIColor+RedpacketColors.m in Sources */,
+				673E4E9FDC4A97E1CB189D2442D672F7 /* UIImage+YZHGIF.m in Sources */,
+				933BDCD1EA0BC9DC3CF2B684A25526E0 /* UIImage+YZHMultiFormat.m in Sources */,
+				D913B6831231DAAACDEB53C323070015 /* UIImageView+YZHWebCache.m in Sources */,
+				1878A924D3808B572315E58E9758DB08 /* UIScrollView+YZHExtension.m in Sources */,
+				0BDC847F1791D0673468454F72048945 /* UIScrollView+YZHRefresh.m in Sources */,
+				690C33ED326206E3D6B696BBDCE9A44D /* UIView+YZHAnimation.m in Sources */,
+				7FBCCA0E4DCE7891AD37FFDBAF0D0C27 /* UIView+YZHExtension.m in Sources */,
+				D664F207D264814B9C4D2E157ECC7E53 /* UIView+YZHPrompting.m in Sources */,
+				AA903850BE5C202F189478489DC87570 /* UIView+YZHWebCacheOperation.m in Sources */,
+				62DE13C28CAFD16E065E265DCAA327AF /* UIViewController+RP_Private.m in Sources */,
+				BC030D41E023F06C573159EC01881244 /* View+RPAdditions.m in Sources */,
+				A427E7AFB0B792A95B203E9CC07956D2 /* YZHChineseInclude.m in Sources */,
+				1E58F9A98BC0023FBB61F116C7D4FDF7 /* YZHChineseString.m in Sources */,
+				87ADACBA34C7DAAA31ADF1CE7002C19D /* YZHChineseToPinyinResource.m in Sources */,
+				627DD46D1154F5A99AD55FBAE8F99D27 /* YZHHanyuPinyinOutputFormat.m in Sources */,
+				ACB92C53D5852A0DCB73923E3518F51D /* YZHMBProgressHUD+YZHAdd.m in Sources */,
+				0DAD0B7155345AE6A32F6C04F296E15F /* YZHMBProgressHUD.m in Sources */,
+				49985A41DFDBC285C1ADB500B9305C0D /* YZHPinyinFormatter.m in Sources */,
+				2C58D1E406861011AD3A9709A2E8BF1B /* YZHPinYinForObjc.m in Sources */,
+				5514CBE414CBD68E8A2F51F3FBA86DF6 /* YZHPinyinHelper.m in Sources */,
+				A2204B124F84D35EF265A3FE976EF1AC /* YZHRefreshAutoFooter.m in Sources */,
+				F937858DA884275CBA81DA2C6BF8553C /* YZHRefreshAutoGifFooter.m in Sources */,
+				62D2A50C67FE6AD365DB1727E6A5A6E1 /* YZHRefreshAutoNormalFooter.m in Sources */,
+				F344D1751B7F5E0BB17E45F6B8F97A99 /* YZHRefreshAutoStateFooter.m in Sources */,
+				A15C2B1D0BAFDB4ABC094243506DAE2F /* YZHRefreshBackFooter.m in Sources */,
+				6DC74D5C5E9879D0B9033FEC4E618787 /* YZHRefreshBackGifFooter.m in Sources */,
+				3CB926832D99480A7D1E28D87F3280DC /* YZHRefreshBackNormalFooter.m in Sources */,
+				DB943D1EEF82B718BF3B93C7FC59ACC0 /* YZHRefreshBackStateFooter.m in Sources */,
+				B9C0357687663318E232F4E212D021D0 /* YZHRefreshComponent.m in Sources */,
+				EA072BF5FC2BC7AFE3F72B6B4285A6FB /* YZHRefreshConst.m in Sources */,
+				BFA303716FE120343B7BD32CEF9C8E48 /* YZHRefreshFooter.m in Sources */,
+				F0C5413761E598ABA6E0F9CF5DF3E377 /* YZHRefreshGifHeader.m in Sources */,
+				7DF343903C4FC624AAE00F7BB1FA5455 /* YZHRefreshHeader.m in Sources */,
+				DDDBAACB80F6C2FCDEA5B58FAC32E7FF /* YZHRefreshNormalHeader.m in Sources */,
+				826AFAC0786C26AFBD15B28013F5DAF5 /* YZHRefreshStateHeader.m in Sources */,
+				5CE38589DB0B508DA279BCAE9A798BA3 /* YZHSDImageCache.m in Sources */,
+				DD5C7BFF94B5787D1BE3D50DCBED88D4 /* YZHSDWebImageCompat.m in Sources */,
+				1B3F52F81E43C1F8DD71078883495BC5 /* YZHSDWebImageDecoder.m in Sources */,
+				54B19FA40103A2DFDE59435444D783D1 /* YZHSDWebImageDownloader.m in Sources */,
+				A5B3D5E7A4A3CA15E1C835D1C6A46781 /* YZHSDWebImageDownloaderOperation.m in Sources */,
+				7E2F076FD8A1B772C0AB30B87B7758DE /* YZHSDWebImageManager.m in Sources */,
+				6C2C49978C6E64CB2CF1CD1084BAA6BD /* YZHSDWebImagePrefetcher.m in Sources */,
+				F7C9593BE53EA2359263456CB926DD20 /* YZHZYPinYinSearch.m in Sources */,
+				B22268C95FDAE7E6FCD2FA91214D43E9 /* YZTransparent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8607BDB85D486699F3193A31AE23C7E /* Sources */ = {
+		654E74EFF7638BE875E99F26AE142CE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				486463D92B0E26E398AEA5529F7804DE /* Pods-RCloudMessage-JDpay-dummy.m in Sources */,
+				0856003EFA38EC70FD6B45F6C0D9296E /* Pods-RCloudMessage-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		703D494C993F7366E6E8D1006AD6F540 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RedPacketAliAuthUI;
+			target = 7756A4714A76730383C886E247E8F931 /* RedPacketAliAuthUI */;
+			targetProxy = A96FD2B8B4F0A69B74457D6CCE93A62E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0FF130FF7DF6A4D47465D4C36523D63F /* AutoRelease */ = {
@@ -388,9 +1658,32 @@
 			};
 			name = AutoRelease;
 		};
-		23AB642B27936026247540366843CEDD /* AutoDebug */ = {
+		250935A1A1A463E84C22B8DDE4007E87 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 463612E4C626C90B90D8B777D0F21936 /* Pods-RCloudMessage.autodebug.xcconfig */;
+			baseConfigurationReference = 6C329A72BABD823E8009F391E5B39965 /* RedPacketAliAuthUI.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RedPacketAliAuthUI/RedPacketAliAuthUI-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		25D5F8B9483ACD8F75BE351FB4C10A38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB7F82CA8522267A0519A6A2AEDBA3F /* Pods-RCloudMessage.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -409,7 +1702,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = AutoDebug;
+			name = Release;
 		};
 		34FE9531DA9AF2820790339988D5FF41 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -455,9 +1748,55 @@
 			};
 			name = Release;
 		};
-		72FE42DFB58FF57F9BD37FA86CE57A7D /* AutoDebug */ = {
+		3C8AD934752BD2D6A7E1EA2F1BB661D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37B99E8DD41105D2198F98654D26C7FF /* Pods-RCloudMessage-JDpay.autodebug.xcconfig */;
+			baseConfigurationReference = 63C02D39EEF3E7E51E20AFA62529E77E /* Pods-RCloudMessage.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6EC7F1C8BD6372F5E4F6BB7DF940067A /* AutoRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 804F83511BEE831AF61F6FF3A7133815 /* Pods-RCloudMessage.autorelease.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = AutoRelease;
+		};
+		73A78EEE53382DC35B1BD6951E775D2C /* AutoDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 590D7E8E457BFF664857B4EA0C4610CC /* Pods-RCloudMessage.autodebug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -478,9 +1817,9 @@
 			};
 			name = AutoDebug;
 		};
-		7669D25FA8C5CE58CA538D172140F176 /* Release */ = {
+		76DBEEA49F8F7DBFE153059FFB581E65 /* AutoDebug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA2F5545120DA0320C00569DA750D705 /* Pods-RCloudMessage-JDpay.release.xcconfig */;
+			baseConfigurationReference = 6C329A72BABD823E8009F391E5B39965 /* RedPacketAliAuthUI.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -488,22 +1827,22 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
+				GCC_PREFIX_HEADER = "Target Support Files/RedPacketAliAuthUI/RedPacketAliAuthUI-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = AutoDebug;
 		};
-		94184A8E35628456E320F7B781FF59E0 /* AutoRelease */ = {
+		950E2A1BADA9A5599623314E712705F6 /* AutoRelease */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2B5BB399271491E98C3E21A4E3C2895 /* Pods-RCloudMessage-JDpay.autorelease.xcconfig */;
+			baseConfigurationReference = 6C329A72BABD823E8009F391E5B39965 /* RedPacketAliAuthUI.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -511,14 +1850,14 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
+				GCC_PREFIX_HEADER = "Target Support Files/RedPacketAliAuthUI/RedPacketAliAuthUI-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -615,32 +1954,9 @@
 			};
 			name = Debug;
 		};
-		D7DC5AF46D120A9D5706D1C215189ABA /* Debug */ = {
+		CB0EB691190B1916739AC123709496EC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A482FB66B7BF320E57A40C05E0B8450B /* Pods-RCloudMessage.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		ECF57159A2090377FD293785A4C869DA /* AutoRelease */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AA2D0B72D45969BDD458E7F4F349511 /* Pods-RCloudMessage.autorelease.xcconfig */;
+			baseConfigurationReference = 6C329A72BABD823E8009F391E5B39965 /* RedPacketAliAuthUI.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -648,60 +1964,14 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
+				GCC_PREFIX_HEADER = "Target Support Files/RedPacketAliAuthUI/RedPacketAliAuthUI-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = AutoRelease;
-		};
-		F3A903E91C4F786D1BA6F753AC2058F5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA23EE45456B4781D8DDFE0D38BCD829 /* Pods-RCloudMessage-JDpay.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		FE7BB675C7355CB42D22A6B7CCA9F7B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8F4845A8BD7410CF60A2682FB985915 /* Pods-RCloudMessage.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -721,24 +1991,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F4B85729A690686CF92F76078F2E687 /* Build configuration list for PBXNativeTarget "Pods-RCloudMessage" */ = {
+		38E2BEB9E7D5675D72134B4E5A001B8A /* Build configuration list for PBXNativeTarget "Pods-RCloudMessage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				23AB642B27936026247540366843CEDD /* AutoDebug */,
-				ECF57159A2090377FD293785A4C869DA /* AutoRelease */,
-				D7DC5AF46D120A9D5706D1C215189ABA /* Debug */,
-				FE7BB675C7355CB42D22A6B7CCA9F7B4 /* Release */,
+				73A78EEE53382DC35B1BD6951E775D2C /* AutoDebug */,
+				6EC7F1C8BD6372F5E4F6BB7DF940067A /* AutoRelease */,
+				3C8AD934752BD2D6A7E1EA2F1BB661D2 /* Debug */,
+				25D5F8B9483ACD8F75BE351FB4C10A38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E877D09832A65033D8A461FA8EE1766B /* Build configuration list for PBXNativeTarget "Pods-RCloudMessage-JDpay" */ = {
+		860EC55C6F417F6B44A65BE19DDF0EF1 /* Build configuration list for PBXNativeTarget "RedPacketAliAuthUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72FE42DFB58FF57F9BD37FA86CE57A7D /* AutoDebug */,
-				94184A8E35628456E320F7B781FF59E0 /* AutoRelease */,
-				F3A903E91C4F786D1BA6F753AC2058F5 /* Debug */,
-				7669D25FA8C5CE58CA538D172140F176 /* Release */,
+				76DBEEA49F8F7DBFE153059FFB581E65 /* AutoDebug */,
+				950E2A1BADA9A5599623314E712705F6 /* AutoRelease */,
+				250935A1A1A463E84C22B8DDE4007E87 /* Debug */,
+				CB0EB691190B1916739AC123709496EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

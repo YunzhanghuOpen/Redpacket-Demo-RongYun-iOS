@@ -569,8 +569,8 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
 #pragma mark - 红包相关代码
     else if ([message.content isMemberOfClass:[RedpacketTakenOutgoingMessage class]]) {
         RedpacketTakenOutgoingMessage *m = (RedpacketTakenOutgoingMessage *)message.content;
-        if([m.redpacket.currentUser.userId isEqualToString:m.redpacket.redpacketReceiver.userId]
-           || [m.redpacket.currentUser.userId isEqualToString:m.redpacket.redpacketSender.userId]) {
+        if([m.redpacketUserInfo.userId isEqualToString:m.redpacket.receiver.userID]
+           || [m.redpacketUserInfo.userId isEqualToString:m.redpacket.sender.userID]) {
             RedpacketTakenMessage *m2 = [RedpacketTakenMessage messageWithRedpacket:m.redpacket];
             RCMessage *rcmsg = [[RCIMClient sharedRCIMClient] insertMessage:message.conversationType
                                                                    targetId:message.targetId

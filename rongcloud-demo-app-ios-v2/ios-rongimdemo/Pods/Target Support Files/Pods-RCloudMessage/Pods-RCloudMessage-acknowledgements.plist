@@ -24,7 +24,7 @@ www.yunzhanghu.com
 			<key>License</key>
 			<string>MIT</string>
 			<key>Title</key>
-			<string>RedPacketAlipay</string>
+			<string>RPAlipayLib</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
@@ -40,7 +40,7 @@ www.yunzhanghu.com
 			<key>License</key>
 			<string>MIT</string>
 			<key>Title</key>
-			<string>RedpacketAliAuthLib</string>
+			<string>RedpacketAliAuthAPILib</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

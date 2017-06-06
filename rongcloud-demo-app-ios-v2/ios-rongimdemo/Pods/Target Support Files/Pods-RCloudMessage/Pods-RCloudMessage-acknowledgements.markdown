@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## RedPacketAlipay
+## RPAlipayLib
 
 
 版权声明：
@@ -11,7 +11,7 @@ Copyright (c) 2016 YunzhanghuOpen
 www.yunzhanghu.com
 
 
-## RedpacketAliAuthLib
+## RedpacketAliAuthAPILib
 
 
 版权声明：

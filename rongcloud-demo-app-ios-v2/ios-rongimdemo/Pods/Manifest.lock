@@ -1,19 +1,22 @@
 PODS:
-  - RedpacketAliAuthLib (1.1.4):
-    - RedPacketAlipay
-  - RedPacketAlipay (15.0.2)
-  - RedpacketLib (3.4.7):
-    - RedPacketAlipay
+  - RedpacketAliAuthAPILib (2.0.0)
+  - RedPacketAliAuthUI (2.0.0):
+    - RedpacketAliAuthAPILib
+    - RPAlipayLib
+  - RPAlipayLib (15.3.3)
 
 DEPENDENCIES:
-  - RedpacketAliAuthLib
-  - RedpacketLib
+  - RedPacketAliAuthUI (from `RedpacketSDK/cocoapods-redpacket-ui-2.0.0`)
+
+EXTERNAL SOURCES:
+  RedPacketAliAuthUI:
+    :path: RedpacketSDK/cocoapods-redpacket-ui-2.0.0
 
 SPEC CHECKSUMS:
-  RedpacketAliAuthLib: 6173b52c25ab728db907da89fbcda3200d1cf98a
-  RedPacketAlipay: a5de6db2e2671fc9255d6d396be869e3ba2f0489
-  RedpacketLib: a5d7dcd3fe5b76dbb23ab799c749bce9eeb633c4
+  RedpacketAliAuthAPILib: d267c31efb1400fcea178972c38304af9c86d65e
+  RedPacketAliAuthUI: e8abf810ec4975a5bb4d4d419c3f7363d0b81e52
+  RPAlipayLib: 5c2fdb260951d9a1e6530d9cc0594883cb4e7810
 
-PODFILE CHECKSUM: 040eb9c2da0ece619450e95c115682feeea2cb3c
+PODFILE CHECKSUM: e856a9c549069d744254e0b67d5468c5a7821833
 
 COCOAPODS: 1.2.1

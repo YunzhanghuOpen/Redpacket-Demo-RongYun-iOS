@@ -80,20 +80,20 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "RedPacketAlipay/AlipaySDK.bundle"
-  install_resource "RedpacketAliAuthLib/Redpacket/resources/RedpacketBundle.bundle"
+  install_resource "RPAlipayLib/AlipaySDK.bundle"
+  install_resource "../RedpacketSDK/cocoapods-redpacket-ui-2.0.0/resources/RedpacketBundle.bundle"
 fi
 if [[ "$CONFIGURATION" == "AutoDebug" ]]; then
-  install_resource "RedPacketAlipay/AlipaySDK.bundle"
-  install_resource "RedpacketAliAuthLib/Redpacket/resources/RedpacketBundle.bundle"
+  install_resource "RPAlipayLib/AlipaySDK.bundle"
+  install_resource "../RedpacketSDK/cocoapods-redpacket-ui-2.0.0/resources/RedpacketBundle.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "RedPacketAlipay/AlipaySDK.bundle"
-  install_resource "RedpacketAliAuthLib/Redpacket/resources/RedpacketBundle.bundle"
+  install_resource "RPAlipayLib/AlipaySDK.bundle"
+  install_resource "../RedpacketSDK/cocoapods-redpacket-ui-2.0.0/resources/RedpacketBundle.bundle"
 fi
 if [[ "$CONFIGURATION" == "AutoRelease" ]]; then
-  install_resource "RedPacketAlipay/AlipaySDK.bundle"
-  install_resource "RedpacketAliAuthLib/Redpacket/resources/RedpacketBundle.bundle"
+  install_resource "RPAlipayLib/AlipaySDK.bundle"
+  install_resource "../RedpacketSDK/cocoapods-redpacket-ui-2.0.0/resources/RedpacketBundle.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
