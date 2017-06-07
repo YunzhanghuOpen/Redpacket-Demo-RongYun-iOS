@@ -17,6 +17,7 @@ static NSString *const UserDictKey = @"user";
 @interface RedpacketMessage ()
 @property (nonatomic, readwrite) RPRedpacketModel *redpacket;
 @property (nonatomic, readwrite) AnalysisRedpacketModel *analyModel;
+@property (nonatomic, strong) NSDictionary *redpackDic;
 @end
 
 @implementation RedpacketMessage
@@ -101,7 +102,9 @@ static NSString *const UserDictKey = @"user";
             sender.avatar = self.senderUserInfo.portraitUri;
             self.redpacket = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:redpacketDic andSender:sender];
             self.analyModel = [AnalysisRedpacketModel analysisRedpacketWithDict:redpacketDic andIsSender:[sender.userID isEqualToString:[RCIM sharedRCIM].currentUserInfo.userId]];
+            self.redpackDic = redpacketDic;
         }
+        
         else {
             NSLog(@"获取的不是红包相关的数据");
         }
@@ -141,6 +144,11 @@ static NSString *const UserDictKey = @"user";
         }
     }
     return tip;
+}
+
+- (RPRedpacketModel *)redpacket
+{
+    return [RPRedpacketUnionHandle modelWithChannelRedpacketDic:_redpackDic andSender:nil];
 }
 
 + (NSString *)getObjectName

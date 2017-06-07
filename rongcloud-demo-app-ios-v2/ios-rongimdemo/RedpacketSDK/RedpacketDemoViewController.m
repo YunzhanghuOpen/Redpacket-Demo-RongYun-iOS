@@ -214,7 +214,8 @@
                 [self.chatSessionInputBarControl.inputTextView resignFirstResponder];
             }
             __weak typeof(self) weakSelf = self;
-            [RedpacketViewControl redpacketTouchedWithMessageModel:((RedpacketMessage *)model.content).redpacket
+            RPRedpacketModel *rPmodel = ((RedpacketMessage *)model.content).redpacket;
+            [RedpacketViewControl redpacketTouchedWithMessageModel:rPmodel
                                                 fromViewController:self
                                                 redpacketGrabBlock:^(RPRedpacketModel *messageModel) {
                                                     /** 抢到红包后，发送红包被抢的消息*/
