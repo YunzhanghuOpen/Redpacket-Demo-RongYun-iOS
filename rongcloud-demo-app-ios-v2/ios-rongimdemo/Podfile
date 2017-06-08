@@ -3,8 +3,20 @@ platform :ios, '8.0'
 # Import CocoaPods sources
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'RCloudMessage' do
+target 'RCloudMessage-alipay' do
 
-pod 'RedPacketAliAuthUI', :path => 'RedpacketSDK/cocoapods-redpacket-ui-2.0.0'
+pod 'RedpacketAliAuthLib'
 
+end
+
+target 'RCloudMessage-JDpay' do
+    
+    pod 'Hyphenate', '~> 3.3.2'
+    
+    pod 'EaseUI', :path => '../EaseUI'
+    
+    pod 'RedpacketLib'
+    
+    #pod 'Hyphenate_VideoRecoder', :path => '../HyphenateVideoRecoder'
+    
 end
