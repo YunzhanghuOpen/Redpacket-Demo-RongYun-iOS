@@ -17,7 +17,7 @@ static NSString *const UserDictKey = @"user";
 @interface RedpacketMessage ()
 @property (nonatomic, readwrite) RPRedpacketModel *redpacket;
 @property (nonatomic, readwrite) AnalysisRedpacketModel *analyModel;
-@property (nonatomic, strong) NSDictionary *redpackDic;
+@property (nonatomic, readwrite) NSDictionary *redpackDic;
 @end
 
 @implementation RedpacketMessage
@@ -146,9 +146,12 @@ static NSString *const UserDictKey = @"user";
     return tip;
 }
 
-- (RPRedpacketModel *)redpacket
+- (NSDictionary *)redpackDic
 {
-    return [RPRedpacketUnionHandle modelWithChannelRedpacketDic:_redpackDic andSender:nil];
+    if (!_redpackDic) {
+        _redpackDic = [RPRedpacketUnionHandle dictWithRedpacketModel:self.redpacket isACKMessage:NO];
+    }
+    return _redpackDic;
 }
 
 + (NSString *)getObjectName

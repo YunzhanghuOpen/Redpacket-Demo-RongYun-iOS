@@ -16,6 +16,7 @@
 // 云帐户红包消息类
 @interface RedpacketMessage : RCMessageContent
 
+@property (nonatomic, readonly) NSDictionary * _Nullable redpackDic;
 @property (nonatomic, readonly)  RPRedpacketModel * __nonnull redpacket;
 @property (nonatomic, readonly)  AnalysisRedpacketModel  * __nonnull analyModel;
 // 红包消息未包含对方的用户昵称，所以需要消息体自己处理
