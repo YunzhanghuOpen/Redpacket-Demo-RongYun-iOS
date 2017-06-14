@@ -205,7 +205,6 @@
 		8463B81A1EE9796600CAD68F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C330F51A0C722F00E31B9A /* CFNetwork.framework */; };
 		8463B81B1EE9796600CAD68F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C4E7E51A0A2F2E00140067 /* UIKit.framework */; };
 		8463B81C1EE9796600CAD68F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C4E7E31A0A2F2800140067 /* CoreGraphics.framework */; };
-		8463B81D1EE9796600CAD68F /* libPods-RCloudMessage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF65FA14A48FE837E2116082 /* libPods-RCloudMessage.a */; };
 		8463B81F1EE9796600CAD68F /* Emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C55EB501B2A8CE5004285F4 /* Emoji.plist */; };
 		8463B8201EE9796600CAD68F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BFAE2A1A12184E007165B1 /* Main.storyboard */; };
 		8463B8211EE9796600CAD68F /* RongCloud.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5111B07A1AE6A11A00317E71 /* RongCloud.bundle */; };
@@ -262,7 +261,7 @@
 		A6EFABA31BB0EDD7007E9D67 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EFABA21BB0EDD7007E9D67 /* libstdc++.tbd */; };
 		A6EFABA51BB0EDE1007E9D67 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EFABA41BB0EDE1007E9D67 /* libsqlite3.tbd */; };
 		A6EFABA71BB0EDFB007E9D67 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EFABA61BB0EDFB007E9D67 /* libc++.tbd */; };
-		A929395EFE7DE47F5C16058B /* libPods-RCloudMessage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF65FA14A48FE837E2116082 /* libPods-RCloudMessage.a */; };
+		CD97BCD153556B772553C922 /* libPods-RCloudMessage-alipay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15816B49C0F413485197B703 /* libPods-RCloudMessage-alipay.a */; };
 		E412BD1E1ADE19A4000DCA7A /* RCDChatListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E412BD1D1ADE19A4000DCA7A /* RCDChatListCell.m */; };
 		E412BD211ADE55BF000DCA7A /* RCDAddFriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E412BD201ADE55BF000DCA7A /* RCDAddFriendTableViewController.m */; };
 		E412BD241ADE6BFB000DCA7A /* RCDHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E412BD231ADE6BFB000DCA7A /* RCDHttpTool.m */; };
@@ -370,6 +369,7 @@
 		E4E939CF1AD65E30001E0AC6 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = E4E939CD1AD65E30001E0AC6 /* pinyin.c */; };
 		E4E939D21AD6805E001E0AC6 /* RCDPersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E939D11AD6805E001E0AC6 /* RCDPersonDetailViewController.m */; };
 		E4FCD7C41AD69DFB00915650 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FCD7C31AD69DFB00915650 /* ImageIO.framework */; };
+		ED83FAAE97225DF08C72F408 /* libPods-RCloudMessage-JDpay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A451CC6AB1FB47EFDDAAF7A /* libPods-RCloudMessage-JDpay.a */; };
 		F821B7F51BE75BFD00F0D14C /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F821B7F41BE75BFD00F0D14C /* libMobClickLibrary.a */; };
 		F836AB0E1C2262C400A1A5D2 /* RCDTestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F836AB0D1C2262C400A1A5D2 /* RCDTestMessage.m */; };
 		F836AB151C226A7F00A1A5D2 /* RCDTestMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F836AB141C226A7F00A1A5D2 /* RCDTestMessageCell.m */; };
@@ -380,7 +380,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01EE9E3AF2AFFCF04A41A330 /* Pods-RCloudMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage/Pods-RCloudMessage.release.xcconfig"; sourceTree = "<group>"; };
+		15816B49C0F413485197B703 /* libPods-RCloudMessage-alipay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCloudMessage-alipay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17244C161B56553B000EFF79 /* RCDMessageNoDisturbSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RCDMessageNoDisturbSettingController.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		17244C171B56553B000EFF79 /* RCDMessageNoDisturbSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RCDMessageNoDisturbSettingController.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		174151F31CBE516A00A4B23B /* RCDPublicServiceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDPublicServiceListViewController.h; sourceTree = SOURCE_ROOT; };
@@ -424,11 +424,9 @@
 		5C0253F31B53D6F8003F48D9 /* RCDBlackListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RCDBlackListViewController.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C7629811B54F7E60027DA82 /* RCDBlackListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RCDBlackListCell.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5C7629821B54F7E60027DA82 /* RCDBlackListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RCDBlackListCell.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		5D7799FF4B5CEB16DEF820C7 /* Pods-RCloudMessage.autorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage.autorelease.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage/Pods-RCloudMessage.autorelease.xcconfig"; sourceTree = "<group>"; };
 		7A451CC6AB1FB47EFDDAAF7A /* libPods-RCloudMessage-JDpay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCloudMessage-JDpay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8463B82E1EE9796600CAD68F /* RCloudMessage-JDpay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RCloudMessage-JDpay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8463B82F1EE9796600CAD68F /* RCloudMessage-alipay copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RCloudMessage-alipay copy-Info.plist"; path = "/Users/admin/Documents/developer/YunzhanghuOfficial/iOS-SDK-for-RongYun/rongcloud-demo-app-ios-v2/ios-rongimdemo/RCloudMessage-alipay copy-Info.plist"; sourceTree = "<absolute>"; };
-		84F97E681EE557BE00CB9BDA /* RCloudMessage copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RCloudMessage copy-Info.plist"; path = "/Users/admin/Documents/developer/rongyun/iOS-SDK-for-RongYun/rongcloud-demo-app-ios-v2/ios-rongimdemo/RCloudMessage copy-Info.plist"; sourceTree = "<absolute>"; };
 		84F97FA01EE56A1100CB9BDA /* RedpacketChangeMoneySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketChangeMoneySegue.h; sourceTree = "<group>"; };
 		84F97FA11EE56A1100CB9BDA /* RedpacketChangeMoneySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedpacketChangeMoneySegue.m; sourceTree = "<group>"; };
 		84F97FA21EE56A1100CB9BDA /* RedpacketConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketConfig.h; sourceTree = "<group>"; };
@@ -458,9 +456,9 @@
 		84F97FBE1EE56A1100CB9BDA /* RedpacketTakenOutgoingMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketTakenOutgoingMessage.h; sourceTree = "<group>"; };
 		84F97FBF1EE56A1100CB9BDA /* RedpacketTakenOutgoingMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedpacketTakenOutgoingMessage.m; sourceTree = "<group>"; };
 		84F980531EE6AB3E00CB9BDA /* RedpacketCellResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RedpacketCellResource.bundle; sourceTree = "<group>"; };
-		8624FC134075EE90F5158A49 /* Pods-RCloudMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage/Pods-RCloudMessage.debug.xcconfig"; sourceTree = "<group>"; };
 		8C55EB501B2A8CE5004285F4 /* Emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Emoji.plist; path = framework/Emoji.plist; sourceTree = SOURCE_ROOT; };
 		8CCBC9861AEDDF8600BA1135 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		93243BA00AB28C01B9DDFB67 /* Pods-RCloudMessage-alipay.autodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage-alipay.autodebug.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage-alipay/Pods-RCloudMessage-alipay.autodebug.xcconfig"; sourceTree = "<group>"; };
 		9DF0900E6FB00826525D3C5A /* Pods-RCloudMessage-JDpay.autorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage-JDpay.autorelease.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage-JDpay/Pods-RCloudMessage-JDpay.autorelease.xcconfig"; sourceTree = "<group>"; };
 		A60BAD091CD1ACB9003D2375 /* voip_call.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = voip_call.caf; sourceTree = SOURCE_ROOT; };
 		A61647861BE9BF7C00E90813 /* RCDMeInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDMeInfoTableViewController.h; path = RCloudMessage/RCDMeInfoTableViewController.h; sourceTree = SOURCE_ROOT; };
@@ -590,6 +588,7 @@
 		A6BD040F1B1E938000ACAF17 /* 融云 Demo WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "融云 Demo WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		A6BD04101B1E941D00ACAF17 /* RCloudMessage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = RCloudMessage.entitlements; path = RCloudMessage/RCloudMessage.entitlements; sourceTree = SOURCE_ROOT; };
 		A6BD04171B1EEA6B00ACAF17 /* RongIMLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RongIMLib.framework; path = framework/RongIMLib.framework; sourceTree = SOURCE_ROOT; };
+		A6C93EBD058F8B1CE7095DF3 /* Pods-RCloudMessage-alipay.autorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage-alipay.autorelease.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage-alipay/Pods-RCloudMessage-alipay.autorelease.xcconfig"; sourceTree = "<group>"; };
 		A6CF8A341BD4CB6E00F3EA1A /* RCConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RCConfig.plist; path = framework/RCConfig.plist; sourceTree = SOURCE_ROOT; };
 		A6EFAB9E1BB0ED94007E9D67 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A6EFABA01BB0EDAC007E9D67 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
@@ -602,7 +601,9 @@
 		C8D7AF10C8787D2FEF70B40F /* Pods-RCloudMessage-JDPay.autodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage-JDPay.autodebug.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage-JDPay/Pods-RCloudMessage-JDPay.autodebug.xcconfig"; sourceTree = "<group>"; };
 		CA12B819996A4B2F38703FC9 /* libPods-RCloudMessage-JDPay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCloudMessage-JDPay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32B60462A2063E1D8119D24 /* Pods-RCloudMessage-JDpay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage-JDpay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage-JDpay/Pods-RCloudMessage-JDpay.debug.xcconfig"; sourceTree = "<group>"; };
+		D4C77DFD14FC902184A29F3D /* Pods-RCloudMessage-alipay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage-alipay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage-alipay/Pods-RCloudMessage-alipay.debug.xcconfig"; sourceTree = "<group>"; };
 		D784DB73B343296A0EC83EB1 /* Pods-RCloudMessage-JDpay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage-JDpay.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage-JDpay/Pods-RCloudMessage-JDpay.release.xcconfig"; sourceTree = "<group>"; };
+		D7968F057BE962E3116391A1 /* Pods-RCloudMessage-alipay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage-alipay.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage-alipay/Pods-RCloudMessage-alipay.release.xcconfig"; sourceTree = "<group>"; };
 		E412BD1C1ADE19A4000DCA7A /* RCDChatListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDChatListCell.h; sourceTree = SOURCE_ROOT; };
 		E412BD1D1ADE19A4000DCA7A /* RCDChatListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDChatListCell.m; sourceTree = SOURCE_ROOT; };
 		E412BD1F1ADE55BF000DCA7A /* RCDAddFriendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDAddFriendTableViewController.h; sourceTree = SOURCE_ROOT; };
@@ -828,7 +829,6 @@
 		F8AD4A581CAE5766006C1CBB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F8AD4A5A1CAE5782006C1CBB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		F8B7DBD11BAC189700E9F9BD /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libopencore-amrnb.a"; path = "framework/libopencore-amrnb.a"; sourceTree = SOURCE_ROOT; };
-		FD9AB5C8A115D0CBEF0B8D67 /* Pods-RCloudMessage.autodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCloudMessage.autodebug.xcconfig"; path = "Pods/Target Support Files/Pods-RCloudMessage/Pods-RCloudMessage.autodebug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -867,7 +867,7 @@
 				8463B8041EE9796600CAD68F /* AVFoundation.framework in Frameworks */,
 				8463B81B1EE9796600CAD68F /* UIKit.framework in Frameworks */,
 				8463B81C1EE9796600CAD68F /* CoreGraphics.framework in Frameworks */,
-				8463B81D1EE9796600CAD68F /* libPods-RCloudMessage.a in Frameworks */,
+				ED83FAAE97225DF08C72F408 /* libPods-RCloudMessage-JDpay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,7 +906,7 @@
 				E4C330F21A0C721D00E31B9A /* AVFoundation.framework in Frameworks */,
 				E4C4E7E61A0A2F2E00140067 /* UIKit.framework in Frameworks */,
 				E4C4E7E41A0A2F2800140067 /* CoreGraphics.framework in Frameworks */,
-				A929395EFE7DE47F5C16058B /* libPods-RCloudMessage.a in Frameworks */,
+				CD97BCD153556B772553C922 /* libPods-RCloudMessage-alipay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1201,10 +1201,6 @@
 		DD768AB49DF53BE6DD3ADCF2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8624FC134075EE90F5158A49 /* Pods-RCloudMessage.debug.xcconfig */,
-				FD9AB5C8A115D0CBEF0B8D67 /* Pods-RCloudMessage.autodebug.xcconfig */,
-				01EE9E3AF2AFFCF04A41A330 /* Pods-RCloudMessage.release.xcconfig */,
-				5D7799FF4B5CEB16DEF820C7 /* Pods-RCloudMessage.autorelease.xcconfig */,
 				B4867D6354EC6376890B4703 /* Pods-RCloudMessage-JDPay.debug.xcconfig */,
 				C8D7AF10C8787D2FEF70B40F /* Pods-RCloudMessage-JDPay.autodebug.xcconfig */,
 				234B3F03A84DDF51F2AFFD16 /* Pods-RCloudMessage-JDPay.release.xcconfig */,
@@ -1213,6 +1209,10 @@
 				BDE69E9B39043C229FF54145 /* Pods-RCloudMessage-JDpay.autodebug.xcconfig */,
 				D784DB73B343296A0EC83EB1 /* Pods-RCloudMessage-JDpay.release.xcconfig */,
 				9DF0900E6FB00826525D3C5A /* Pods-RCloudMessage-JDpay.autorelease.xcconfig */,
+				D4C77DFD14FC902184A29F3D /* Pods-RCloudMessage-alipay.debug.xcconfig */,
+				93243BA00AB28C01B9DDFB67 /* Pods-RCloudMessage-alipay.autodebug.xcconfig */,
+				D7968F057BE962E3116391A1 /* Pods-RCloudMessage-alipay.release.xcconfig */,
+				A6C93EBD058F8B1CE7095DF3 /* Pods-RCloudMessage-alipay.autorelease.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1467,6 +1467,7 @@
 				AF65FA14A48FE837E2116082 /* libPods-RCloudMessage.a */,
 				CA12B819996A4B2F38703FC9 /* libPods-RCloudMessage-JDPay.a */,
 				7A451CC6AB1FB47EFDDAAF7A /* libPods-RCloudMessage-JDpay.a */,
+				15816B49C0F413485197B703 /* libPods-RCloudMessage-alipay.a */,
 			);
 			name = Frameworks;
 			path = RongCloudTests;
@@ -1483,7 +1484,6 @@
 				E4C4E7E71A0A309100140067 /* Frameworks */,
 				E4D40F291A031F460045097C /* Products */,
 				DD768AB49DF53BE6DD3ADCF2 /* Pods */,
-				84F97E681EE557BE00CB9BDA /* RCloudMessage copy-Info.plist */,
 				8463B82F1EE9796600CAD68F /* RCloudMessage-alipay copy-Info.plist */,
 			);
 			sourceTree = "<group>";
@@ -1939,7 +1939,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCloudMessage/Pods-RCloudMessage-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCloudMessage-alipay/Pods-RCloudMessage-alipay-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5CA5271E9EC9F4A52377786B /* [CP] Embed Pods Frameworks */ = {
@@ -1954,7 +1954,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCloudMessage/Pods-RCloudMessage-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCloudMessage-alipay/Pods-RCloudMessage-alipay-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8463B76A1EE9796600CAD68F /* [CP] Check Pods Manifest.lock */ = {
@@ -1984,7 +1984,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCloudMessage/Pods-RCloudMessage-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCloudMessage-JDpay/Pods-RCloudMessage-JDpay-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8463B8281EE9796600CAD68F /* [CP] Copy Pods Resources */ = {
@@ -1999,7 +1999,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCloudMessage/Pods-RCloudMessage-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCloudMessage-JDpay/Pods-RCloudMessage-JDpay-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2346,7 +2346,7 @@
 /* Begin XCBuildConfiguration section */
 		8463B82A1EE9796600CAD68F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8624FC134075EE90F5158A49 /* Pods-RCloudMessage.debug.xcconfig */;
+			baseConfigurationReference = D32B60462A2063E1D8119D24 /* Pods-RCloudMessage-JDpay.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2389,7 +2389,7 @@
 		};
 		8463B82B1EE9796600CAD68F /* AutoDebug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD9AB5C8A115D0CBEF0B8D67 /* Pods-RCloudMessage.autodebug.xcconfig */;
+			baseConfigurationReference = BDE69E9B39043C229FF54145 /* Pods-RCloudMessage-JDpay.autodebug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2432,7 +2432,7 @@
 		};
 		8463B82C1EE9796600CAD68F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01EE9E3AF2AFFCF04A41A330 /* Pods-RCloudMessage.release.xcconfig */;
+			baseConfigurationReference = D784DB73B343296A0EC83EB1 /* Pods-RCloudMessage-JDpay.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2475,7 +2475,7 @@
 		};
 		8463B82D1EE9796600CAD68F /* AutoRelease */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D7799FF4B5CEB16DEF820C7 /* Pods-RCloudMessage.autorelease.xcconfig */;
+			baseConfigurationReference = 9DF0900E6FB00826525D3C5A /* Pods-RCloudMessage-JDpay.autorelease.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2564,7 +2564,7 @@
 		};
 		A608834E1B3954240003B082 /* AutoDebug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD9AB5C8A115D0CBEF0B8D67 /* Pods-RCloudMessage.autodebug.xcconfig */;
+			baseConfigurationReference = 93243BA00AB28C01B9DDFB67 /* Pods-RCloudMessage-alipay.autodebug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2648,7 +2648,7 @@
 		};
 		A60883521B3972CB0003B082 /* AutoRelease */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D7799FF4B5CEB16DEF820C7 /* Pods-RCloudMessage.autorelease.xcconfig */;
+			baseConfigurationReference = A6C93EBD058F8B1CE7095DF3 /* Pods-RCloudMessage-alipay.autorelease.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2778,7 +2778,7 @@
 		};
 		E4D40F4F1A031F460045097C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8624FC134075EE90F5158A49 /* Pods-RCloudMessage.debug.xcconfig */;
+			baseConfigurationReference = D4C77DFD14FC902184A29F3D /* Pods-RCloudMessage-alipay.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2821,7 +2821,7 @@
 		};
 		E4D40F501A031F460045097C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01EE9E3AF2AFFCF04A41A330 /* Pods-RCloudMessage.release.xcconfig */;
+			baseConfigurationReference = D7968F057BE962E3116391A1 /* Pods-RCloudMessage-alipay.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

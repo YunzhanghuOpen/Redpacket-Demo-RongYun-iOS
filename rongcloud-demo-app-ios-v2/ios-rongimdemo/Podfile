@@ -11,12 +11,7 @@ end
 
 target 'RCloudMessage-JDpay' do
     
-    pod 'Hyphenate', '~> 3.3.2'
+        pod 'RedpacketLib'
     
-    pod 'EaseUI', :path => '../EaseUI'
-    
-    pod 'RedpacketLib'
-    
-    #pod 'Hyphenate_VideoRecoder', :path => '../HyphenateVideoRecoder'
     
 end
