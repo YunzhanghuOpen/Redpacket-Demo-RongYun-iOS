@@ -12,7 +12,7 @@
 #import "AFNetworking.h"
 
 #import "RPRedpacketBridge.h"
-#import "AnalysisRedpacketModel.h"
+#import "RPRedpacketUnionHandle.h"
 
 
 //	*此为演示地址* App需要修改为自己AppServer上的地址, 数据格式参考此地址给出的格式。

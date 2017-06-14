@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AnalysisRedpacketModel.h"
+#import "RPRedpacketUnionHandle.h"
 
 @interface RedpacketConfig : NSObject
 + (instancetype)sharedConfig;

@@ -9,7 +9,7 @@
 #import <RongIMLib/RongIMLib.h>
 
 #import "RPRedpacketModel.h"
-#import "AnalysisRedpacketModel.h"
+#import "RPRedpacketUnionHandle.h"
 
 #define YZHRedpacketMessageTypeIdentifier @"YZH:RedPacketMsg"
 

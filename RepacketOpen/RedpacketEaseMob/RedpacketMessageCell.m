@@ -10,7 +10,7 @@
 #import "RedpacketMessage.h"
 #import "RedpacketView.h"
 #import "RedPacketLuckView.h"
-#import "AnalysisRedpacketModel.h"
+#import "RPRedpacketUnionHandle.h"
 
 #define Redpacket_Message_Font_Size 14
 #define Redpacket_SubMessage_Font_Size 12
