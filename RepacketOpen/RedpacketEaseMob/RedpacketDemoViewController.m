@@ -214,7 +214,7 @@
                 [self.chatSessionInputBarControl.inputTextView resignFirstResponder];
             }
             __weak typeof(self) weakSelf = self;
-            RPRedpacketModel *rPmodel = ((RedpacketMessage *)model.content).redpacket;
+            RPRedpacketModel *rPmodel = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:((RedpacketMessage *)model.content).redpackDic andSender:nil];
             [RedpacketViewControl redpacketTouchedWithMessageModel:rPmodel
                                                 fromViewController:self
                                                 redpacketGrabBlock:^(RPRedpacketModel *messageModel) {
@@ -315,7 +315,7 @@
             // 云账户增加红包插件点击回调
         case REDPACKET_TAG: {
             if (ConversationType_PRIVATE == self.conversationType) {
-                /** 小额随机红包*/
+                /** 点对点*/
                 redpacketVCType = RPRedpacketControllerTypeRand;
                 [RedpacketViewControl presentRedpacketViewController:redpacketVCType
                                                      fromeController:weakSelf
