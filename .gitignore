@@ -40,6 +40,8 @@ Thumbs.db
 #XCode
 xcuserdata
 project.xcworkspace
+../../Pods/
+../../Podfile.lock
 #Android
 local.properties
 obj
