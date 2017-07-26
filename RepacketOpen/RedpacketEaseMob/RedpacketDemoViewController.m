@@ -214,7 +214,7 @@
                 [self.chatSessionInputBarControl.inputTextView resignFirstResponder];
             }
             __weak typeof(self) weakSelf = self;
-            RPRedpacketModel *rPmodel = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:((RedpacketMessage *)model.content).redpackDic andSender:nil];
+            RPRedpacketModel *rPmodel = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:((RedpacketMessage *)model.content).redpackDic andSender:((RedpacketMessage *)model.content).redpacket.sender];
             [RedpacketViewControl redpacketTouchedWithMessageModel:rPmodel
                                                 fromViewController:self
                                                 redpacketGrabBlock:^(RPRedpacketModel *messageModel) {
